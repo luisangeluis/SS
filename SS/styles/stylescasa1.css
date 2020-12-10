@@ -1,0 +1,347 @@
+        /* ||| General setup |||*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: silver;
+    margin: 0 auto;
+}
+
+body {
+    font: normal 100%;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    background-color: #FFFFFF;
+}
+
+/*||| Fonts |||
+           Tiene su propia CSS
+       */
+
+
+/* ||| General Typography ||| */
+
+/*  color: #999999;  strong Gray*/
+/*  color: #C0C0C0;  Silver Txt*/
+/*  color: #666666;  pale Gray*/
+/*  color: #808080;  Gray Txt*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'proxima_nova_scosfregular', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+ol, ul {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    list-style-type: none;
+}
+
+p {
+    font-family: 'latoregular', sans-serif;
+    font-size: .8rem;
+    color: #C0C0C0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+
+/* ||| Links settings ||| */
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    border: 5px solid dodgerblue;
+    border-radius: 12px;
+}
+
+a:active {
+    border: 5px solid dodgerblue;
+    border-radius: 12px;
+    color: dodgerblue;
+}
+
+.solomenu.a:hover {
+    color: red;
+}
+
+.solomenu.a:active {
+    color: red;
+}
+
+
+/* ||| Header settings ||| */
+
+header {
+    margin-top: .1rem;
+    margin-bottom: .5rem;
+    padding: .5rem 1rem;
+}
+
+.section {
+    display: flex;
+    height: 1.5rem;
+}
+
+.article {
+    flex: 1;
+}
+
+.article1 {
+    flex: 1;
+}
+
+.article2 {
+    flex: 1;
+    padding-right: 0 5rem;
+}
+
+header img {
+    float: left;
+    height: 1.5rem;
+}
+
+nav img {
+    float: right;
+    height: 1.5rem;
+}
+
+
+/* ||| Main layout ||| */
+
+main {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0 1rem;
+}
+
+
+/* ||| Seccion main titulos ||| */
+
+.Titu {
+    font-family: 'proxima_nova_scosfregular', sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #808080;
+    margin-bottom: 0;
+}
+
+.Titd {
+    font-family: 'proxima_nova_scosfregular', sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #000000;
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.Titt {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #666666;
+    /*margin-bottom: 1.5rem;  El original de la plantilla*/
+    /*Incorpore espacio adicional respecto a la plantilla de casa729*/
+    margin-bottom: 3rem;
+}
+
+
+/* ||| Central box layout ||| */
+
+.cajalayout {
+    display: flex;
+    flex-direction: column;
+    float: none;
+}
+
+.cajacentral {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-flow: row wrap;
+    margin-bottom: 15rem;
+}
+
+.par1 {
+    display: flex;
+    min-width: 320px;
+    min-height: 150px;
+    justify-content: space-evenly;
+    margin-bottom: .75rem;
+}
+
+.par2 {
+    display: flex;
+    min-width: 320px;
+    min-height: 150px;
+    justify-content: space-evenly;
+}
+
+.box {
+    flex: 1;
+    min-width: 125px;
+}
+
+.cajacentral .box img {
+    max-width: 80%;
+    display: block;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.btnconfirmar {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: steelblue;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 150px;
+    max-width: 80%;
+}
+
+
+/* ||| Footer ||| */
+footer {
+}
+
+
+/* ||| Breakpoint 648px ||| */
+
+@media (min-width: 648px) {
+    header {
+        margin-top: .1rem;
+        padding: .5rem 1rem;
+    }
+
+    hr {
+        margin-bottom: 0;
+    }
+
+    .section {
+        display: flex;
+        height: 2.2rem;
+    }
+
+    header img {
+        float: left;
+        height: 2rem;
+    }
+
+    nav img {
+        float: right;
+        height: 2rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .submain {
+        background-color: #dbdbdb;
+        padding-top: 4rem;
+    }
+
+    .Titd {
+        color: black;
+        font-weight: bolder;
+        margin-bottom: 3rem;
+    }
+
+    .Titu {
+        color: #808080;
+        font-weight: bold;
+    }
+
+    .Titt {
+        color: #666666;
+        font-weight: bold;
+        margin-bottom: 3rem;
+    }
+
+    .submain2 {
+        padding-top: 4rem;
+    }
+
+    .cajacentral {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
+        flex-flow: row wrap;
+    }
+
+    .par1 {
+        display: flex;
+        min-width: 480px;
+        min-height: 150px;
+        justify-content: space-evenly;
+        margin-bottom: 1.2rem;
+    }
+
+    .par2 {
+        display: flex;
+        min-width: 480px;
+        min-height: 150px;
+        justify-content: space-evenly;
+    }
+
+    .box {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .cajacentral .box img {
+        max-width: 80%;
+        display: block;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .cajacentral .box img {
+        width: 100%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+/* ||| Breakpoint 1100px ||| */
+
+@media (min-width: 1100px) {
+    .par1 {
+        display: flex;
+        min-width: 800px;
+        min-height: 150px;
+        justify-content: space-evenly;
+        margin-bottom: 3rem;
+    }
+
+    .par2 {
+        display: flex;
+        min-width: 800px;
+        min-height: 150px;
+        justify-content: space-evenly;
+    }
+}

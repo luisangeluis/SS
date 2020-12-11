@@ -154,6 +154,18 @@ main {
     margin-bottom: 1.5rem;
 }
 
+.Titdlato {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #000000;
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+
+
 .Tituleft {
     font-family: 'proxima_nova_scosfregular', sans-serif;
     font-size: 1.2rem;
@@ -197,6 +209,25 @@ main {
     margin: 0;
     font-weight: bold;
 }
+
+.Tittcenter {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #666666;
+    margin: 0;
+}
+
+.Tittcenterbold {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #666666;
+    margin: 0;
+    font-weight: bold;
+}
+
+
 
 .Tittleftboldverif {
     font-family: 'proxima_nova_scosfregular', sans-serif;
@@ -789,6 +820,61 @@ form {
     max-width: 30%;
 }
 
+.btndocofoto {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: steelblue;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.btnredondeado {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: midnightblue;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 175px;
+}
+
+.btnredondeadododger {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: dodgerblue;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 175px;
+}
+
+.btnredondeadogris {
+    font-family: 'latoregular', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: lightslategray;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 175px;
+}
+
+
+
 .btnconfirmargris {
     font-family: 'latoregular', sans-serif;
     font-size: .7rem;
@@ -835,6 +921,20 @@ form {
     margin-right: auto;
     max-width: 30%;
     margin-bottom: 1rem;
+}
+
+.azulpeque {
+    font-family: 'latoregular', sans-serif;
+    font-size: .75rem;
+    text-align: left;
+    color: cornflowerblue;
+}
+
+#btnOtroIngresoazul {
+    font-family: 'latoregular', sans-serif;
+    font-size: .75rem;
+    text-align: left;
+    color: cornflowerblue;
 }
 
 .disclaimer {
@@ -1043,6 +1143,7 @@ footer {
 
 /* ||| Breakpoint 648px ||| */
 
+
 @media (min-width: 648px) {
     header {
         margin-top: .1rem;
@@ -1070,7 +1171,7 @@ footer {
         float: right;
         height: 2rem;
     }
-
+   
     main {
         display: grid;
         grid-template-columns: 30% 70%;
@@ -1097,8 +1198,6 @@ footer {
         margin: 0;
     }
 
-
-
     .Titd {
         color: black;
         font-weight: bolder;
@@ -1115,7 +1214,7 @@ footer {
         font-weight: bold;
         margin-bottom: 3rem;
     }
-
+    
     .Tituleft2 {
         font-family: 'proxima_nova_scosfregular', sans-serif;
         font-size: 1.4rem;
@@ -1205,7 +1304,8 @@ footer {
                 max-height: 500px;
             }
         }
+
         /*  color: #999999;  strong Gray*/
         /*  color: #C0C0C0;  Silver Txt*/
         /*  color: #666666;  pale Gray*/
-        /*  color: #808080;  Gray Txt*/ 
+        /*  color: #808080;  Gray Txt*/

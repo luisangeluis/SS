@@ -331,8 +331,8 @@ input {
 }
 
 .item-boton {
-    font-weight: bold;
-    font-size: 1.2rem;
+   /* font-weight: bold;*/
+    font-size: 1.3rem;
     }
 
 #porcentajeenganche, #porcentFinanciamiento, #porcentCofi {
@@ -630,6 +630,24 @@ footer {
 .activo + .item-contenido {
     max-height: 500px;
 }
+}
+
+/*clases para expandir las opciones*/
+.item-boton{
+    color: midnightblue;
+    /*width:150px;*/
+}
+.item-contenido{
+    overflow: hidden;
+    max-height: 0px;
+}
+
+.activo + .item-contenido{
+    max-height: 500px;
+}
+
+.colorNegro{
+    color:black;
 }
 
 /*  color: #999999;  strong Gray*/

@@ -107,7 +107,7 @@
                                 <label for="enganche">Enganche</label><br />
                                 <abbr>&nbsp;</abbr>
                                 <div class="minblockeng">
-                                    <input type="text" id="porcentajeenganche" name="user_name" placeholder="10%"> <br />
+                                    <input type="text" id="porcentajeenganche" name="user_name" placeholder="10%" value="10"> <br />
                                     <div id="valorenganche">
                                         <abbr>$ 0.00</abbr>
                                     </div> <br />
@@ -122,9 +122,10 @@
                             </li>
 
                             <li>
+                                <!--
                                 <label>Cofinanciamiento</label>
 
-                                <p class="item-boton"><abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</abbr>+</p>
+                                <p class="item-boton" id="botonCofi"><abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</abbr>+</p>
 
                                 <div class="item-contenido">
 
@@ -138,6 +139,21 @@
                                            name="user_name" placeholder="10%"> <br />
 
                                     <div id="valorCofin"> <abbr>$ 0.00</abbr> </div> <br />
+                                </div>
+                                -->
+                                <p class="item-boton" id="botonCofi">+Cofinanciamiento</p>
+                                <div class="item-contenido">
+                                    <abbr>&nbsp;&nbsp;&nbsp;</abbr>
+                                    <select id="inst" name="instselect">
+                                        <option selected value="infonavit">Infonavit</option>
+                                        <option value="cofin">Cofinavit</option>
+                                        <option value="otro">Otro</option>
+                                    </select> <br />
+
+                                    <abbr>&nbsp;&nbsp;&nbsp;</abbr> <input type="text" id="porcentCofi" name="user_name"
+                                        placeholder="10%"> <abbr>%</abbr> <br />
+                                    <!--<span class="currency">$</span>-->
+                                    <div id="valorCofin"> <abbr>$</abbr> </div> <br />
                                 </div>
                             </li>
                         </ul>
@@ -218,8 +234,26 @@
                                 <label for="ingresoneto">Ingreso Mensual Neto</label><br />
                                 <br />
                                 <input type="text" id="ingresoMensNeto" name="user_name" placeholder="$ 0.00"> <br />
+                                <!--
+                                <p class="item-boton" id="btnOtroIngreso">+Agregar otro ingreso</p>
+                                <div class="item-contenido ">
+                                    <abbr>$</abbr><input type="text" id="otroIngreso" name="user_name"
+                                        placeholder="$ 0.00"> <br />
+
+                                </div>
+                                -->
+                            
                             </li>
+                            
                             <li>
+                                
+                                <p class="item-boton" id="btnOtroIngreso">+Agregar otro ingreso</p>
+                                <div class="item-contenido ">
+                                    <abbr>$</abbr><input type="text" id="otroIngreso" name="user_name"
+                                        placeholder="$ 0.00"> <br />
+
+                                </div>
+                                <!--
                                 <label>Agregar otro ingreso</label>
 
                                 <p class="item-boton" id="btnOtroIngreso"><abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</abbr>+</p>
@@ -230,7 +264,9 @@
                                     <br />
                                     <input type="text" id="otrosIngresos" name="user_name" placeholder="$ 0.00"> <br />
                                 </div>
+                                -->
                             </li>
+                            
                         </ul>
                     </form>
                 </div>
@@ -254,7 +290,7 @@
 
                             <div class="formatoacifra3">
                                 <span class="currency">$</span>
-                                <output name="prOutputName" id="prOutputId">TBD</output>
+                                <output name="prOutputName" id="">TBD</output>
                             </div>
                             <br /><br />
                         </div>
@@ -321,9 +357,15 @@
                     </div>
 
                     <div class="parabtnfinal">
+
+                        <!--
                         <a href="privacidad.html">
                             <p class="btnconfirmar">PRE APRUEBA <br /> TU HIPOTECA</p>
                         </a>
+                        -->
+                        <button id="preApruebaHipoteca" onclick="location.href='./privacidad.html'" class="">
+                            <p class="btnconfirmar">PRE APRUEBA <br /> TU HIPOTECA</p>
+                        </button>
 
                     </div>
                 </div>

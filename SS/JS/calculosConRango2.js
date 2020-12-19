@@ -717,14 +717,17 @@ function calcularMensTotal(cantidadPesos, porcentTaza, tiempoAnios) {
     let result = 0;
 
     //iMensual = porcentTaza / 12;
-    iMensual = myRound(porcentTaza/12,4);
+    iMensual = myRound(porcentTaza/12,10);
+    //iMensual = myRound(porcentTaza/12,2);
+
     console.log(porcentTaza);
     console.log(iMensual);
 
     //result = cantidadPesos * (Math.pow(1 + (iMensual / 100), tiempoAnios * 12) * iMensual / 100 / (Math.pow(1 + (iMensual / 100), tiempoAnios * 12) - 1))
 
     //result = cantidadPesos * (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),2) * myRound(iMensual / 100,2) / (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),2) - 1))
-    result = cantidadPesos * (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),4) * myRound(iMensual / 100,4) / (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),4) - 1))
+      result = cantidadPesos * (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),10) * myRound(iMensual / 100,10) / (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),10) - 1))
+    //result = cantidadPesos * (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),2) * myRound(iMensual / 100,2) / (myRound(Math.pow(1 + (iMensual / 100), tiempoAnios * 12),2) - 1))
 
     return result;
 }
@@ -734,6 +737,13 @@ function myRound(num, dec) {
     var exp = Math.pow(10, dec || 2); // 2 decimales por defecto
     return parseInt(num * exp, 10) / exp;
 }
+
+
+
+
+
+    
+
 
 
 

@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Simulador de Crédito Hipotecario.">
@@ -24,80 +25,82 @@
             <div class="article1"></div>
 
             <div class="article2">
-                <nav><a href="index.html"><div class="solomenu"><img src="images/menubtn.svg" alt="Menu"></div></a></nav>
+                <nav><a href="index.html">
+                        <div class="solomenu"><img src="images/menubtn.svg" alt="Menu"></div>
+                    </a></nav>
             </div>
 
         </div>
     </header>
 
     <hr size="2" color="gray">
-    
-<main>
 
-    <div class="submain">
+    <main>
 
-        <div class="cajalayout2">
+        <div class="submain">
 
-        <div class="cajacentral">
+            <div class="cajalayout2">
 
-            <div class="box">
-                <div>
-                    <p class="solosi3">Estás aplicando a: </p>
-                    <p class="Tituleft2">CRÉDITO</p>
-                    <p class="Titdleft2">TRADICIONAL</p>
+                <div class="cajacentral">
+
+                    <div class="box">
+                        <div>
+                            <p class="solosi3">Estás aplicando a: </p>
+                            <p class="Tituleft2">CRÉDITO</p>
+                            <p class="Titdleft2">TRADICIONAL</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div>
+                            <p class="solosi3">Te prestamos: </p>
+                            <p class="Tituleft2blue">$ 1,620,000</p>
+                            <p class="solosi4">80% del valor </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="item-boton" id="btnexpandirresumen">\/</p>
+
+                <div class="item-contenido ">
+                    <p class="txtdetalles">
+                        Fin del crédito:
+                    </p>
+
+                    <p class="txtdetalles1">
+                        Comprar una casa
+                    </p>
+
+                    <p class="txtdetalles">
+                        Mensualidad con seguro <br /> y comisiones:
+                    </p>
+
+                    <p class="txtdetalles1">
+                        $18,000.00
+                    </p>
+
+                    <p class="txtdetalles">
+                        Plazo:
+                    </p>
+
+                    <p class="txtdetalles1">
+                        20 años
+                    </p>
+
+                    <div class="parabtnfinal">
+                        <a href="temphipot.html">
+                            <p class="btnconfirmargris">VER DETALLES</p>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="box">
-                <div>
-                    <p class="solosi3">Te prestamos: </p>
-                    <p class="Tituleft2blue">$ 1,620,000</p>
-                    <p class="solosi4">80% del valor </p>
-                </div>
-            </div>
+            <HR />
         </div>
 
-        <p class="item-boton" id="btnexpandirresumen">\/</p>
+        <div class="submain2">
 
-        <div class="item-contenido ">
-            <p class="txtdetalles">
-                Fin del crédito:
-            </p>
-
-            <p class="txtdetalles1">
-                Comprar una casa
-            </p>
-
-            <p class="txtdetalles">
-                Mensualidad con seguro <br /> y comisiones:
-            </p>
-
-            <p class="txtdetalles1">
-                $18,000.00
-            </p>
-
-            <p class="txtdetalles">
-                Plazo:
-            </p>
-
-            <p class="txtdetalles1">
-                20 años
-            </p>
-
-            <div class="parabtnfinal">
-                <a href="temphipot.html">
-                    <p class="btnconfirmargris">VER DETALLES</p>
-                </a>
-            </div>
-            </div> 
-    </div>
-
-        <HR />
-    </div>
-
-                                <div class="submain2">
-
-                                    <!-- <div class="cajalayout">-->
+            <!-- <div class="cajalayout">-->
             <!-- <div class="columna-derecha">-->
             <div class="svg">
                 <!--barra 1-->
@@ -249,14 +252,14 @@
                                 Bruto mensual
                             </p>
 
-                            <input type="text" id="valorbrutomens" name="user_name" placeholder="$ 0.00"> <br />
+                            <input type="text" id="valorbrutomens" name="user_name" placeholder="$ 0.00" class="formatoMoneda"> <br />
 
                             <p class="Tittleft">
                                 Otros ingresos
                             </p>
 
 
-                            <input type="text" id="valorbrutomens2" name="user_name" placeholder="$ 0.00">
+                            <input type="text" id="valorbrutomens2" name="user_name" placeholder="$ 0.00" class=formatoMoneda>
 
 
                             <p class="Tittleft">
@@ -304,34 +307,39 @@
             </div>
         </div>
 
-                            </main>
+    </main>
 
-                            <footer>
-                                <div></div>
-                            </footer>
+    <footer>
+        <div></div>
+    </footer>
 
-                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-                            <!--ANIMACIONES DE BOTONES--->
-                            <script type="text/javascript" src="JS/animacionBotones.js"></script>
-                            <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
-                            <script type="text/javascript" src="JS/acordCofin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <!--ANIMACIONES DE BOTONES--->
+    <script type="text/javascript" src="JS/animacionBotones.js"></script>
+    <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
+    <script type="text/javascript" src="JS/acordCofin.js"></script>
 
-                            <!-- SCRIPT JQUERY-->
-                            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-                                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-                                    crossorigin="anonymous"></script>
-                            <!-- SCRIPT MASK-->
-                            <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-                            <!--CALCULOS CON EL VALOR DE RANGO-->
-                            <!--SCRIPT MASK MONEY-->
-                            <script type="text/javascript"
-                                    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
-                            <!-- CALCULOS CON RANGO E INGRESOS -->
-                            <script type="text/javascript" src="JS/calculosConRango2.js"></script>
-                            <script type="text/javascript" src="JS/calculosConIngresoMens.js"></script>
+    <!-- SCRIPT JQUERY-->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    -->
+    <!-- SCRIPT MASK-->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <!--SCRIPT MASK MONEY-->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <!-- CALCULOS CON RANGO E INGRESOS -->
+    <!--
+    <script type="text/javascript" src="JS/calculosConRango2.js"></script>
+    <script type="text/javascript" src="JS/calculosConIngresoMens.js"></script>
+    -->
+    <script type="text/javascript" src="JS/datos1.js"></script>
 
 
 
 </body>
+
 </html>

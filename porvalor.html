@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Rodrigo Quezada">
+    <meta name="description" content="Simulador de Crédito Hipotecario.">
+
+    <title>Simulador Crédito Hipotecario</title>
+
+    <link rel="stylesheet" href="fonts/webfontkit-20200730-220600/stylesheet.css" type="text/css" charset="utf-8" />
+    <link href="styles/stylescasa2.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="section">
+
+            <div class="article">
+                <div class="logo"><img src="images/logorecortado.png" alt="Logo"></div>
+            </div>
+
+            <div class="article1"></div>
+
+            <div class="article2">
+                <nav><a href="index.html"><img src="images/menubtn.svg" alt="Menu"></a></nav>
+
+            </div>
+        </div>
+    </header>
+
+    <hr size="2" color="gray">
+
+
+    <main>
+
+        <div class="submain">
+
+            <div class="Tituloppl">
+
+                <p class="Titu">SIMULADOR DE </p>
+                <p class="Titd">CRÉDITO HIPOTECARIO </p>
+
+            </div>
+        </div>
+
+        <div class="submain2">
+
+            <div>
+
+                <p class="Titt">Valor del inmueble</p>
+
+                <form name="registrationForm">
+
+                    <div class="centrarcuadro">
+
+                        <div class="formatoacifra">
+                            <output name="prOutputName" id="prOutputId">
+                                <span class="currency-usd">2,500,000</span>
+                            </output>
+                        </div>
+
+                    </div>
+
+                    <div class="rango">
+                        <input type="range" name="valorcasa" id="prInputId" value="2500000" min="500000" max="10000000"
+                               step="100000">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="minflex">
+
+                <div class="min1">
+                    <p class="minlabel">
+                        MIN <span class="makebold">$ 500,000</span>
+                    </p>
+                </div>
+
+                <div class="minmiddle"></div>
+
+                <div class="min2">
+                    <p class="minlabel">
+                        MAX <span class="makebold">$ 10'000,000</span>
+                    </p>
+                </div>
+            </div>
+
+            <br />
+
+            <div></div>
+
+
+
+            <div class="bigblock">
+
+                <div class="enganche">
+
+                    <form name="engancheform" action="/my-handling-form-page" method="post">
+
+                        <ul>
+                            <li>
+                                <label for="enganche">Enganche</label><br />
+                                <abbr>&nbsp;</abbr>
+                                <div class="minblockeng">
+                                    <input type="text" id="porcentajeenganche" name="user_name" placeholder="10%" value="10"> <br />
+                                    <div id="valorenganche">
+                                        <abbr>$ 0.00</abbr>
+                                    </div> <br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="financiamiento">Financiamiento</label><br />
+                                <abbr>&nbsp;</abbr>
+                                <div id="porcentFinanciamiento"><abbr>0 %</abbr></div>
+                                <div id="valorFinanciamiento"><abbr>$ 0.00</abbr></div>
+                            </li>
+
+                            <li>
+                                <!--
+                                <label>Cofinanciamiento</label>
+
+                                <p class="item-boton" id="botonCofi"><abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</abbr>+</p>
+
+                                <div class="item-contenido">
+
+                                    <select id="inst" name="instselect">
+                                        <option selected value="infonavit">Infonavit</option>
+                                        <option value="cofin">Cofinavit</option>
+                                        <option value="otro">Otro</option>
+                                    </select> <br />
+
+                                    <input type="text" id="porcentCofi"
+                                           name="user_name" placeholder="10%"> <br />
+
+                                    <div id="valorCofin"> <abbr>$ 0.00</abbr> </div> <br />
+                                </div>
+                                -->
+                                <p class="item-boton" id="botonCofi">+Cofinanciamiento</p>
+                                <div class="item-contenido">
+                                    <abbr>&nbsp;&nbsp;&nbsp;</abbr>
+                                    <select id="inst" name="instselect">
+                                        <option selected value="infonavit">Infonavit</option>
+                                        <option value="cofin">Cofinavit</option>
+                                        <option value="otro">Otro</option>
+                                    </select> <br />
+
+                                    <abbr>&nbsp;&nbsp;&nbsp;</abbr> <input type="text" id="porcentCofi" name="user_name"
+                                        placeholder="10%"> <abbr>%</abbr> <br />
+                                    <!--<span class="currency">$</span>-->
+                                    <div id="valorCofin"> <abbr>$</abbr> </div> <br />
+                                </div>
+                            </li>
+                        </ul>
+
+                    </form>
+                </div>
+
+                <p class="Titt2">¿A cuántos años quieres pagar?</p>
+
+                <form name="registrationFormmes">
+
+                    <div class="centrarcuadro">
+
+                        <div class="formatoaciframes">
+                            <output name="mesOutputName" id="mesOutputId">
+                                <span class="elmes">20</span>
+                            </output>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="rangomes">
+
+                        <input type="range" name="mensualidades" id="mesInputId" value="20" min="5" max="30" step="1"
+                               oninput="mesOutputId.value = mesInputId.value">
+
+
+                    </div>
+
+                </form>
+
+                <div class="minflex2">
+
+                    <div class="min12">
+                        <p class="minlabel">
+                            MIN <span class="makebold">5</span>
+                        </p>
+                    </div>
+
+                    <div class="minmiddle2"></div>
+
+                    <div class="min22">
+                        <p class="minlabel">
+                            MAX <span class="makebold">30</span>
+                        </p>
+                    </div>
+                </div>
+
+                <br />
+
+                <div></div>
+
+                <div class="mensualidad">
+
+                    <form name="mensualidadform" action="/my-handling-form-page" method="post">
+                        <ul>
+
+                            <li>
+                                <label for="mensualidad">Mensualidad</label> <br />
+                                <abbr>&nbsp;</abbr>
+                                <div id="valorMensualidad"> <abbr>$ 0.00</abbr> </div> <br />
+
+                            </li>
+                        </ul>
+                    </form>
+                    <br />
+                </div>
+
+                <hr />
+                <div class="ingresos">
+
+                    <form name="ingresosform" action="/my-handling-form-page" method="post">
+
+                        <ul>
+
+                            <li>
+                                <label for="ingresoneto">Ingreso Mensual Neto</label><br />
+                                <br />
+                                <input type="text" id="ingresoMensNeto" name="user_name" placeholder="$ 0.00"> <br />
+                                <!--
+                                <p class="item-boton" id="btnOtroIngreso">+Agregar otro ingreso</p>
+                                <div class="item-contenido ">
+                                    <abbr>$</abbr><input type="text" id="otroIngreso" name="user_name"
+                                        placeholder="$ 0.00"> <br />
+
+                                </div>
+                                -->
+                            
+                            </li>
+                            
+                            <li>
+                                
+                                <p class="item-boton" id="btnOtroIngreso">+Agregar otro ingreso</p>
+                                <div class="item-contenido ">
+                                    <abbr>$</abbr><input type="text" id="otroIngreso" name="user_name"
+                                        placeholder="$ 0.00"> <br />
+
+                                </div>
+                                <!--
+                                <label>Agregar otro ingreso</label>
+
+                                <p class="item-boton" id="btnOtroIngreso"><abbr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</abbr>+</p>
+
+                                <div class="item-contenido ">
+                                    <label for="ingresoextras">Otros Ingresos</label>
+                                    <br />
+                                    <br />
+                                    <input type="text" id="otrosIngresos" name="user_name" placeholder="$ 0.00"> <br />
+                                </div>
+                                -->
+                            </li>
+                            
+                        </ul>
+                    </form>
+                </div>
+
+            </div>
+
+            <br />
+
+            <div class="finalblock">
+
+                <div class="finalblocktxt">
+                    <br />
+                    <p class="Titfinal">CRÉDITO<br />TRADICIONAL</p>
+                    <br />
+
+                    <p class="Tittfinal">Te prestamos:</p>
+
+                    <form name="presentardato">
+
+                        <div class="centrarcuadro">
+
+                            <div class="formatoacifra3">
+                                <span class="currency">$</span>
+                                <output name="prOutputName" id="">TBD</output>
+                            </div>
+                            <br /><br />
+                        </div>
+                    </form>
+
+                    <br />
+
+                    <div class="cajalayout">
+
+                        <div class="cajacentral">
+
+                            <div class="box1">
+                                <p>Mensualidad con<br />seguro y comisiones:</p>
+                            </div>
+
+                            <div class="box2" id="valorMensualidad2">
+                                <!--03/12/2020-->
+                                <p><br />Texto</p>
+                            </div>
+
+                            <div class="box1">
+                                <p>Tipo de tasa:</p>
+                            </div>
+
+                            <div class="box2">
+                                <!--<p>Texto</p>-->
+                            </div>
+
+                            <div class="box1">
+                                <p>Tasa:</p>
+                            </div>
+
+                            <div class="box2" id="valorTazaInteres">
+                                <!--03/12/2020-->
+                                <p>Texto</p>
+                            </div>
+
+                            <div class="box1">
+                                <p>Comisión por <br /> apertura:</p>
+                            </div>
+
+                            <div class="box2">
+                                <p><br />Texto</p>
+                            </div>
+
+                            <div class="box1">
+                                <p>*CAT:</p>
+                            </div>
+
+                            <div class="box2" id="cat">
+                                <!--03/12/2020-->
+                                <p>Texto</p>
+                            </div>
+
+                            <div class="box1">
+                                <p>*Gastos de<br /> originación:</p>
+                            </div>
+
+                            <div class="box2">
+                                <p><br />Texto</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="parabtnfinal">
+
+                        <!--
+                        <a href="privacidad.html">
+                            <p class="btnconfirmar">PRE APRUEBA <br /> TU HIPOTECA</p>
+                        </a>
+                        -->
+                        <button id="preApruebaHipoteca" onclick="location.href='./privacidad.html'" class="">
+                            <p class="btnconfirmar">PRE APRUEBA <br /> TU HIPOTECA</p>
+                        </button>
+
+                    </div>
+                </div>
+
+                <p class="disclaimer">
+                    *CAT Sin IVA, para fines informativos y de comparación. Fecha de cálculo 19 de Mayo de 2019.
+                    Vigencia de la oferta hasta el 17 de Julio de 2019.
+                    <br />
+                    *Gastos de Originación, estimados para fines informativos y de comparación.
+                </p>
+
+            </div>
+
+            <br />
+
+        </div>
+    </main>
+
+    <footer>
+        <div></div>
+    </footer>
+    <br />
+
+
+    <!-- SCRIPT JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <!-- SCRIPT MASK-->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <!--CALCULOS CON EL VALOR DE RANGO-->
+    <!--SCRIPT MASK MONEY-->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+    <!--ANIMACIONES DE BOTONES--->
+    <SCRipt type="text/javascript" src="JS/animacionBotones.js"></SCRipt>
+
+    <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
+    <script type="text/javascript" src="JS/acordCofin.js"></script>
+
+    <!--CALCULO DE CAT-->
+    <script type="text/javascript" src="JS/calculoCat.js"></script> <!--Debe ir primero calculoCat.js 03/12/2020-->
+    <!-- CALCULOS CON RANGO E INGRESOS -->
+    <script type="text/javascript" src="JS/calculosConRango2.js"></script>
+    <script type="text/javascript" src="JS/calculosConIngresoMens.js"></script>
+
+</body>
+
+</html>

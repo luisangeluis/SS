@@ -1,124 +1,273 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simulador Credito Hipotecario</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="fonts/webfontkit-20200730-220600/stylesheet.css" type="text/css" charset="utf-8" />
-    <link href="styles/stylesindex.css" rel="stylesheet">
+    <!-- <link href="styles/stylesindex.css" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-     <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'latoregular', sans-serif;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        ol,
+        ul,
+        .nav-item {
+            font-family: 'latoregular', sans-serif;
+            line-height: 1.3;
+            color: #3d556f;
+            font-size: medium;
+            letter-spacing: 2px;
+            list-style-type: none;
+        }
+
+        p {
+            font-family: 'latoregular', sans-serif;
+            font-size: .8rem;
+            color: grey;
+            margin-bottom: 1rem;
+            line-height: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .bs-card__link {
+            font-family: 'latoregular', sans-serif;
+            font-size: .8rem;
+            color: grey;
+            margin-bottom: 1rem;
+            line-height: 1.2rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .bs-card__link:hover {
+            color: grey;
+        }
+
+        .title {
+            font-size: large;
+        }
+
+        .subtitle {
+            font-size: medium;
+        }
+
+        .navbar-logo {
+            width: 100px;
+        }
+
+        .page-content {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+
+
+        .bs-card {
+            min-width: 150px;
+            max-width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.20), 0 6px 20px 0;
+        }
+
+        .bs-card:hover {
+            box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15), 0 2px 2px -1px rgba(152, 162, 179, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .bs-card__image {
+            padding: 20px;
+            margin: auto;
+            max-width: 120px;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            background-color: #3d556f;
+
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+
+        @media (min-width: 992px) {
+            .navbar-logo {
+                width: 130px;
+                margin: 5px;
+            }
+
+            .title {
+                font-size: x-large;
+            }
+
+            .subtitle {
+                font-size: large;
+            }
+
+            .left-column {
+                background-color: #ddd;
+                height: 85vh;
+
+
+            }
+
+            .bs-card {
+                margin: 30px;
+            }
+
+
+            .page-content {
+                margin: auto;
+                padding: 0;
+                height: 85vh;
+                align-items: center;
+            }
+
+
+
+        }
+    </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="mastheader">
-            <div class="mastheader__container">
-            <div class="mastheader_logo">
-                <a href="Index.html">
-                    <img src="./images/logo.png" alt="logo" class="logo">
-                </a>
-            </div>
-            <nav class="mastheader__navigation">
-                <ul class="navigation__menu">
-                    <li class="menu__item"><a href="x" target="_self">Home</a></li>   
-                    <li class="menu__item"><a href="x" target="_self">Simulador</a></li>
-                    <li class="menu__item"><a href="x" target="_self">Pre-Aprobador</a></li>
-                    <li class="menu__item"><a href="x" target="_self">Agenda Tu Cita </a></li>
-                    <li class="menu__item--border"><a href="x" class="selected">Iniciar Sesion</a></li>
-                </ul>
+        <header class="header border-bottom mb-2">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="/SS/images/logo.png" class="navbar-logo ms-2"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="material-icons">menu</i>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav d-flex ">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Simulador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pre-Aprobador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Agenda tu Cita</a>
+                            </li>
+                            <li class="nav-item link-dark">
+                                <a class="nav-link" href="#">Iniciar Sesi&oacuten</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
-            <div class="mastheader_navigation_mobile">
-                <label for="menu__button"><i class="menu__icon fas fa-bars"></i></label>
-            </div>
-        </div>
-        <div class="mastheader_navigation_mobile">
-            <input id="menu_button" type="checkbox" />
-            <nav class="nav_menu_mobile">
-                <ul class="header-menu-mobile">
-                    <li class="menu__item"><a href="x" target="_self">Home</a></li>
-                    <li class="menu__item"><a href="x" target="_self">Simulador</a></li>
-                    <li class="menu__item"><a href="x" target="_self">Pre-Aprobador/a></li>
-                    <li class="menu__item"><a href="x" target="_self">Agenda Cita </a></li>
-                    <li class="menu__item--border"><a href="x" class="selected">Iniciar Sesion</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-        
-        
 
-        <div class="container">
-            <section class="container__left">
-
-                <div class="hero">
-                    <h1 class="hero__title">SIMULADOR DE <span class="hero__title--bold">CR&EacuteDITO
-                    </br>  HIPOTECARIO.</span>
-                    </h1>
-                    <h3 class="hero__subtitle">¿Para qu&eacute; quieres el cr&eacutedito?</p>
-
-            </section>
+        </header>
 
 
-            <section class="container__right">
 
-                <div class="container__box">
-
-                    <div class="container__box--up">
-                        <div class="container__card">
-
-                            <a href="elegircasa.html" class="card__link">
-                                <div class="card">
-                                    <img src="images/comprar_casa.svg" alt="imagen comprar casa" class="card_image">
-                                    <p class="card__text">COMPRAR<br />UNA CASA.</p>
-                                </div>
-                            </a>
-
-                            <a href="elegirterreno.html" class="card__link">
-                                <div class="card">
-                                    <img src="images/comprar_terreno.svg" alt="imagen comprar terreno"
-                                        class="card_image">
-                                    <p class="card__text">COMPRAR <br /> UN TERRENO. </p>
-                                </div>
-                            </a> 
-
-                        </div>
-
-                        <div class="container__box--down" class=->
-                            <div class="container__card">
-                                <a href="elegirliquidez.html">
-                                    <div class="card">
-                                        <img src="images/obtener_liquidez.svg" alt="imagen obtener liquidez"
-                                            class="card_image">
-                                        <p class="card__text">OBTENER <br />LIQUIDEZ.</p>
+        <div class="container-fluid page-content">
+            <div class="row">
+                <section class="left-column col-sm-12 col-lg-4 ">
+                    <div>
+                        <h1 class="title">SIMULADOR DE <span class="text-secondary">CR&EacuteDITO HIPOTECARIO.</span>
+                        </h1>
+                        <h3 class="subtitle">¿Para qu&eacute; quieres el cr&eacutedito?</h3>
+                    </div>
+                </section>
+                <section class="col-sm-12 col-lg-8 right-column d-flex align-items-center justify-content-center ">
+                    <div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/comprar_casa.svg" class="img-fluid bs-card__image"
+                                        alt="imagen comprar casa">
+                                    <div class="card-body">
+                                        <a href="./elegircasa.html" class="stretched-link bs-card__link">COMPRAR UNA
+                                            CASA</a>
                                     </div>
-                                </a>
-                                <a href="elegirrefinanciar.html">
-                                    <div class="card">
-                                        <img src="images/refinanciar.svg" alt="imagen refinanciar" class="card_image">
-                                        <p class="card__text">REFINANCIAR<br />&nbsp;.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/comprar_terreno.svg" class="img-fluid bs-card__image"
+                                        alt="imagen comprar terreno">
+                                    <div class="card-body">
+                                        <a href="elegirterreno.html" class="stretched-link bs-card__link"> ELEGIR UN
+                                            TERRENO</a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-
-                </div>
-
+                        <div class="row">
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/obtener_liquidez.svg" class="img-fluid bs-card__image"
+                                        alt="imagen obtener liquidez">
+                                    <div class="card-body">
+                                        <a href="./elegirliquidez.html" class="stretched-link bs-card__link"> OBTENER
+                                            LIQUIDEZ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/refinanciar.svg" class="img-fluid bs-card__image"
+                                        alt="imagen refinanciar">
+                                    <div class="card-body">
+                                        <a href="./elegirrefinanciar.html" class="stretched-link bs-card__link">
+                                            REFINANCIAR</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
         </div>
-   
-    </section>
 
 
-   
 
-    <footer class="footer">
-        <div class="footer__division">
-            <p class="footer__text">Copyright&copy; 2020 - BB4 - Todos los derechos reservados</p>
-        </div>
-    </footer>
+
+
+        <footer class="row footer mt-2">
+            <div class="col-12">
+                <span>Copyright&copy; 2020 - BB4 - Todos los derechos reservados</span>
+            </div>
+        </footer>
     </div>
     </div>
 </body>

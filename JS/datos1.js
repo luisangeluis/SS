@@ -1,164 +1,152 @@
 
 
-//FUNCTION PARA FORMATO MONEDA
-$(document).ready(function () {
+    $(document).ready(function () {
 
-    let valorbrutomens;
-    let valorBrutoMens2;
-    const btnOtroIngresoSlide = document.getElementById('btnOtroIngresoSlide');
-
-    $(".formatoMoneda").on({
-        "focus": function (event) {
-            $(event.target).select();
-        },
-        "keyup": function (event) {
-            $(event.target).val(function (index, value) {
-                return '$' + value.replace(/\D/g, "")
-                .replace(/([0-9])([0-9]{2})$/, '$1.$2')
-                .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+        let valorbrutomens=0;
+        let otroIngresoDatos1=0;
+        let concepOtroIngresoDatos1=0;
+        let otroIngreso_2_Datos1=0;
+        let concepOtroIngreso_2_Datos1=0;
 
 
-            });
-        }
-    });
-
-       //Asignar valor a input de valor bruto
-    $('#valorbrutomens').on({
-
-        keyup:function(e){
-            
-            let key = e.keyCode || e.which;
+        const btnOtroIngresoSlide = document.getElementById('btnOtroIngresoSlide');
 
 
-            valorbrutomens = this.value;
-            valorbrutomens = valorbrutomens.replace(/,|\$/g, "");
 
-            if (key == 13) {
+           //Asignar valor a input de valor bruto
+        $('#valorbrutomens').on({
+
+            keyup:function(e){
                 
-                console.log(valorbrutomens)
-                $('.formatoMoneda').focus();
-            }
-            
-
-        }
-
-    });
-
-    $('#valorbrutomens2').on({
-
-        keyup:function(e){
-            
-            let key = e.keyCode || e.which;
+                let key = e.keyCode || e.which;
 
 
-            valorBrutoMens2 = this.value;
-            valorBrutoMens2 = valorBrutoMens2.replace(/,|\$/g, "");
+                valorbrutomens = this.value;
+                valorbrutomens = valorbrutomens.replace(/,|\$/g, "");
 
-            if (key == 13) {
+                if (key == 13) {
+                    
+                    console.log(valorbrutomens)
+                    $('#otroIngresoDatos1').focus();
+                    e.preventDefault();
+                }
                 
-                console.log(valorBrutoMens2)
-                $('#conceptobrutomens2').focus();
+
             }
-            
 
-        }
+        });
+        //Asignar valor a input de valor de otro ingreso
 
-    });
+        $('#otroIngresoDatos1').on({
 
-    /*
-    //Asignar valor a Otros ingresos
-    $('#valorbrutomens2').on({
-
-        keyup:function(e){
-            
-            let key = e.keyCode || e.which;
-
-            //valorbrutomens = brutomens.value;
-
-            valorBrutoMens2 = this.value;
-            valorBrutoMens2 = valorBrutoMens2.replace(/,|\$/g, "");
-
-
-            //console.log(valorbrutomens2)
-
-
-            if (key == 13) {
+            keyup:function(e){
                 
-                //console.log(valorbrutomens2)
-                $('#conceptobrutomens2').focus();
+                let key = e.keyCode || e.which;
+
+
+                otroIngresoDatos1 = this.value;
+                otroIngresoDatos1 = otroIngresoDatos1.replace(/,|\$/g, "");
+
+                if (key == 13) {
+                    
+                    console.log(otroIngresoDatos1)
+                    $('#concepOtroIngresoDatos1').focus();
+                }
+                
+
             }
-            
 
-        }
+        });
 
-    });
-    */
+        //Asignar valor a input de valor de concepto otro ingreso
 
-    $('#btnOtroIngresoSlide').on({
+        $('#concepOtroIngresoDatos1').on({
 
-        click:function(){
-            expandirPanel(btnOtroIngresoSlide);        }
-    });
+            keyup:function(e){
+                let key = e.keyCode || e.which;
 
+                concepOtroIngresoDatos1 = this.value;
+                console.log(concepOtroIngresoDatos1)
 
-    function expandirPanel(pPanel){
-        if(pPanel!=undefined){
-            if(pPanel.className=="item-boton activo"){
-
-                pPanel.classList.remove("activo");
-            }else{
-                pPanel.classList.add('activo');
             }
-        }
+        });
+        //Animacion de opcion para otro ingreso
+        $('#btnOtroIngresoSlide').on({
+
+            click:function(){
+                expandirPanel(btnOtroIngresoSlide);
+                $('#otroIngreso_2_Datos1').focus();
+        
+            }
+        });
 
 
-    }
+        $('#otroIngreso_2_Datos1').on({
 
-    
+            keyup:function(e){
 
-    
-    
-    
+                let key = e.keyCode || e.which;
 
-    
-    function saludo(){
-        alert('hola');
-    }
-    
-    /*
-    brutomens.addEventListener('blur',function(e){
+                otroIngreso_2_Datos1=this.value;
+                otroIngreso_2_Datos1 = otroIngreso_2_Datos1.replace(/,|\$/g, "");
 
-        valorbrutomens = brutomens.value;
-        valorbrutomens = valorbrutomens.replace(/,|\$/g, "");
-            //$('.formatoMoneda').focus();
-            //inputCharacters(key);
+                if(key==13){
+                    console.log(otroIngreso_2_Datos1);
+                    $('#concepOtroIngreso_2_Datos1').focus();
+                }
+            }
+        });
 
-        console.log('valor en blur: '+valorbrutomens)
+        $('#concepOtroIngreso_2_Datos1').on({
+
+            keyup:function(e){
+                let key = e.keyCode || e.which;
+
+                concepOtroIngreso_2_Datos1 = this.value;
+                console.log(concepOtroIngreso_2_Datos1)
+
+            }
+        });
 
 
+
+       
+
+
+        //FUNCION PARA FORMATO MONEDA
+
+        $(".formatoMoneda").on({
+            "focus": function (event) {
+                $(event.target).select();
+            },
+            "keyup": function (event) {
+                $(event.target).val(function (index, value) {
+                    return '$' + value.replace(/\D/g, "")
+                    .replace(/([0-9])([0-9]{2})$/, '$1.$2')
+                    .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+
+
+                });
+            }
+        });
 
         
-    });
-    
-    */
 
-    /*
-    brutomens.addEventListener('keyup',function(e){
+        //FUNCION PARA EXPANDIR OPCIONES
+        function expandirPanel(pPanel){
+            if(pPanel!=undefined){
+                
+                if(pPanel.className=="item-boton activo"){
 
-        let key = e.keyCode || e.which;
-
-        valorbrutomens = brutomens.value;
-        valorbrutomens = valorbrutomens.replace(/,|\$/g, "");
-
-        if(key===13){
-            
-            console.log('valor: '+valorbrutomens)
-            $(".formatoMoneda").focus();
+                    pPanel.classList.remove("activo");
+                }else{
+                    pPanel.classList.add('activo');
+                }
+                
+            }
 
         }
-    
-    });
 
-    */
-});
+         
+    });
 

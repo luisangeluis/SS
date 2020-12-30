@@ -1,103 +1,277 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="Rodrigo Quezada">
-    <meta name="description" content="Simulador de Crédito Hipotecario.">
-
-    <title>Simulador Crédito Hipotecario</title>
-
-    <link rel="stylesheet" href="fonts/webfontkit-20200730-220600/stylesheet.css" type="text/css" charset="utf-8" />
-    <link href="styles/stylesindex.css" rel="stylesheet">   
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simulador Credito Hipotecario</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="fonts/webfontkit-20200730-220600/stylesheet.css" type="text/css"  />
+    <!-- <link href="styles/stylesindex.css" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
 
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'latoregular', sans-serif;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        ol,
+        ul,
+        .nav-item {
+            font-family: 'latoregular', sans-serif;
+            line-height: 1.3;
+            color: #3d556f;
+            font-size: medium;
+            letter-spacing: 2px;
+            list-style-type: none;
+        }
+
+        p {
+            font-family: 'latoregular', sans-serif;
+            font-size: .8rem;
+            color: grey;
+            margin-bottom: 1rem;
+            line-height: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .bs-card__link {
+            font-family: 'latoregular', sans-serif;
+            font-size: .8rem;
+            color: grey;
+            margin-bottom: 1rem;
+            line-height: 1.2rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .bs-card__link:hover {
+            color: grey;
+        }
+
+        .title {
+            font-size: large;
+        }
+
+        .subtitle {
+            font-size: medium;
+        }
+
+        .navbar-logo {
+            width: 100px;
+        }
+
+        .page-content {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+
+
+        .bs-card {
+            min-width: 150px;
+            max-width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.20), 0 6px 20px 0;
+        }
+
+        .bs-card:hover {
+            box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15), 0 2px 2px -1px rgba(152, 162, 179, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .bs-card__image {
+            padding: 20px;
+            margin: auto;
+            max-width: 120px;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            background-color: #3d556f;
+
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+
+        @media (min-width: 992px) {
+            .navbar-logo {
+                width: 130px;
+                margin: 5px;
+            }
+
+            .title {
+                font-size: x-large;
+            }
+
+            .subtitle {
+                font-size: large;
+            }
+
+            .left-column {
+                background-color: #ddd;
+                height: 85vh;
+
+
+            }
+
+            .bs-card {
+                margin: 30px;
+            }
+
+
+            .page-content {
+                margin: auto;
+                padding: 0;
+                height: 85vh;
+                align-items: center;
+            }
+
+
+
+        }
+    </style>
 </head>
 
 <body>
-
-    <header>
-        <div class="section">
-
-            <div class="article">
-                <div class="logo"><img src="images/logorecortado.png" alt="Logo"></div>
-            </div>
-
-            <div class="article1"></div>
-
-            <div class="article2">
-                <nav><a href="index.html"><div class="solomenu"><img src="images/menubtn.svg" alt="Menu"></div></a></nav>
-            </div>
-
-        </div>
-    </header>
-
-    <hr size="2" color="gray">
-
-
-    <main>
-
-        <div class="submain">
-
-            <div class="Tituloppl">
-
-                <p class="Titu">SIMULADOR DE </p>
-                <p class="Titd">CRÉDITO HIPOTECARIO </p>
-
-                <p class="Titt">¿Para qué quieres el crédito?</p>
-
-            </div>
-
-        </div>
-
-        <div class="submain2">
-
-                <div class="cajalayout">
-
-                    <div class="cajacentral">
-
-                        <div class="par1">
-
-                            <a href="elegircasa.html">
-                                <div class="box">
-                                    <img src="images/comprar_casa.svg" alt="imagen comprar casa">
-                                    <p>COMPRAR<br />UNA CASA</p>
-                                </div>
-                            </a>
-
-                            <a href="elegirterreno.html">
-                                <div class="box">
-                                    <img src="images/comprar_terreno.svg" alt="imagen comprar terreno">
-                                    <p>COMPRAR <br /> UN TERRENO </p>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="par2">
-
-                            <a href="elegirliquidez.html">
-                                <div class="box">
-                                    <img src="images/obtener_liquidez.svg" alt="imagen obtener liquidez">
-                                    <p>OBTENER <br />LIQUIDEZ</p>
-                                </div>
-                            </a>
-
-                            <a href="elegirrefinanciar.html">
-                                <div class="box">
-                                    <img src="images/refinanciar.svg" alt="imagen refinanciar">
-                                    <p>REFINANCIAR<br />&nbsp;</p>
-                                </div>
-                            </a>
-
-                        </div>
-
+    <div class="wrapper">
+        <header class="header border-bottom mb-2">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="./images/logo.png" class="navbar-logo ms-2" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="material-icons">menu</i>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav d-flex ">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Simulador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pre-Aprobador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Agenda tu Cita</a>
+                            </li>
+                            <li class="nav-item link-dark">
+                                <a class="nav-link" href="#">Iniciar Sesi&oacute;n</a>
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
+            </nav>
+
+        </header>
+
+
+
+        <div class="container-fluid page-content">
+            <div class="row">
+                <section class="left-column col-sm-12 col-lg-4">
+                    <div>
+                        <h1 class="title"> SIMULADOR DE <span class="text-secondary">CR&Eacute;DITO HIPOTECARIO.</span>
+                        </h1>
+                        <h3 class="subtitle">¿Para qu&eacute; quieres el cr&eacute;dito?</h3>
+                    </div>
+                </section>
+                <section class="col-sm-12 col-lg-8 right-column d-flex align-items-center justify-content-center">
+                    <div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/comprar_casa.svg" class="img-fluid bs-card__image"
+                                        alt="imagen comprar casa">
+                                    <div class="card-body">
+                                        <a href="./elegircasa.html" class="stretched-link bs-card__link">COMPRAR UNA
+                                            CASA</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/comprar_terreno.svg" class="img-fluid bs-card__image"
+                                        alt="imagen comprar terreno">
+                                    <div class="card-body">
+                                        <a href="elegirterreno.html" class="stretched-link bs-card__link"> ELEGIR UN
+                                            TERRENO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/obtener_liquidez.svg" class="img-fluid bs-card__image"
+                                        alt="imagen obtener liquidez">
+                                    <div class="card-body">
+                                        <a href="./elegirliquidez.html" class="stretched-link bs-card__link"> OBTENER
+                                            LIQUIDEZ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bs-card">
+                                    <img src="images/refinanciar.svg" class="img-fluid bs-card__image"
+                                        alt="imagen refinanciar">
+                                    <div class="card-body">
+                                        <a href="./elegirrefinanciar.html" class="stretched-link bs-card__link">
+                                            REFINANCIAR</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-</main>
+        </div>
 
-    <footer></footer>
 
+
+
+
+        <footer class="row footer mt-2">
+            <div class="col-12">
+                <span>Copyright&copy; 2020 - BB4 - Todos los derechos reservados</span>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>

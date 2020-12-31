@@ -104,23 +104,6 @@ let valorIngresoMensNeto = 0;
 let valorOtroIngreso = 0;
 const valorCAT=document.getElementById('cat');
 
-
-//VALORES TABLA FINAL
-/*
-let aniosAPagar=0;
-let pesosMensualidadSegYComi=0;
-let porcentajeTasaAnual=0;
-let porcentajeCAT=0;
-let porcentajeComisionApertura=0;
-let pesosGastosOriginacion=0;
-let pesosPorcentTasaAnual=0;
-*/
-
-
-
-
-
-
 //formato a las entradas de porcentajes y entradas de pesos
 $("#porcentajeenganche").mask("00%");
 $("#porcentCofi").mask("00%");
@@ -128,7 +111,11 @@ $("#ingresoMensNeto").maskMoney({ prefix: '$' });
 $("#otroIngreso").maskMoney({ prefix: '$' });
 
 //calculos al cargar la pagina
-asignarPorcentajeEnganche();
+
+//asignarPorcentajeEnganche();
+
+valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
+
 if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
     valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
     mostrarValorEnganche();
@@ -170,23 +157,16 @@ if (valorMensualidad.value > 0) {
 
 //calculos al mover la barra de valor del inmueble
 montoRango.addEventListener("mouseup", function () {
-    asignarPorcentajeEnganche();
+
+    //asignarPorcentajeEnganche();
+    valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
+
 
     if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
         if (panel == true) {
 
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+           
             valorCofin.value = calcularPorcentajeEnPesos(valorPorcentCofi, montoRango.value);
             mostrarValorCofin();
             console.log(panel);
@@ -196,16 +176,7 @@ montoRango.addEventListener("mouseup", function () {
 
 
         } else {
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+           
             mostrarEngancheYFinanciamiento();
         }
 
@@ -261,23 +232,15 @@ montoRango.addEventListener("mouseup", function () {
 
 
 montoRango.addEventListener("touchend", function () {
-    asignarPorcentajeEnganche();
+
+    //asignarPorcentajeEnganche();
+    valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
 
     if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
         if (panel == true) {
 
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+            
             valorCofin.value = calcularPorcentajeEnPesos(valorPorcentCofi, montoRango.value);
             mostrarValorCofin();
             console.log(panel);
@@ -287,16 +250,8 @@ montoRango.addEventListener("touchend", function () {
 
 
         } else {
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+            
+            
             mostrarEngancheYFinanciamiento();
         }
         asignarTazaInteres()
@@ -340,23 +295,17 @@ montoRango.addEventListener("touchend", function () {
 
 //calculos al mover el valor de porcentaje enganche
 porcentajeEnganche.addEventListener("blur", function () {
-    //porcentajeEnganche.addEventListener("keyup", function (event) {
-    //console.log(valorPorcentEnganche);
+    
+    //asignarPorcentajeEnganche();
+    valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
 
-    asignarPorcentajeEnganche();
-    //asignarPorcentEngancheK(event.path[0].value);
+
+
     console.log(valorPorcentEnganche);
 
     if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
-        /*
-        valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-        mostrarValorEnganche();
-        porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-        mostrarPorcentFinanciamiento();
-        valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-        mostrarValorFinanciamiento();
-        */
+        
         valorPorcentCofi = 0;
         valorCofin.value = 0;
         mostrarValorCofin();
@@ -387,8 +336,7 @@ porcentajeEnganche.addEventListener("blur", function () {
 
 
     } else {
-        //valorPorcentEnganche = 0;
-        //valorPorcentEnganche = 10;
+       
 
         valorEnganchePesos.value = 0;
         porcentFinanciamiento.value = 0;
@@ -418,8 +366,7 @@ porcentajeEnganche.addEventListener("blur", function () {
         panel = false;
         // console.log(panel);
     }
-    //valorPorcentCofi.style.setProperty("--value", "0%");
-    //console.log(valorPorcentCofi);
+   
 
     valorSelectDeCofi = undefined;
     console.log("valor de tipo de infonavit " + valorSelectDeCofi);
@@ -473,14 +420,7 @@ porcentCofi.addEventListener("blur", function () {
             //investigar como actualizar los valores del input para no volver a recalcular todo
             if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
-                /*
-                valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-                mostrarValorEnganche();
-                porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-                mostrarPorcentFinanciamiento();
-                valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-                mostrarValorFinanciamiento();
-                */
+                
                 valorPorcentCofi = 0;
                 valorCofin.value = 0;
 
@@ -580,15 +520,13 @@ mesInputId.addEventListener("touchend", function () {
 });
 
 //inician las funciones para asignar valores de porcentaje enganche y porcentaje cofinanciamiento
+
+
+/*
 function asignarPorcentajeEnganche() {
 
 
     valorPorcentEnganche = parseInt(porcentajeEnganche.value.replace(/%/g, ""));
-}
-/*
-function asignarPorcentEngancheK(valor){
-
-    valorPorcentEnganche =parseInt(valor.replace(/%/g, "")); 
 }
 */
 
@@ -680,37 +618,7 @@ function calcDifEnPorcentaje(totalPorcentaje, porcentARestar) {
 
 }
 
-/*
-function calcularMensualidad(total, anios) {
-    let result = 0;
-    result = total / (anios * 12);
-    return result;
-}
-*/
-/*
-let aniosAPagar=0;
-let pesosMensualidadSegYComi=0;
-let porcentajeTasaAnual=0;
-let porcentajeCAT=0;
-let porcentajeComisionApertura=0;
-let pesosGastosOriginacion=0;
-let pesosPorcentTasaAnual=0;
-*/
 
-/*
-function calcularMensTotal(pPorcentTasaAnual,pAniosAPagar){
-    if(pPorcentTasaAnual>0){
-        porcentajeTasaAnual=pPorcentTasaAnual;
-        pesosPorcentTasaAnual= calcularPorcentajeEnPesos(porcentajeTasaAnual,valorFinanciamiento.value)
-        if(pAniosAPagar>0){
-            aniosAPagar = pAniosAPagar;
-        }
-        
-        pesosMensualidadSegYComi = (valorFinanciamiento.value+(pesosPorcentTasaAnual*aniosAPagar))/(aniosAPagar*12);
-    }
-    console.log(pesosMensualidadSegYComi);
-}
-*/
 
 function calcularMensTotal(cantidadPesos, porcentTaza, tiempoAnios) {
     let iMensual = 0;

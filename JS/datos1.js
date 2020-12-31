@@ -8,8 +8,19 @@
         let otroIngreso_2_Datos1=0;
         let concepOtroIngreso_2_Datos1=0;
 
+        const btnResumenSlide = document.getElementById('btnResumenSlide');
+
 
         const btnOtroIngresoSlide = document.getElementById('btnOtroIngresoSlide');
+
+
+
+
+        $(btnResumenSlide).on({
+            click:function(){
+               expandirPanel(btnResumenSlide);
+            }
+        });
 
 
 

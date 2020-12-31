@@ -22,7 +22,10 @@ btnItemCofi.addEventListener("click", function () {
 
     
     valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-    mostrarValorEnganche();
+
+    //mostrarValorEnganche();
+    valorEnganchePesos.innerHTML=mostrarValorPesos(valorEnganchePesos);
+
 
     porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
     mostrarPorcentFinanciamiento();

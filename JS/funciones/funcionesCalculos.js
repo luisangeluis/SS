@@ -7,3 +7,10 @@ const asignarPorcentaje=(pValorAsignar)=>{
 	console.log(`nuevo metodo de asignar porcentaje ${result}`);
 	return result;
 }
+
+const mostrarValorPesos=(pValorAMostrar)=>{
+
+	let result = "$"+formatMoney(pValorAMostrar.value);
+	return result;
+
+}

@@ -118,14 +118,25 @@ valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
 
 if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
     valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-    mostrarValorEnganche();
+    
+    //mostrarValorEnganche();
+    valorEnganchePesos.innerHTML=mostrarValorPesos(valorEnganchePesos);
+
     console.log(valorEnganchePesos.value);
 
     porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
     mostrarPorcentFinanciamiento();
 
     valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-    mostrarValorFinanciamiento();
+
+    //mostrarValorFinanciamiento();
+    valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
+
+
+
+
+
 }
 
 
@@ -376,7 +387,9 @@ porcentajeEnganche.addEventListener("blur", function () {
 porcentCofi.addEventListener("blur", function () {
 
     if (panel == true) {
-        asignarPorcentajeCofinanciamiento();
+        //asignarPorcentajeCofinanciamiento();
+
+        valorPorcentCofi = asignarPorcentaje(porcentCofi);
 
         if ((valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) && (valorPorcentCofi <= (100 - valorPorcentEnganche) - 1 && valorPorcentCofi >= 10)) {
 
@@ -384,7 +397,10 @@ porcentCofi.addEventListener("blur", function () {
             porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
             mostrarPorcentFinanciamiento();
             valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
+
+            //mostrarValorFinanciamiento();
+            valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
             valorCofin.value = calcularPorcentajeEnPesos(valorPorcentCofi, montoRango.value);
             mostrarValorCofin();
             console.log(valorPorcentCofi);
@@ -529,11 +545,12 @@ function asignarPorcentajeEnganche() {
     valorPorcentEnganche = parseInt(porcentajeEnganche.value.replace(/%/g, ""));
 }
 */
-
+/*
 function asignarPorcentajeCofinanciamiento() {
 
     valorPorcentCofi = parseInt(porcentCofi.value.replace(/%/g, ""));
 }
+*/
 
 //Asigna el valor de la taza de acuerdo a los años
 function asignarTazaInteres() {
@@ -547,21 +564,28 @@ function asignarTazaInteres() {
 }
 
 //inician las funciones para mostrar valores en pantalla
+
+
+
+/*
 function mostrarValorEnganche() {
 
     valorEnganchePesos.innerHTML = "$" + formatMoney(valorEnganchePesos.value);
 
 }
+*/
 
 function mostrarPorcentFinanciamiento() {
     porcentFinanciamiento.innerHTML = porcentFinanciamiento.value + "%";
 
 }
 
+/*
 function mostrarValorFinanciamiento() {
 
     valorFinanciamiento.innerHTML = "$" + formatMoney(valorFinanciamiento.value);
 }
+*/
 
 function mostrarValorCofin() {
     valorCofin.innerHTML = "$" + formatMoney(valorCofin.value);
@@ -572,11 +596,16 @@ function mostrarValorCofin() {
 function mostrarEngancheYFinanciamiento() {
 
     valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-    mostrarValorEnganche();
+    //mostrarValorEnganche();
+    valorEnganchePesos.innerHTML=mostrarValorPesos(valorEnganchePesos);
+
+
     porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
     mostrarPorcentFinanciamiento();
     valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-    mostrarValorFinanciamiento();
+    //mostrarValorFinanciamiento();
+    valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
 
 }
 

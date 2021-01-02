@@ -14,3 +14,18 @@ const mostrarValorPesos=(pValorAMostrar)=>{
 	return result;
 
 }
+
+const mostrarValorPesosConDecimales=(pValorAMostrar)=>{
+
+	let result = "$"+formatMoneyDecimales(pValorAMostrar.value);
+	return result;
+
+}
+const mostrarValorPorcentaje=(pValorAMostrar)=>{
+
+	let result = pValorAMostrar.value + "%";
+	console.log("metodo de mostrar valor porcentaje");
+
+	return result;
+
+}

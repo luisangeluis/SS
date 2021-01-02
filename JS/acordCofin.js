@@ -28,16 +28,25 @@ btnItemCofi.addEventListener("click", function () {
 
 
     porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-    mostrarPorcentFinanciamiento();
+
+    //mostrarPorcentFinanciamiento();
+    porcentFinanciamiento.innerHTML = mostrarValorPorcentaje(porcentFinanciamiento);
+
 
     valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-    mostrarValorFinanciamiento();
+
+    //mostrarValorFinanciamiento();
+    valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
     //console.log(valorPorcentEnganche);
     
     valorPorcentCofi = 0;
     valorCofin.value = 0;
     //mostrarEngancheYFinanciamiento();
-    mostrarValorCofin();
+
+    //mostrarValorCofin();
+    valorCofin.innerHTML = mostrarValorPesos(valorCofin);
+
 
     
     asignarTazaInteres();
@@ -45,16 +54,29 @@ btnItemCofi.addEventListener("click", function () {
     valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,mesInputId.value*12,12);
 
     if (valorMensualidad.value > 0) {
-      mostrarValorMensualidad();
-      mostrarValorMensualidad2();
-      MostrarTazaInteres();
+
+      //mostrarValorMensualidad();
+      //mostrarValorMensualidad2();
+
+      valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+      valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+      //MostrarTazaInteres();
+      valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
       mostrarCat();
 
       console.log(valorMensualidad.value);
     } else {
       valorMensualidad.value = 0;
-      mostrarValorMensualidad();
-      mostrarValorMensualidad2
+
+      //mostrarValorMensualidad();
+      //mostrarValorMensualidad2
+
+      valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+      valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
       console.log(valorFinanciamiento.value);
       console.log(mesInputId.value);
       console.log(valorMensualidad.value);

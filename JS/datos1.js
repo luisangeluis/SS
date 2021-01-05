@@ -9,19 +9,19 @@
         let concepOtroIngreso_2_Datos1=0;
 
         const btnResumenSlide = document.getElementById('btnResumenSlide');
-
-
         const btnOtroIngresoSlide = document.getElementById('btnOtroIngresoSlide');
+        const itemBoton = document.querySelectorAll('.item-boton');
 
-
-
-
+        /*
         $(btnResumenSlide).on({
+            
             click:function(){
-               expandirPanel(btnResumenSlide);
+               expandirPanel(itemBoton,"prev");
             }
+            
         });
-
+        */
+       expandirPanelInvert(itemBoton,230);
 
 
            //Asignar valor a input de valor bruto
@@ -85,8 +85,8 @@
         $('#btnOtroIngresoSlide').on({
 
             click:function(){
-                expandirPanel(btnOtroIngresoSlide);
-                $('#otroIngreso_2_Datos1').focus();
+                //expandirPanel(btnOtroIngresoSlide);
+                //$('#otroIngreso_2_Datos1').focus();
         
             }
         });
@@ -144,6 +144,7 @@
         
 
         //FUNCION PARA EXPANDIR OPCIONES
+        /*
         function expandirPanel(pPanel){
             if(pPanel!=undefined){
                 
@@ -157,6 +158,28 @@
             }
 
         }
+        */
+       //expandirPanel(itemBoton,"prev");
+
+       function expandirPanelInvert(pElemento,pTiempo){
+            for(x=0; x<pElemento.length;x++){
+                $(pElemento[x]).on({
+                
+                    click: function(e){
+                        let btn = e.target;
+                        
+                            $(btn).prev().slideToggle(pTiempo);
+    
+                        
+
+                    }
+                })
+            }
+            
+        }
+
+        
+        
 
          
     });

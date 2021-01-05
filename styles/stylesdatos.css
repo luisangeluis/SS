@@ -469,17 +469,20 @@ form .engancheform .mensualidadform .ingresosform {
 .item-boton {
     color: #191970;
     /*width: 150px;*/
+    display:none;
 }
 
 .item-contenido {
-    overflow: hidden;
-    max-height: 0px;
+    
+    /*overflow: hidden;*/
+    max-height: 400px;
+    /*display:none;*/
 }
-
+/*
 .activo + .item-contenido {
     max-height: 500px;
 }
-
+*/
 .colorNegro {
     color: black;
 }
@@ -1280,6 +1283,7 @@ footer {
     .bigblock {
         padding-left: 3rem;
     }
+
 }
 
 
@@ -1289,20 +1293,27 @@ footer {
             .bigblock {
                 padding-left: 7rem;
             }
-
+            
             .item-boton {
+                /*
                 color: #191970;
                 width: 150px;
+                display:none;
+                */
             }
-
+            
             .item-contenido {
+                /*
                 overflow: hidden;
                 max-height: 0px;
+                */
+                
             }
-
+            /*
             .activo + .item-contenido {
                 max-height: 500px;
             }
+            */
         }
 
         /*  color: #999999;  strong Gray*/

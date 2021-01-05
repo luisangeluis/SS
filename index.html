@@ -18,160 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
-
-    <style>
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'latoregular', sans-serif;
-            letter-spacing: 2px;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        ol,
-        ul,
-        .nav-item {
-            font-family: 'latoregular', sans-serif;
-            line-height: 1.3;
-            color: #3d556f;
-            font-size: medium;
-            letter-spacing: 2px;
-            list-style-type: none;
-        }
-
-        p {
-            font-family: 'latoregular', sans-serif;
-            font-size: .8rem;
-            color: grey;
-            margin-bottom: 1rem;
-            line-height: 1.2rem;
-            letter-spacing: 2px;
-        }
-
-        .header {
-            border-bottom: 0px 0px 0px solid #424242;
-            width: 100%;
-            -webkit-box-shadow: 1px 2px 5px 0px #909090;
-            -moz-box-shadow: 1px 2px 5px 0px #909090;
-            box-shadow: 1px 2px 5px 0px #909090;
-            top: 0;
-
-        }
-
-        .bs-card__link {
-            font-family: 'latoregular', sans-serif;
-            font-size: .8rem;
-            color: grey;
-            margin-bottom: 1rem;
-            line-height: 1.2rem;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
-
-        .bs-card__link:hover {
-            color: grey;
-        }
-
-        .title {
-            font-size: large;
-        }
-
-        .subtitle {
-            font-size: medium;
-        }
-
-        .navbar-logo {
-            width: 100px;
-        }
-
-        .page-content {
-            margin: 10px;
-            padding: 5px;
-        }
-
-        .left-column {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-
-
-        .bs-card {
-            min-width: 150px;
-            max-width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            text-align: center;
-            box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.20), 0 6px 20px 0;
-        }
-
-        .bs-card:hover {
-            box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15), 0 2px 2px -1px rgba(152, 162, 179, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .bs-card__image {
-            padding: 20px;
-            margin: auto;
-            max-width: 120px;
-        }
-
-        .footer {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            color: #fff;
-            background-color: #3d556f;
-
-        }
-
-        /* Medium devices (tablets, 768px and up) */
-
-        @media (min-width: 992px) {
-            .navbar-logo {
-                width: 130px;
-                margin: 5px;
-            }
-
-            .title {
-                font-size: x-large;
-            }
-
-            .subtitle {
-                font-size: large;
-            }
-
-            .left-column {
-                background-color: #ddd;
-                height: 85vh;
-
-
-            }
-
-            .bs-card {
-                margin: 30px;
-            }
-
-
-            .page-content {
-                margin: auto;
-                padding: 0;
-                height: 85vh;
-                align-items: center;
-            }
-
-
-
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/mainstyles.css">
 </head>
 
 <body>
@@ -201,7 +48,7 @@
                                 <a class="nav-link" href="#">Agenda tu Cita</a>
                             </li>
                             <li>
-                                <a class="btn btn-outline-secondary" href="./inicioDeSesion.html" role="button">Iniciar Sesi&oacute;n </a>
+                                <a class="btn btn-outline-secondary ms-2" href="./inicioDeSesion.html" role="button">Iniciar Sesi&oacute;n </a>
                             </li>
                         </ul>
                     </div>
@@ -216,9 +63,9 @@
             <div class="row">
                 <section class="left-column col-sm-12 col-lg-4">
                     <div>
-                        <h1 class="title"> SIMULADOR DE <span class="text-secondary">CR&Eacute;DITO HIPOTECARIO.</span>
+                        <h1 class="title text-secondary"> SIMULADOR DE <span class="text-dark">CR&Eacute;DITO HIPOTECARIO.</span>
                         </h1>
-                        <h3 class="subtitle">¿Para qu&eacute; quieres el cr&eacute;dito?</h3>
+                        <h3 class="subtitle text-secondary">¿Para qu&eacute; quieres el cr&eacute;dito?</h3>
                     </div>
                 </section>
                 <section class="col-sm-12 col-lg-8 right-column d-flex align-items-center justify-content-center">

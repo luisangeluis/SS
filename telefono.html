@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
     <div class="wrapper">
         <header class="header border-bottom mb-2 ">
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -49,7 +50,7 @@
                                 <a class="nav-link" href="#">Agenda tu Cita</a>
                             </li>
                             <li>
-                                <a class="btn btn-outline-secondary" href="inicioDeSesion.html" role="button">Iniciar
+                                <a class="btn btn-outline-secondary" href="./inicioDeSesion.html" role="button">Iniciar
                                     Sesi&oacute;n </a>
                             </li>
                         </ul>
@@ -61,48 +62,52 @@
 
 
         <div class="container-fluid page-content d-flex justify-content-center">
-            <div class="card border-secondary    mb-3 " style="max-width: 25rem;">
-                <div class="card-header bg-transparent border-secondary d-flex justify-content-center">Acceder</div>
+            <div class="card border-secondary    mb-3 " style="width: 25rem;">
+                <div class="card-header bg-transparent border-secondary d-flex justify-content-center">
+                    Verificaci&oacute;n de Seguridad</div>
                 <div class="card-body text-dark">
                     <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Correo Electr&oacute;nico </label>
+                        <div class="mb-3" id="phomeMessage">
+                            <label for="exampleInputEmail1" class="form-label">Tel&eacute;fono
+                                <span class="text-secondary">( 10 d&iacute;gitos)</span></label>
+                            <input type="phone" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">
+                                Para verificar tu identidad, enviaremos un c&oacute;digo de verificaci&oacute;n a tu
+                                tel&eacute;fono celular.
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary" onclick="sendMessage()">Enviar C&oacute;digo</button>
+                            </div>
+                        </div>
+                        <div class="mb-3 phoneCode" id="phoneCode">
+                            <label for="exampleInputEmail1" class="form-label">C&oacute;digo</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text"> Jam&aacute;s compartiremos tu correo
-                                electr&oacute;nico con nadie m&aacute;s.</div>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary mt-2 sendCode">Enviar SMS</button>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contrasen&#771;a</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Mantener Sesi&oacute;n abierta</label>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">Iniciar Sesi&oacute;n</button>
-                        </div>
-                    </form>
-                    <div class="p-3">
-                        <a href="x" class="text-decoration-none"> &#191;Olvidaste tu contrasen&#771;a?</a>
-                    </div>
-                    <div class="card-footer bg-transparent border-success d-flex justify-content-center">
-                        <a href="./telefono.html" class="text-decoration-none"> Crear Cuenta</a>
-                    </div>
                 </div>
+                </form>
+
+
             </div>
         </div>
+    </div>
+    </div>
 
 
 
 
-                <footer class="row footer mt-2">
-                    <div class="col-12">
-                        <span>Copyright&copy; 2020 - BB4 - Todos los derechos reservados</span>
-                    </div>
-                </footer>
-            </div>
+
+    <footer class="row footer mt-2">
+        <div class="col-12">
+            <span>Copyright&copy; 2020 - BB4 - Todos los derechos reservados</span>
+        </div>
+    </footer>
+    </div>
+    <script type="text/javascript" src="./JS/phone.js"></script>
 </body>
 
 </html>

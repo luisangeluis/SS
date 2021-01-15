@@ -468,21 +468,27 @@ form .engancheform .mensualidadform .ingresosform {
 
 .item-boton {
     color: #191970;
+    font-size: 1.2rem;
+
     /*width: 150px;*/
-    display:none;
+    /*display:none;*/
 }
 
 .item-contenido {
     
     /*overflow: hidden;*/
     max-height: 400px;
-    /*display:none;*/
+    display:none;
 }
 /*
 .activo + .item-contenido {
     max-height: 500px;
 }
 */
+
+.btn-slide{
+
+}
 .colorNegro {
     color: black;
 }
@@ -549,12 +555,12 @@ input {
     padding-right: 1rem;
     padding-left: 1rem;
 }
-
+/*
 .item-boton {
-    /*font-weight: bold;*/
+    font-weight: bold;
     font-size: 1.2rem;
-    }
-
+}
+*/
 #porcentajeenganche, #porcentFinanciamiento, #porcentCofi {
     font-family: 'latoregular', sans-serif;
     box-sizing: border-box;
@@ -1314,6 +1320,9 @@ footer {
                 max-height: 500px;
             }
             */
+
+            .btn-slide{
+            }
         }
 
         /*  color: #999999;  strong Gray*/

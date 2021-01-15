@@ -8,9 +8,9 @@
         let otroIngreso_2_Datos1=0;
         let concepOtroIngreso_2_Datos1=0;
 
-        const btnResumenSlide = document.getElementById('btnResumenSlide');
-        const btnOtroIngresoSlide = document.getElementById('btnOtroIngresoSlide');
-        const itemBoton = document.querySelectorAll('.item-boton');
+        
+        const btnSlide = document.querySelectorAll('.btn-slide');
+        const btnSlideInvert = document.querySelectorAll('.btn-slide-invert');
 
         /*
         $(btnResumenSlide).on({
@@ -21,7 +21,33 @@
             
         });
         */
-       expandirPanelInvert(itemBoton,230);
+       //expandirPanelInvert(itemBoton,700);
+       //expandirPanel(btnSlide,300);
+       expandirPanelInvert(btnSlideInvert,430);
+
+       for(let x=0;x<btnSlide.length;x++){
+            $(btnSlide[x]).on({
+
+                click:function(e){
+    
+                    let btn = e;
+
+                    btn=e.target;
+                    expandirPrueba(btn,300);
+
+    
+
+    
+                }
+           });
+       }
+       
+
+
+
+
+
+
 
 
            //Asignar valor a input de valor bruto
@@ -144,22 +170,18 @@
         
 
         //FUNCION PARA EXPANDIR OPCIONES
-        /*
-        function expandirPanel(pPanel){
-            if(pPanel!=undefined){
-                
-                if(pPanel.className=="item-boton activo"){
+        
 
-                    pPanel.classList.remove("activo");
-                }else{
-                    pPanel.classList.add('activo');
-                }
-                
+       function expandirPanel(pElemento,pTiempo){
+            for(let x=0; x<pElemento.length;x++){
+                $(pElemento[x]).on({
+                    click : function(e){
+                        btn = e.target;
+                        $(btn).next().slideToggle(pTiempo);
+                    }
+                })
             }
-
-        }
-        */
-       //expandirPanel(itemBoton,"prev");
+       }
 
        function expandirPanelInvert(pElemento,pTiempo){
             for(x=0; x<pElemento.length;x++){
@@ -168,7 +190,7 @@
                     click: function(e){
                         let btn = e.target;
                         
-                            $(btn).prev().slideToggle(pTiempo);
+                        $(btn).prev().slideToggle(pTiempo);
     
                         
 
@@ -178,7 +200,9 @@
             
         }
 
-        
+        function expandirPrueba(pElemento, pTiempo){
+            $(pElemento).next().slideToggle(pTiempo);
+        }
         
 
          

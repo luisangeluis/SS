@@ -12,45 +12,50 @@
         const btnSlide = document.querySelectorAll('.btn-slide');
         const btnSlideInvert = document.querySelectorAll('.btn-slide-invert');
 
-        /*
-        $(btnResumenSlide).on({
-            
-            click:function(){
-               expandirPanel(itemBoton,"prev");
-            }
-            
-        });
-        */
-       //expandirPanelInvert(itemBoton,700);
+        const btnMancomunado= document.querySelectorAll('.btnMancomunado');
+
+
+
+        
        //expandirPanel(btnSlide,300);
-       expandirPanelInvert(btnSlideInvert,430);
-
-       for(let x=0;x<btnSlide.length;x++){
-            $(btnSlide[x]).on({
-
-                click:function(e){
-    
-                    let btn = e;
-
-                    btn=e.target;
-                    expandirPrueba(btn,300);
-
-    
-
-    
-                }
+        //EXPANDIR PANEL
+       for(let x=0; x<btnSlide.length; x++){
+           $(btnSlide[x]).on({
+               click:function(e){
+                   let btn = e.target;
+                   expandirPanel(btn,300);
+               }
            });
        }
        
+       //expandirPanelInvert(btnSlideInvert,430);
+       //EXPANDIR PANEL INVERTIDO
+       for(let x=0; x<btnSlideInvert.length; x++){
+           $(btnSlideInvert[x]).on({
+               click:function(e){
+                   let btn = e.target;
+                   expandirPanelInvert(btn,400);
+               }
+           });
+       }
+       //DAR COLOR A LOS BOTONES
+       for(let x=0; x<btnMancomunado.length; x++){
+           $(btnMancomunado[x]).on({
+               click:function(e){
+                    let btn = e.target;
+                    let posicion =x;
+
+                    btn.classList.add("conColor");
 
 
+                    animacionBotonesColor(posicion,btnMancomunado);
+                    
+               }
+           });
+       }
 
 
-
-
-
-
-           //Asignar valor a input de valor bruto
+       //Asignar valor a input de valor bruto
         $('#valorbrutomens').on({
 
             keyup:function(e){
@@ -107,16 +112,7 @@
 
             }
         });
-        //Animacion de opcion para otro ingreso
-        $('#btnOtroIngresoSlide').on({
-
-            click:function(){
-                //expandirPanel(btnOtroIngresoSlide);
-                //$('#otroIngreso_2_Datos1').focus();
         
-            }
-        });
-
 
         $('#otroIngreso_2_Datos1').on({
 
@@ -145,66 +141,7 @@
             }
         });
 
-
-
-       
-
-
-        //FUNCION PARA FORMATO MONEDA
-
-        $(".formatoMoneda").on({
-            "focus": function (event) {
-                $(event.target).select();
-            },
-            "keyup": function (event) {
-                $(event.target).val(function (index, value) {
-                    return '$' + value.replace(/\D/g, "")
-                    .replace(/([0-9])([0-9]{2})$/, '$1.$2')
-                    .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
-
-
-                });
-            }
-        });
-
         
 
-        //FUNCION PARA EXPANDIR OPCIONES
-        
-
-       function expandirPanel(pElemento,pTiempo){
-            for(let x=0; x<pElemento.length;x++){
-                $(pElemento[x]).on({
-                    click : function(e){
-                        btn = e.target;
-                        $(btn).next().slideToggle(pTiempo);
-                    }
-                })
-            }
-       }
-
-       function expandirPanelInvert(pElemento,pTiempo){
-            for(x=0; x<pElemento.length;x++){
-                $(pElemento[x]).on({
-                
-                    click: function(e){
-                        let btn = e.target;
-                        
-                        $(btn).prev().slideToggle(pTiempo);
-    
-                        
-
-                    }
-                })
-            }
-            
-        }
-
-        function expandirPrueba(pElemento, pTiempo){
-            $(pElemento).next().slideToggle(pTiempo);
-        }
-        
-
-         
     });
 

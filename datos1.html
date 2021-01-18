@@ -59,9 +59,9 @@
                         </div>
                     </div>
                 </div>
-
+                <!--
                 <p class="item-boton" id="btnResumenSlide">\/</p>
-
+                -->
                 <div class="item-contenido ">
                     <p class="txtdetalles">
                         Fin del crédito:
@@ -93,6 +93,8 @@
                         </a>
                     </div>
                 </div>
+                <p class="btn-slide-invert" id="btnResumenSlide">\/</p>
+
             </div>
 
             <HR />
@@ -242,7 +244,7 @@
 
                     <div class="ingresos2">
 
-                        <form name="ingresosform" action="/my-handling-form-page" method="post">
+                        <form name="ingresosform">
 
                             <p class="Tittleft">
                                 ¿Cuál es tu ingreso base mensual?
@@ -276,7 +278,7 @@
                             <!--
                             <p class="item-boton" id="btnOtroIngreso">+</p>
                              -->   
-                            <p class="item-boton" id="btnOtroIngresoSlide">+ Agregar otro ingreso</p> 
+                            <p class="btn-slide" id="btnOtroIngresoSlide">+ Agregar otro ingreso</p> 
 
                             <div class="item-contenido ">
 
@@ -307,6 +309,9 @@
                         </a>
                     </div>
                     <br />
+                    <div class="result" id="result">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -317,44 +322,17 @@
         <div></div>
     </footer>
 
-
+    <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <!--BOOTSTRAP-->
-    <!--
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    -->
+    <!--FUNCIONES ANIMACIONES-->
+    <script type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></script>
     <!--ANIMACIONES DE BOTONES--->
+    <!--
     <script type="text/javascript" src="JS/animacionBotones.js"></script>
-    <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
+    -->
 
     <!--Script de datos1.html-->
     <script type="text/javascript" src="JS/datos1.js"></script>
-
-
-    <!-- SCRIPT JQUERY-->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    -->    
-    <!-- SCRIPT MASK-->
-    <!--
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    -->
-    <!--CALCULOS CON EL VALOR DE RANGO-->
-    <!--SCRIPT MASK MONEY-->
-    <!--
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
-    -->
-    <!-- CALCULOS CON RANGO E INGRESOS -->
-    <!--
-    <script type="text/javascript" src="JS/calculosConRango2.js"></script>
-    <script type="text/javascript" src="JS/calculosConIngresoMens.js"></script>
-    -->
-
-
 
 </body>
 

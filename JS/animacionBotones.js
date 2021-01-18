@@ -1,7 +1,9 @@
-const btnMancomunado = document.querySelectorAll(".btnMancomunado");
+//const btnMancomunado = document.querySelectorAll(".btnMancomunado");
 //const btnMancomunado2 = document.querySelectorAll(".btnMancomunado2");
 const btnActividad = document.querySelectorAll(".btnActividad");
 
+
+/*
 for (let i = 0; i < btnMancomunado.length; i++) {
 
     btnMancomunado[i].addEventListener("click", function (e) {
@@ -21,6 +23,10 @@ for (let i = 0; i < btnMancomunado.length; i++) {
     });
 
 }
+
+*/
+
+
 
 for (let i = 0; i < btnActividad.length; i++) {
 
@@ -43,10 +49,15 @@ for (let i = 0; i < btnActividad.length; i++) {
 }
 
 
-function removerClase(pBoton) {
-    for (let i = 0; i < pBoton.length; i++) {
-        pBoton[i].classList.remove("conColor");
 
+
+/*
+function animacionBotonesColor(pPosicion,pArreglo){
+    
+    if(pArreglo[pPosicion].className=="btnMancomunado"){
+        pArreglo[pPosicion].classList.add("conColor");
+        
     }
     
 }
+*/

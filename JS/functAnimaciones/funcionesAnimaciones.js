@@ -27,6 +27,15 @@ function expandirPanelInvert(pElemento,pTiempo){
 
 }
 
+//FUNCION PARA AGREGAR COLOR A LOS BOTONES
+function removerClase(pBoton) {
+    for (let i = 0; i < pBoton.length; i++) {
+        pBoton[i].classList.remove("conColor");
+
+    }
+    
+}
+
 /*
 function expandirPanel(pElemento,pTiempo){
     for(let x=0; x<pElemento.length;x++){

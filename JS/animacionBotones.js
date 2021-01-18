@@ -48,15 +48,10 @@ for (let i = 0; i < btnActividad.length; i++) {
 
 }
 
-/*
-function removerClase(pBoton) {
-    for (let i = 0; i < pBoton.length; i++) {
-        pBoton[i].classList.remove("conColor");
 
-    }
-    
-}
-*/
+
+
+/*
 function animacionBotonesColor(pPosicion,pArreglo){
     
     if(pArreglo[pPosicion].className=="btnMancomunado"){
@@ -65,3 +60,4 @@ function animacionBotonesColor(pPosicion,pArreglo){
     }
     
 }
+*/

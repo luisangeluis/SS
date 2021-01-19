@@ -8,16 +8,12 @@ $(document).ready(function () {
     let otroIngreso_2_Datos1 = 0;
     let concepOtroIngreso_2_Datos1 = 0;
 
-
     const btnSlide = document.querySelectorAll('.btn-slide');
     const btnSlideInvert = document.querySelectorAll('.btn-slide-invert');
 
     //variables para botones
     const btnMancomunado = document.querySelectorAll('.btnMancomunado');
     const btnActividad = document.querySelectorAll('.btnActividad');
-
-
-
 
     //expandirPanel(btnSlide,300);
     //EXPANDIR PANEL
@@ -40,8 +36,8 @@ $(document).ready(function () {
             }
         });
     }
-    //DAR COLOR A LOS BOTONES
 
+    //DAR COLOR A LOS BOTONES
     for (let x = 0; x < btnMancomunado.length; x++) {
 
         $(btnMancomunado[x]).on({
@@ -76,11 +72,6 @@ $(document).ready(function () {
 
     }
 
-
-
-
-
-
     //Asignar valor a input de valor bruto
     $('#valorbrutomens').on({
 
@@ -98,8 +89,6 @@ $(document).ready(function () {
                 $('#otroIngresoDatos1').focus();
                 e.preventDefault();
             }
-
-
         }
 
     });

@@ -1,13 +1,29 @@
 $(document).ready(function () {
 
+    //INPUTS FECHA
     const dia = document.querySelector('#dia');
     const mes = document.querySelector('#mes');
     const year = document.querySelector('#year');
 
+    //PANEL SLIDE INVERTIDO
+    const btnSlideInvert = document.querySelectorAll('.btn-slide-invert');
+    const btnSexo = document.querySelectorAll('.btnSexo');
+    const btnEdoCivil = document.querySelectorAll('.btnEdoCivil');
+
+    //FECHA ACTUAL
     let yearActual = (new Date).getFullYear();
     let mesActual = (new Date).getMonth() + 1;
     let diaActual = (new Date).getDate();
+    //INPUT EMAIL
+    const email = document.querySelector('#email');
 
+    for(let x=0; x<btnSlideInvert.length;x++){
+        $(btnSlideInvert[x]).on({
+            click:function(){
+                expandirPanelInvert(btnSlideInvert[x],400);
+            }
+        });
+    }
 
     //INPUT DIA
     $(dia).on({
@@ -53,7 +69,6 @@ $(document).ready(function () {
 
                     reiniciarFecha();
                     alert('dia no valido');
-    
                 }
             }
 
@@ -75,9 +90,6 @@ $(document).ready(function () {
 
             let key = e.keyCode || e.which;
 
-            if (key == 13) {
-                $(year).focus();
-            }
         },
 
         focusout: function () {
@@ -91,59 +103,48 @@ $(document).ready(function () {
                 alert('La persona debe ser mayor de edad');
             }
 
+            /*
             if(!validarYearBisiesto() && dia.value>28 && mes.value==2){
                 reiniciarFecha();
                 alert('Fecha no valida');
             }
             validarEdad();
+            */
 
+            if(dia.value>diasEnMes()){
+                reiniciarFecha();
+                alert('Fecha no valida');
+            }
         }
     });
+    //BOTONES SEXO
+    $(btnSexo).on({
+        click:function(e){
+           let btn = e.target; 
 
-    //RETORNA CUANTOS DIAS HAY CON REFERENCIA AL MES Y AÑO
-    function diasEnMes() {
-        return new Date(year.value, mes.value, 0).getDate();
-    }
-
-    function reiniciarFecha() {
-        dia.value = 1;
-        mes.value = 1;
-        year.value = 1920;
-    }
-    //VALIDAR SI ES MAYOR DE EDAD
-    function validarEdad() {
-        if (year.value == (yearActual - 18)) {
-
-
-            if (mes.value > mesActual) {
-                reiniciarFecha();
-                alert('La persona debe ser mayor de edad');
-
-            }
-
-            if (mes.value == mesActual) {
-                if (dia.value > diaActual) {
-                    reiniciarFecha();
-
-                    alert('La persona debe ser mayor de edad');
-
-                }
-            }
-
+            removerClase(btnSexo);
+            btn.classList.add('conColor');
         }
+    })
+    //BOTONES ESTADO CIVIL
+    $(btnEdoCivil).on({
+        click:function(e){
+           let btn = e.target; 
 
-    }
-    //VALIDAR SI ES AÑO BISIESTO
-    function validarYearBisiesto(){
+            removerClase(btnEdoCivil);
+            btn.classList.add('conColor');
+        }
+    })
 
-            if(year.value%5!=0){   
-                
-                return false;
-                
+    $(email).on({
+        focusout:function(){
+            if(validarCorreo(email.value)!=true){
+                email.value="";
+                alert('correo no valido');
             }
-        
-        return true;
-    }
+            
+        }
+    });
 
 
 });

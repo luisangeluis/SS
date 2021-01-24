@@ -59,9 +59,9 @@
                         </div>
                     </div>
                 </div>
-
+                <!--
                 <p class="item-boton" id="btnexpandirresumen">\/</p>
-
+                -->
                 <div class="item-contenido ">
                     <p class="txtdetalles">
                         Fin del crédito:
@@ -93,6 +93,9 @@
                         </a>
                     </div>
                 </div>
+                <p class="btn-slide-invert" id="btnResumenSlide">\/</p>
+
+
             </div>
 
             <HR />
@@ -131,7 +134,7 @@
 
                     <div class="datospersonales">
 
-                        <form name="datospersonalesform" action="/my-handling-form-page" method="post">
+                        <form>
 
                             <p class="Tittleft">
                                 Nombre
@@ -168,8 +171,8 @@
                         </p>
 
                         <form action="">
-                            <input type="button" class="btnMancomunado" value="M">
-                            <input type="button" class="btnMancomunado" value="F"><br>
+                            <input type="button" class="btnSexo conColor" value="M">
+                            <input type="button" class="btnSexo" value="F"><br>
                         </form>
 
                         <p class="Tittleft">
@@ -177,19 +180,19 @@
                         </p>
 
                         <form action="">
-                            <input type="button" class="btnActividad" value="SOLTERO/A">
-                            <input type="button" class="btnActividad" value="CASADO/A"><br>
+                            <input type="button" class="btnEdoCivil conColor" value="SOLTERO/A">
+                            <input type="button" class="btnEdoCivil" value="CASADO/A"><br>
                         </form>
 
                         <div class="email">
 
-                            <form name="emailform" action="/my-handling-form-page" method="post">
+                            <form>
 
                                 <p class="Tittleft">
                                     Correo electrónico
                                 </p>
 
-                                <input type="email" id="email" name="user_name" placeholder="rhulo@gmail.com">
+                                <input type="email" id="email" name="user_name" placeholder="rhulo@gmail.com" required>
 
                             </form>
                         </div>
@@ -217,17 +220,14 @@
         <div></div>
     </footer>
 
+    <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--ANIMACIONES DE BOTONES--->
-    <script type="text/javascript" src="JS/animacionBotones.js"></script>
-
+    <!--FUNCIONES ANIMACIONES-->
+    <script type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></script>
+    <!--SCRIPT PAGINA2.HTML-->
     <script type="text/javascript" src="JS/eventEnPaginas/datos2.js"></script>
-
-    <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
-    <!--
-    <script type="text/javascript" src="JS/acordCofin.js"></script>
-    -->
-
+    <!--FUNCIONES CALCULOS-->
+    <script type="text/javascript" src="JS/funciones/funcionesCalculos.js"></script>
     <!-- SCRIPT MASK-->
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     

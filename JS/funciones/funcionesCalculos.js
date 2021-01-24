@@ -1,3 +1,11 @@
+//Detectar ENTER
+function detectarEnter(pE, pElemtSiguiente) {
+	let key = pE.keyCode || pE.which;
+
+	if (key == 13) {
+		$(pElemtSiguiente).focus();
+	}
+}
 //VALIDAR EMAIL CORRECTO
 function validarCorreo(pCorreo){
 	let expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;

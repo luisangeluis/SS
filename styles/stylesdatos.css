@@ -516,7 +516,7 @@ form .engancheform .mensualidadform .ingresosform {
 }
 
 .btnMancomunado, .btnActividad,
-.btnSexo,.btnEdoCivil {
+.btnSexo,.btnEdoCivil,.btnVivienda {
     /*opacity: 1;*/
     text-align: center;
     font-family: 'proxima_nova_scosfregular', sans-serif;

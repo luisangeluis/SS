@@ -35,7 +35,6 @@ function removerClase(pBoton) {
     }
     
 }
-
 /*
 function expandirPanel(pElemento,pTiempo){
     for(let x=0; x<pElemento.length;x++){

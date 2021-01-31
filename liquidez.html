@@ -22,9 +22,15 @@
     <link rel="stylesheet" href="./styles/mainstyles.css">
 
     <style>
-        #hola .nav-link {
+        
+
+        .ul_item-w-250{
             width: 250px;
             text-align: center;
+        }
+        .container-fluid{
+            padding-right: .28rem;
+            padding-left: .28rem;
         }
     </style>
 </head>
@@ -33,7 +39,8 @@
     <div class="wrapper">
         <div class="container-fluid">
 
-            <header class="">
+            <header class="header border-bottom mb-2">
+
                 <nav class="navbar navbar-expand-lg navbar-light bg-white">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="./index.html">
@@ -44,6 +51,7 @@
                             aria-label="Toggle navigation">
                             <i class="bi bi-list"></i>
                         </button>
+
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                             <ul class="navbar-nav d-flex ">
                                 <li class="nav-item">
@@ -62,12 +70,20 @@
                                     <a class="btn btn-outline-secondary ms-2" href="./inicioDeSesion.html"
                                         role="button">Iniciar Sesi&oacute;n </a>
                                 </li>
+                                
                             </ul>
                         </div>
+                        
+
+
                     </div>
                 </nav>
+
+
+
             </header>
-        <!--
+            <!--<hr>-->
+            <!--
         </div>
         
         <hr>
@@ -80,24 +96,23 @@
                 </h1>
             </div>
             <div>
-                <h6 class="text-secondary d-flex justify-content-start ms-4 ">Selecciona el fin del cr&eacute;dito &#58;
+                <h6 class="text-secondary d-flex justify-content-start ms-5 ">Selecciona el fin del cr&eacute;dito &#58;
                 </h6>
                 <!-- Navegador Secundario -->
                 <div class="container-fluid">
 
 
-
-                    <ul class="nav__secondary nav nav-pills  m-4 mt-1 " id="pills-tab" role="tablist">
-
-                        <li class="nav-item" role="presentation">
+                    <!--<ul class="nav nav-pills nav-justified w-75">-->
+                    <ul class="nav__secondary nav nav-pills  m-4 mt-1" id="pills-tab" role="tablist">
+                        <li class="nav-item ul_item-w-250" role="presentation">
                             <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home"
                                 role="tab" aria-controls="pills-home" aria-selected="true">VALOR DE LA PROPIEDAD</a>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        <li class="nav-item ul_item-w-250" role="presentation">
                             <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile"
                                 role="tab" aria-controls="pills-profile" aria-selected="false">MENSUALIDAD</a>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        <li class="nav-item ul_item-w-250" role="presentation">
                             <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact"
                                 role="tab" aria-controls="pills-contact" aria-selected="false">INGRESO
                                 MENSUAL</a>
@@ -105,9 +120,9 @@
                     </ul>
 
                 </div>
-                
-                
-                
+
+
+
 
                 <!-- Valor de la Porpiedad -->
                 <div class="tab-content " id="pills-tabContent">
@@ -719,16 +734,16 @@
                     </div>
                 </div>
 
-                
-                
 
-                
+
+
+
                 <footer class="container-fluid footer">
                     <div>
                         <span>Copyright&copy; 2020 - go4it - Todos los derechos reservados</span>
                     </div>
                 </footer>
-                
+
 
                 <!-- SCRIPT JQUERY-->
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

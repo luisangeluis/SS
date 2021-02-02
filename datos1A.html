@@ -121,62 +121,137 @@
 
                                     <form name="registrationForm" class="mb-3">
 
-                                        <!--row principal en columna izquierda-->
+                                        <!--row 1 en columna izquierda-->
                                         <div class="row">
                                             <!--btones mancomunado col principal izquierda-->
                                             <div class="col-md-6">
-                                                <div class="row">
-                                                    <h2 class="subtitle ">¿El credito será mancomunado?
-                                                    </h2>
+                                                <h6 class="text-secondary ">¿El credito será mancomunado?
+                                                </h6>
 
-                                                    <div class="btn-group" role="group"
-                                                        aria-label="Basic radio toggle button group">
-                                                        <input type="radio" class="btn-check" name="mancomunado" id="no"
-                                                            autocomplete="off" checked>
-                                                        <label class="btn btn-outline-primary" for="no">NO
-                                                        </label>
-
+                                                <div class="btn-group d-flex" role="group"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="mancomunado" id="no"
+                                                        autocomplete="off" checked>
+                                                    <label class="btn btn-outline-primary" for="no">NO
+                                                    </label>
 
 
-                                                        <input type="radio" class="btn-check" name="mancomunado" id="si"
-                                                            autocomplete="off">
-                                                        <label class="btn btn-outline-primary" for="si">SI
-                                                        </label>
-                                                    </div>
+
+                                                    <input type="radio" class="btn-check" name="mancomunado" id="si"
+                                                        autocomplete="off">
+                                                    <label class="btn btn-outline-primary" for="si">SI
+                                                    </label>
                                                 </div>
-
-                                                <div class="row">
-
-                                                </div>
-
                                             </div>
 
-                                            <!--btones actividad col principal izquierda-->
+                                            <div class="col-md-6">
+                                                <h6 class="text-secondary ">¿Qué tipo de actividad realizas?
+                                                </h6>
+
+                                                <div class="btn-group d-flex" role="group"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="actividad"
+                                                        id="asalariado" autocomplete="off" checked>
+                                                    <label class="btn btn-outline-primary" for="asalariado">Asalariado
+                                                    </label>
+
+
+
+                                                    <input type="radio" class="btn-check" name="actividad" id="otro"
+                                                        autocomplete="off">
+                                                    <label class="btn btn-outline-primary" for="otro">Otro
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--row 2 columna izquierda-->
+                                        <div class="row mt-5">
+
+                                            <div class="col-md-4 mb-3">
+
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Ingreso Mensual Neto
+                                                </label>
+
+                                                <div>
+                                                    <input type="text" value="$55,000" class="input_information"
+                                                        style="width: 100%;">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Agrega otro ingreso
+                                                </label>
+                                                <div>
+                                                    <input type="text" value="$55,000" class="input_information"
+                                                        style="width: 100%;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Describe el ingreso
+                                                </label>
+                                                <div>
+                                                    <input type="text" placeholder="Descripción"
+                                                        class="input_information" style="width: 100%;">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--row 3 columna izquierda-->
+                                        <div class="row">
 
                                             <div class="col-md-6">
-                                                <div class="row">
-                                                    <h2 class="subtitle">¿Qué tipo de actividad realizas?</h2>
-
-                                                    <div class="btn-group" role="group"
-                                                        aria-label="Basic radio toggle button group">
-                                                        <input type="radio" class="btn-check" name="actividad"
-                                                            id="asalariado" autocomplete="off" checked>
-                                                        <label class="btn btn-outline-primary"
-                                                            for="asalariado">Asalariado
-                                                        </label>
 
 
+                                                <p class="text-secondary">
 
-                                                        <input type="radio" class="btn-check" name="actividad" id="otro"
-                                                            autocomplete="off">
-                                                        <label class="btn btn-outline-primary" for="otro">Otro
-                                                        </label>
+
+                                                    <i class="bi bi-plus-circle" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseExample" aria-expanded="false"
+                                                        aria-controls="collapseExample"></i>
+
+                                                    Agregar otro ingreso
+                                                </p>
+
+                                                <div class="collapse" id="collapseExample">
+
+                                                    <label class="bb-input-label">
+                                                        <span class="bullet"></span>
+                                                        Agrega otro ingreso
+                                                    </label>
+
+                                                    <div>
+                                                        <input type="text" value="$55,000" class="input_information"
+                                                            style="width: 50%; display: inline;">
                                                     </div>
+
+
+                                                    <label class="bb-input-label">
+                                                        <span class="bullet"></span>
+                                                        Describe el ingreso
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Descripción"
+                                                            class="input_information"
+                                                            style="width: 50%; display:inline;">
+                                                    </div>
+
+
+
+
+
                                                 </div>
 
                                             </div>
 
                                         </div>
+                                        
 
                                     </form>
 

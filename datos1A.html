@@ -100,15 +100,8 @@
                         HIPOTECARIO.</span>
                 </h1>
             </div>
+
             <div>
-
-                <!-- Navegador Secundario -->
-
-
-
-
-
-                <!-- Valor de la Porpiedad -->
                 <div class="tab-content " id="pills-tabContent">
                     <div class="nav__secondary tab-pane fade show active" id="pills-home" role="tabpanel"
                         aria-labelledby="pills-home-tab">
@@ -116,15 +109,15 @@
                         <div class="container">
                             <div class="row ">
                                 <!--Seccion Izquierda-->
-                                <section class="col-12 col-lg-6 mb-5 gx-5">
+                                <section class="col-12 col-lg-6 mb-2 gx-5">
                                     <h2 class="subtitle text-secondary">Tipo de ingresos</h2>
 
                                     <form name="registrationForm" class="mb-3">
 
                                         <!--row 1 en columna izquierda-->
-                                        <div class="row">
+                                        <div class="row mb-5">
                                             <!--btones mancomunado col principal izquierda-->
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 mb-2">
                                                 <h6 class="text-secondary ">¿El credito será mancomunado?
                                                 </h6>
 
@@ -144,7 +137,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 mb-2">
                                                 <h6 class="text-secondary ">¿Qué tipo de actividad realizas?
                                                 </h6>
 
@@ -203,116 +196,61 @@
                                             </div>
 
                                         </div>
+
+
+                                        <div class="btn-slide mb-2">
+                                            <div class="d-flex">
+                                                <i class="bi bi-plus-circle">
+                                                </i>
+                                                <p class="m-1">Otro ingreso</p>
+                                            </div>
+                                        </div>
+
+
                                         <!--row 3 columna izquierda-->
-                                        <div class="row">
-
-                                            <div class="col-md-6">
-
-
-                                                <p class="text-secondary">
-
-
-                                                    <i class="bi bi-plus-circle" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseExample" aria-expanded="false"
-                                                        aria-controls="collapseExample"></i>
-
-                                                    Agregar otro ingreso
-                                                </p>
-
-                                                <div class="collapse" id="collapseExample">
-
-                                                    <label class="bb-input-label">
-                                                        <span class="bullet"></span>
-                                                        Agrega otro ingreso
-                                                    </label>
-
-                                                    <div>
-                                                        <input type="text" value="$55,000" class="input_information"
-                                                            style="width: 50%; display: inline;">
-                                                    </div>
-
-
-                                                    <label class="bb-input-label">
-                                                        <span class="bullet"></span>
-                                                        Describe el ingreso
-                                                    </label>
-                                                    <div>
-                                                        <input type="text" placeholder="Descripción"
-                                                            class="input_information"
-                                                            style="width: 50%; display:inline;">
-                                                    </div>
+                                        <div class="row contenido-slide" style="display:none;">
 
 
 
-
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        
-
-                                    </form>
-
-                                    <div class="row">
-
-                                    </div>
-
-                                    <div class="mt-5">
-                                        <div>
-                                            <h6 class="text-secondary"> &iquest;A cu&aacute;ntos a&ntilde;os quieres
-                                                pagar&#63;</h6>
-                                        </div>
-                                        <div class="rango mb-4">
-                                            <input type="range" class="forms-range" name="valorcasa" id="prInputId"
-                                                value="2500000" min="500000" max="10000000" step="100000">
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 col-lg-6 mb-3">
-                                                <label class="bb-input-label">
+                                            <div class="col-md-4 mb-2">
+                                                <label class="bb-input-label ">
                                                     <span class="bullet"></span>
-                                                    Mensualidad
+                                                    Agrega otro ingreso
                                                 </label>
-                                                <div class="row">
-                                                    <div class="col-6"><input type="text"
-                                                            class="input_information text-end" name="user_name"
-                                                            value="$18,000" style="width: 100%;"></div>
-                                                    <div class="col-6"><input type="text" value="33%"
-                                                            class="input_information text-end" style="width: 100%">
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-12 col-lg-6 mb-3">
-                                                <label class="bb-input-label">
-                                                    <span class="bullet"></span>
-                                                    Ingreso Mensual Neto
-                                                </label>
                                                 <div>
                                                     <input type="text" value="$55,000" class="input_information"
                                                         style="width: 100%;">
                                                 </div>
-                                                <div class="d-flex p-2 justify-content-">
-                                                    <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseExample2"></i>
-                                                    <p class="m-1">Agregar Otros Ingresos</p>
-                                                </div>
-                                                <div>
 
-                                                    <div class="collapse" id="collapseExample2">
-                                                        <i class="bi bi-dash-circle m-1"></i>
-                                                        <p class="m-1"> Otros Ingresos</p>
-                                                    </div>
 
-                                                </div>
                                             </div>
+                                            <div class="col-md-4 mb-2">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Describe el ingreso
+                                                </label>
+
+                                                <div>
+                                                    <input type="text" placeholder="Descripcion"
+                                                        class="input_information" style="width: 100%;">
+                                                </div>
+
+
+                                            </div>
+
+
+
+
                                         </div>
 
-                                    </div>
+
+                                    </form>
+
                                 </section>
                                 <!-- Seccion Derecha -->
-                                <section class="col-12 col-lg-6 mb-5 gx-5">
+                                <section class="col-12 col-lg-6 mb-5 gx-5" id="detalles_credito">
+
                                     <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
                                         <div class="card-body">
                                             <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>
@@ -320,6 +258,7 @@
                                                 <div class="text-secondary">Te prestamos:</div>
                                                 <div class="fs-5" style="color: #60a1e7">$1,620,000</div>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col-6 text-end text-secondary">Mensualidad con seguro y
                                                     comisiones:</div>
@@ -371,7 +310,20 @@
                                         </div>
 
                                     </div>
+
+
+
                                 </section>
+                                <p>
+                                    <button class="btn btn-primary" id="btn-dinamico" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#detalles_credito"
+                                        aria-expanded="false" aria-controls="collapseExample" style="display: none;">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </p>
+
+
+
                             </div>
 
                         </div>
@@ -394,15 +346,19 @@
 
 
                 <!-- SCRIPT JQUERY-->
+                <!--
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
                     crossorigin="anonymous">
                     </script>
+                -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+                <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
 
-                <!--ANIMACIONES DE BOTONES--->
-                <SCRipt type="text/javascript" src="JS/animacionBotones.js"></SCRipt>
+                <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos1A.js"></SCRipt>
+
 
                 <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

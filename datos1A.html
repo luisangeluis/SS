@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simulador Credito Hipotecario</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="fonts/webfontkit-20200730-220600/stylesheet.css" type="text/css" />
+    <!-- <link href="styles/stylesindex.css" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/mainstyles.css">
+
+    <style>
+        .nav__secondary li {
+            width: 245px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        /*
+        .container-fluid{
+            padding-right: .28rem;
+            padding-left: .28rem;
+        }
+        */
+
+        .container-fluid {
+
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header border-bottom mb-2">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./images/logo.png" class="navbar-logo ms-2" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav d-flex ">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Simulador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pre-Aprobador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Agenda tu Cita</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-outline-secondary ms-2" href="./inicioDeSesion.html"
+                                    role="button">Iniciar Sesi&oacute;n </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </nav>
+
+
+
+        </header>
+        <!--<hr>-->
+
+
+
+
+
+        <div class="container-fluid page-content">
+
+            <div>
+                <h1 class="title text-secondary p-2 bb-page-title"> SIMULADOR DE <span class="text-dark">CR&Eacute;DITO
+                        HIPOTECARIO.</span>
+                </h1>
+            </div>
+
+            <div>
+                <div class="tab-content " id="pills-tabContent">
+                    <div class="nav__secondary tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <!-- Contenido  -->
+                        <div class="container">
+                            <div class="row ">
+                                <!--Seccion Izquierda-->
+                                <section class="col-12 col-lg-6 mb-2 gx-5">
+                                    <h2 class="subtitle text-secondary">Tipo de ingresos</h2>
+
+                                    <form name="registrationForm" class="mb-3">
+
+                                        <!--row 1 en columna izquierda-->
+                                        <div class="row mb-5">
+                                            <!--btones mancomunado col principal izquierda-->
+                                            <div class="col-md-6 mb-2">
+                                                <h6 class="text-secondary ">¿El credito será mancomunado?
+                                                </h6>
+
+                                                <div class="btn-group d-flex" role="group"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="mancomunado" id="no"
+                                                        autocomplete="off" checked>
+                                                    <label class="btn btn-outline-primary" for="no">NO
+                                                    </label>
+
+
+
+                                                    <input type="radio" class="btn-check" name="mancomunado" id="si"
+                                                        autocomplete="off">
+                                                    <label class="btn btn-outline-primary" for="si">SI
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mb-2">
+                                                <h6 class="text-secondary ">¿Qué tipo de actividad realizas?
+                                                </h6>
+
+                                                <div class="btn-group d-flex" role="group"
+                                                    aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="actividad"
+                                                        id="asalariado" autocomplete="off" checked>
+                                                    <label class="btn btn-outline-primary" for="asalariado">Asalariado
+                                                    </label>
+
+
+
+                                                    <input type="radio" class="btn-check" name="actividad" id="otro"
+                                                        autocomplete="off">
+                                                    <label class="btn btn-outline-primary" for="otro">Otro
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--row 2 columna izquierda-->
+                                        <div class="row mt-5">
+
+                                            <div class="col-md-4 mb-3">
+
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Ingreso Mensual Neto
+                                                </label>
+
+                                                <div>
+                                                    <input type="text" value="$55,000" class="input_information"
+                                                        style="width: 100%;">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Agrega otro ingreso
+                                                </label>
+                                                <div>
+                                                    <input type="text" value="$55,000" class="input_information"
+                                                        style="width: 100%;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Describe el ingreso
+                                                </label>
+                                                <div>
+                                                    <input type="text" placeholder="Descripción"
+                                                        class="input_information" style="width: 100%;">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="btn-slide mb-2">
+                                            <div class="d-flex">
+                                                <i class="bi bi-plus-circle">
+                                                </i>
+                                                <p class="m-1">Otro ingreso</p>
+                                            </div>
+                                        </div>
+
+
+                                        <!--row 3 columna izquierda-->
+                                        <div class="row contenido-slide" style="display:none;">
+
+
+
+                                            <div class="col-md-4 mb-2">
+                                                <label class="bb-input-label ">
+                                                    <span class="bullet"></span>
+                                                    Agrega otro ingreso
+                                                </label>
+
+                                                <div>
+                                                    <input type="text" value="$55,000" class="input_information"
+                                                        style="width: 100%;">
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col-md-4 mb-2">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet"></span>
+                                                    Describe el ingreso
+                                                </label>
+
+                                                <div>
+                                                    <input type="text" placeholder="Descripcion"
+                                                        class="input_information" style="width: 100%;">
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+                                        </div>
+
+
+                                    </form>
+
+                                </section>
+                                <!-- Seccion Derecha -->
+                                <section class="col-12 col-lg-6 mb-5 gx-5" id="detalles_credito">
+
+                                    <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>
+                                            <div class="m-4">
+                                                <div class="text-secondary">Te prestamos:</div>
+                                                <div class="fs-5" style="color: #60a1e7">$1,620,000</div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-6 text-end text-secondary">Mensualidad con seguro y
+                                                    comisiones:</div>
+                                                <div class="col-6 text-start">$18,000</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 text-end text-secondary">Tipo de tasa:</div>
+                                                <div class="col-6 text-start">Tasa fija anual</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 text-end text-secondary">Tasa:</div>
+                                                <div class="col-6 text-start" style="color: #60a1e7">11.20%</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 text-end text-secondary">*CAT:</div>
+                                                <div class="col-6 text-start">13.4%</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 text-end text-secondary">Comisi&oacute;n por apertura:
+                                                </div>
+                                                <div class="col-6 text-start">1.0%</div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-6 text-end text-secondary">Gastos de Originaci&oacute;n:
+                                                </div>
+                                                <div class="col-6 text-start">1.0%</div>
+                                            </div>
+                                            <div class="m-4"><a href="#">Ver tabla de amortizaci&oacute;n</a></div>
+                                            <div class="row m-4">
+                                                <div class="col-12 mb-3">
+                                                    <button type="button"
+                                                        class="btn btn-light  text-secondary shadow-sm  rounded "
+                                                        style="width: 100%;">M&Aacute;S INFORMACI&Oacute;N</button>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="button" class="btn btn-primary"
+                                                        style="width: 100%;">PRE APRUEBA TU HIPOTECA</button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>*CAT Sin IVA, para fines informativos y de comparaci&oacute;n. Fecha
+                                                    de
+                                                    calculo 17 de mayo del 2019.
+                                                    Vigencia de la oferta hasta el 17 de Julio de 2019.</p>
+                                                <p>*Gastos de originación, estimado para fines informativos y
+                                                    comparativos.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </section>
+                                <p>
+                                    <button class="btn btn-primary" id="btn-dinamico" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#detalles_credito"
+                                        aria-expanded="false" aria-controls="collapseExample" style="display: none;">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </p>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Menusalidad -->
+
+                    <!-- Ingreso mensual -->
+
+                </div>
+
+
+
+
+
+                <footer class="container-fluid footer">
+                    <div>
+                        <span>Copyright&copy; 2020 - go4it - Todos los derechos reservados</span>
+                    </div>
+                </footer>
+
+
+                <!-- SCRIPT JQUERY-->
+                <!--
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous">
+                    </script>
+                -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+                <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
+
+                <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos1A.js"></SCRipt>
+
+
+                <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+
+
+</body>
+
+</html>

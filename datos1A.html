@@ -39,6 +39,27 @@
 
             margin: 0;
         }
+
+        #btn-detalles {
+            display: none;
+
+        }
+
+        #detalles_credito {
+            display: block;
+        }
+
+        @media(max-width:991px) {
+            
+            #btn-detalles {
+                display: block;
+                justify-content: center;
+            }
+            
+            #detalles_credito {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -109,7 +130,7 @@
                         <div class="container">
                             <div class="row ">
                                 <!--Seccion Izquierda-->
-                                <section class="col-12 col-lg-6 mb-2 gx-5">
+                                <section class="col-12 col-lg-6 mb-2 gx-5 order-3 order-lg-1">
                                     <h2 class="subtitle text-secondary">Tipo de ingresos</h2>
 
                                     <form name="registrationForm" class="mb-3">
@@ -249,7 +270,7 @@
 
                                 </section>
                                 <!-- Seccion Derecha -->
-                                <section class="col-12 col-lg-6 mb-5 gx-5" id="detalles_credito">
+                                <section class="col-12 col-lg-6 mb-5 gx-5 order-1 order-lg-2" id="detalles_credito">
 
                                     <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
                                         <div class="card-body">
@@ -313,15 +334,20 @@
 
 
 
-                                </section>
-                                <p>
-                                    <button class="btn btn-primary" id="btn-dinamico" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#detalles_credito"
-                                        aria-expanded="false" aria-controls="collapseExample" style="display: none;">
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                </p>
 
+                                </section>
+
+                                <div class="btn-slide-invert  mb-5 justify-content-center border-bottom order-2 text-center" id="btn-detalles">
+                                    
+                                        <div class="" >
+
+                                        <i class="fas fa-angle-down mx-auto fs-1">
+
+                                        </i>
+                                        
+                                        </div>
+                                    
+                                </div>
 
 
                             </div>

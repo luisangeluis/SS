@@ -22,12 +22,13 @@
     <link rel="stylesheet" href="./styles/mainstyles.css">
 
     <style>
+        /*
         .nav__secondary li {
             width: 245px;
             text-align: center;
             margin: 0 auto;
         }
-
+        */
         /*
         .container-fluid{
             padding-right: .28rem;
@@ -35,6 +36,13 @@
         }
         */
 
+        iframe {
+
+            height: 500px;
+            overflow: hidden;
+            border: none;
+            /*display: block;*/
+        }
 
         .container-fluid {
 
@@ -51,6 +59,12 @@
         }
 
         @media(max-width:991px) {
+
+            iframe {
+
+                height: 620px;
+               
+            }
 
             #btn-detalles {
                 display: block;
@@ -167,13 +181,14 @@
                                                     aria-label="Basic radio toggle button group">
                                                     <input type="radio" class="btn-check " name="actividad"
                                                         id="asalariado" autocomplete="off" checked>
-                                                    <label class="btn btn-outline-primary w-25" for="asalariado">Asalariado
+                                                    <label class="btn btn-outline-primary w-25"
+                                                        for="asalariado">Asalariado
                                                     </label>
 
 
 
-                                                    <input type="radio" class="btn-check col-6" name="actividad" id="otro"
-                                                        autocomplete="off">
+                                                    <input type="radio" class="btn-check col-6" name="actividad"
+                                                        id="otro" autocomplete="off">
                                                     <label class="btn btn-outline-primary w-25" for="otro">Otro
                                                     </label>
                                                 </div>
@@ -266,10 +281,11 @@
 
                                             <div class="col-lg-12 ">
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto mb-3">
-                                                    
-                                                        <a class="btn btn-light text-secondary shadow-sm rounded text-dark" href="#">
-                                                            Regresar
-                                                        </a>
+
+                                                    <a class="btn btn-light text-secondary shadow-sm rounded text-dark"
+                                                        href="#">
+                                                        Regresar
+                                                    </a>
                                                 </div>
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
                                                     <a class="btn btn-primary  shadow-sm" href="#">
@@ -284,9 +300,14 @@
 
                                 </section>
                                 <!-- Seccion Derecha -->
-                                <section class="col-12 col-lg-6  gx-5 order-1 order-lg-2" id="detalles_credito">
+
+                                <section class="col-12 col-lg-6  gx-5 order-1 order-lg-2  d-lg-block "
+                                    id="detalles_credito">
 
                                     <div class="card text-center shadow-sm p-3  bg-white rounded">
+                                        <iframe src="plantillas/panel_detalle-credito.html" class=""></iframe>
+
+                                        <!--
                                         <div class="card-body">
                                             <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>
                                             <div class="m-4">
@@ -329,25 +350,12 @@
                                                         class="btn btn-light  text-secondary shadow-sm  rounded "
                                                         style="width: 100%;">M&Aacute;S INFORMACI&Oacute;N</button>
                                                 </div>
-                                                <!--
-                                                <div class="col-12">
-                                                    <button type="button" class="btn btn-primary"
-                                                        style="width: 100%;">PRE APRUEBA TU HIPOTECA</button>
-                                                </div>
-                                                -->
+                                                
+                                                
                                             </div>
-                                            <!--
-                                            <div>
-                                                <p>*CAT Sin IVA, para fines informativos y de comparaci&oacute;n. Fecha
-                                                    de
-                                                    calculo 17 de mayo del 2019.
-                                                    Vigencia de la oferta hasta el 17 de Julio de 2019.</p>
-                                                <p>*Gastos de originación, estimado para fines informativos y
-                                                    comparativos.</p>
-                                            </div>
-                                            -->
+                                            
                                         </div>
-
+                                        -->
                                     </div>
 
 

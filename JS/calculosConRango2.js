@@ -52,6 +52,7 @@ $(document).ready(function () {
         input.style.setProperty("--value", input.value / 100000 - 2.5);
     },
         false);
+            
 
 });
 

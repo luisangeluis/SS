@@ -25,7 +25,7 @@
 <body>
     <div class="wrapper">
         <header class="header border-bottom mb-2 ">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <nav class="container-xxl navbar navbar-expand-lg navbar-light bg-white">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="./index.html">
                         <img src="./images/logo.png" class="navbar-logo ms-2" alt="logo">
@@ -64,11 +64,17 @@
                         HIPOTECARIO.</span>
                 </h1>
             </div>
+            <!-- Navegador Fin del Credito -->
             <div>
-                <h6 class="text-secondary d-flex justify-content-start ms-4 ">Selecciona el fin del cr&eacute;dito &#58;
+                <h6 class="text-secondary d-flex justify-content-start ms-4 ">Selecciona el Fin del Cr&eacute;dito </h6>
+            </div>
+
+            <!-- Navegador Modo a Calcular -->
+            <div class="Secondary__nav container-xxl container-fluid">
+                <h6 class="text-secondary d-flex justify-content-start ms-4 ">Elige el modo para calcular
                 </h6>
-                <!-- Navegador Secundario -->
-                <ul class="nav__secondary nav nav-pills  m-4 mt-1" id="pills-tab" role="tablist">
+                
+                <ul class="nav__secondary nav nav-pills  d-flex justify-content-start ms-4 m-4 mt-1" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home"
                             role="tab" aria-controls="pills-home" aria-selected="true">VALOR DE LA PROPIEDAD</a>
@@ -83,7 +89,8 @@
                             MENSUAL</a>
                     </li>
                 </ul>
-                <!-- Valor de la Porpiedad -->
+            </div>
+                <!-- Valor de la Propiedad -->
                 <div class="tab-content " id="pills-tabContent">
                     <div class="nav__secondary tab-pane fade show active" id="pills-home" role="tabpanel"
                         aria-labelledby="pills-home-tab">
@@ -137,19 +144,19 @@
                                                         class="input_information text-end" style="width: 100%"></div>
                                             </div>
                                             <div class="">
-                                                <div class="d-flex p-2 justify-content-">
+                                                <div class="d-flex p-2 justify-content-end align-items-center" >
                                                     <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                                         data-bs-target="#collapseExample"></i>
-                                                    <p class="m-1">Agregar Cofinanciamiento</p></i>
+                                                    <p class="m-1 collapse.show" data-bs-toggle="collapse"  data-bs-target="#collapseExample">Agregar Cofinanciamiento</p></i>
                                                 </div>
                                                 <div>
                                                     <div class="collapse" id="collapseExample">
                                                         <div class="d-flex p-2">
-                                                            <i class="bi bi-dash-circle m-1"></i>
+                                                            <i class="bi bi-dash-circle m-1 collapse"></i>
                                                             <p class="m-1"> Cofinanciamiento</p>
                                                         </div>
                                                         <div>
-                                                            <select class="form-select"
+                                                            <select class="form-select collapse.show "
                                                                 aria-label="Default select example">
                                                                 <option selected>Infonavit</option>
                                                                 <option value="1">Cofinavit</option>
@@ -171,10 +178,18 @@
                                             <h6 class="text-secondary"> &iquest;A cu&aacute;ntos a&ntilde;os quieres
                                                 pagar&#63;</h6>
                                         </div>
-                                        <div class="rango mb-4">
-                                            <input type="range" class="forms-range" name="valorcasa" id="prInputId"
-                                                value="2500000" min="500000" max="10000000" step="100000">
+                                        <div class="formatoaciframes">
+                                            <output name="mesOutputName" id="mesOutputId">
+                                                <span class="elmes">20</span>
+                                            </output>
                                         </div>
+                                    </div>
+                
+                                    <div class="rangomes mb-4">
+                                        <input type="range" name="mensualidades" class="forms-range" id="mesInputId" value="20" min="5" max="30" step="1"
+                                               oninput="mesOutputId.value = mesInputId.value">
+                                    </div>
+    
                                         <div class="row">
                                             <div class="col-12 col-lg-6 mb-3">
                                                 <label class="bb-input-label">
@@ -365,9 +380,9 @@
                                                 pagar&#63;</h6>
                                         </div>
                                         <div class="rango mb-4">
-                                            <input type="range" class="forms-range" name="valorcasa" id="prInputId"
+                                            <input type="range " id="rangomes" class="forms-range " name="valorcasa" 
                                                 value="2500000" min="500000" max="10000000" step="100000">
-                                        </div>
+                                        </div>           
                                         <div class="row">
                                             <div class="col-12 col-lg-6 mb-3">
                                                 <label class="bb-input-label">
@@ -375,10 +390,12 @@
                                                     Mensualidad
                                                 </label>
                                                 <div class="row">
-                                                    <div class="col-6"><input type="text"
+                                                    <div class="col-6">
+                                                        <input type="text"
                                                             class="input_information text-end" name="user_name"
                                                             value="$18,000" style="width: 100%;"></div>
-                                                    <div class="col-6"><input type="text" value="33%"
+                                                    <div class="col-6">
+                                                        <input type="text" value="33%"
                                                             class="input_information text-end" style="width: 100%">
                                                     </div>
                                                 </div>
@@ -672,7 +689,7 @@
                                                         style="width: 100%;">M&Aacute;S INFORMACI&Oacute;N</button>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="button" class="btn btn-primary"
+                                                    <button type="button" class=" btn btn-primary" id="preApruebaHipoteca"
                                                         style="width: 100%;">PRE APRUEBA TU HIPOTECA</button>
                                                 </div>
                                             </div>

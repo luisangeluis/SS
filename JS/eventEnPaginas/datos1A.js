@@ -1,30 +1,36 @@
 $(document).ready(function () {
     const btnSlide = document.querySelectorAll('.btn-slide');
-    const slideContenido = document.querySelector('.contenido-slide');
-    const btnDinamico = document.querySelector('#btn-dinamico');
-    const detallesCredito = document.querySelector('#detalles_credito');
+    const btnSlideInvert = document.querySelectorAll('.btn-slide-invert');
+    
+
+    
 
 
-    /*
-    $(window).resize(function(){
-        if($(window).width()<=767){
-            $(btnDinamico).css('display','block');
-            $(detallesCredito).addClass('collapse');
-        }else{
-            $(btnDinamico).css('display','none');
+        
+    
+    
+    //panel slide de agregar otro ingreso
 
-            $(detallesCredito).removeClass('collapse');
+    for(let x=0; x<btnSlide.length;x++){
+        $(btnSlide[x]).on({
+            click: function () {
+                //$(slideContenido).slideToggle();
+                //let btn = e.target;
+                
+                expandirPanel(btnSlide[x],300);
+            }
+        })
+    }
+    
+    for(let x=0; x<btnSlideInvert.length;x++){
+        $(btnSlideInvert[x]).on({
+            click: function(e){
+                expandirPanelInvert(btnSlideInvert[x],450);
+            }
+        })
 
-        }
-
-    })
-    */
-    $(btnSlide).on({
-        click: function () {
-            //$(slideContenido).slideToggle();
-            expandirPanel(btnSlide,300);
-        }
-    })
-
+    }
+    
+    
     
 });

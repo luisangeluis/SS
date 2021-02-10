@@ -18,19 +18,36 @@ $(".formatoMoneda").on({
 
 //FUNCIONES PARA EXPANDIR PANEL
 
+
 function expandirPanel(pElemento, pTiempo){
     $(pElemento).next().slideToggle(pTiempo);
 }
+
 
 function expandirPanelInvert(pElemento,pTiempo){
     $(pElemento).prev().slideToggle(pTiempo);
 
 }
 
+/*
+function expandirPanelInvert(pPanel,pTiempo){
+    $(pPanel).slideToggle(pTiempo);
+}
+*/
+
+
+
 //FUNCION PARA AGREGAR COLOR A LOS BOTONES
 function removerClase(pBoton) {
     for (let i = 0; i < pBoton.length; i++) {
         pBoton[i].classList.remove("conColor");
+
+    }
+    
+}
+function removerClase(pBoton,pClase) {
+    for (let i = 0; i < pBoton.length; i++) {
+        pBoton[i].classList.remove(pClase);
 
     }
     

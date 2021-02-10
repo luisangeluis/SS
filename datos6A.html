@@ -31,7 +31,7 @@
         .iframe_detalles-credito {
             width: 100%;
 
-            height:600px;
+            height: 585px;
             overflow: hidden;
             border: none;
             /*display: block;*/
@@ -129,146 +129,63 @@
                         <div class="container">
                             <div class="row ">
                                 <!--Seccion Izquierda-->
-                                <section class="col-12 col-lg-6 mb-2 mb-md-5 gx-5 order-3 order-lg-1">
-                                    <h2 class="subtitle text-secondary">Tipo de ingresos</h2>
+                                <section class="col-12 col-lg-6 mb-1 mb-md-5 gx-5 order-3 order-lg-1">
+                                    <h2 class="subtitle text-secondary">COMPROBACIÓN CON BURÓ DE CREDITO</h2>
 
-                                    <form name="registrationForm" class="my-5">
+                                    <form name="registrationForm" class="my-1">
 
                                         <!--row 1 en columna izquierda-->
-                                        <div class="row mb-5">
-                                            <!--btones mancomunado y actividad col principal izquierda-->
-                                            <div class="col-md-6 mb-2">
-                                                <h6 class="text-secondary ">¿El credito será mancomunado?
-                                                </h6>
 
-                                                <div class="btn-group d-flex" role="group"
-                                                    aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check" name="mancomunado" id="no"
-                                                        autocomplete="off" checked>
-                                                    <label class="btn btn-outline-primary" for="no">NO
-                                                    </label>
+                                        <div class="row mb-3">
+                                            <div class="col-lg-12 ">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet "></span>
+                                                    RFC con Homoclave
+                                                </label>
 
-
-
-                                                    <input type="radio" class="btn-check" name="mancomunado" id="si"
-                                                        autocomplete="off">
-                                                    <label class="btn btn-outline-primary" for="si">SI
-                                                    </label>
+                                                <div class="mb-3">
+                                                    <input type="text" value="" class="input_information"
+                                                        style="width: 75%;" placeholder="RHB4911108W9">
                                                 </div>
+                                                
                                             </div>
 
-                                            <div class="col-md-6 mb-2">
-                                                <h6 class="text-secondary ">¿Qué tipo de actividad realizas?
-                                                </h6>
-
-                                                <div class="btn-group d-flex" role="group"
-                                                    aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check " name="actividad"
-                                                        id="asalariado" autocomplete="off" checked>
-                                                    <label class="btn btn-outline-primary w-25"
-                                                        for="asalariado">Asalariado
-                                                    </label>
-
-
-
-                                                    <input type="radio" class="btn-check col-6" name="actividad"
-                                                        id="otro" autocomplete="off">
-                                                    <label class="btn btn-outline-primary w-25" for="otro">Otro
-                                                    </label>
-                                                </div>
-                                            </div>
 
                                         </div>
-                                        <!--row 2 columna izquierda-->
-                                        <div class="row mt-5">
+                                        <!--row 2 en columna izquierda-->
 
-                                            <div class="col-md-4 mb-3">
+                                        <div class="row ">
+                                            <P class="text-secondary px-1">
+                                                Autorizo se lleven a cabo investigaciones sobre mi comportamiento e historial crediticio, así como de cualquier otra información de naturaleza análoga en las Sociedades de Información Crediticia que estime conveniente de acuerdo con los artículos 13 y 28 de la Ley para Regular las Sociedades de Información Crediticia. Igualmente, declaro que conozco la naturaleza y el alcance de la información que se solicitará. Asimismo, autorizo que mi Reporte de Crédito Especial incluya los resultados de Mi Score.
 
-                                                <label class="bb-input-label">
-                                                    <span class="bullet"></span>
-                                                    Ingreso Mensual Neto
-                                                </label>
-
-                                                <div>
-                                                    <input type="text" value="$55,000" class="input_information"
-                                                        style="width: 100%;">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4 mb-3">
-                                                <label class="bb-input-label">
-                                                    <span class="bullet"></span>
-                                                    Agrega otro ingreso
-                                                </label>
-                                                <div>
-                                                    <input type="text" value="$55,000" class="input_information"
-                                                        style="width: 100%;">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <label class="bb-input-label">
-                                                    <span class="bullet"></span>
-                                                    Describe el ingreso
-                                                </label>
-                                                <div>
-                                                    <input type="text" placeholder="Descripción"
-                                                        class="input_information" style="width: 100%;">
-                                                </div>
-                                            </div>
+                                            </P>
+                                            
 
                                         </div>
+                                        <div class="row ">
+                                            <div class="form-check  text-center">
+                                                <label class="form-check-label " for="flexCheckDefault">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 
-
-                                        <div class="btn-slide mb-2">
-                                            <div class="d-flex">
-                                                <i class="bi bi-plus-circle">
-                                                </i>
-                                                <p class="m-1">Otro ingreso</p>
+                                                  Autorizo y Acepto
+                                                </label>
                                             </div>
                                         </div>
+                                        
 
-                                        <!--row 3 columna izquierda-->
-                                        <div class="row contenido-slide" style="display:none;">
-
-                                            <div class="col-md-4 mb-2">
-                                                <label class="bb-input-label ">
-                                                    <span class="bullet"></span>
-                                                    Agrega otro ingreso
-                                                </label>
-
-                                                <div>
-                                                    <input type="text" value="$55,000" class="input_information"
-                                                        style="width: 100%;">
-                                                </div>
-
-                                            </div>
-                                            <div class="col-md-4 mb-2">
-                                                <label class="bb-input-label">
-                                                    <span class="bullet"></span>
-                                                    Describe el ingreso
-                                                </label>
-
-                                                <div>
-                                                    <input type="text" placeholder="Descripcion"
-                                                        class="input_information" style="width: 100%;">
-                                                </div>
-
-
-                                            </div>
-
-                                        </div>
+                                        <!--Botones confirmar y regresar-->
                                         <div class="row mt-5 ">
 
                                             <div class="col-lg-12 ">
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto mb-3">
 
                                                     <a class="btn btn-light text-secondary shadow-sm rounded text-dark"
-                                                        href="#">
+                                                        href="/SS/datos5A.html">
                                                         Regresar
                                                     </a>
                                                 </div>
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
-                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos2A.html">
+                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos7A.html">
                                                         Confirmar
                                                     </a>
                                                 </div>
@@ -287,7 +204,8 @@
                                     <div class="card text-center shadow-sm p-3  bg-white rounded">
 
                                         <iframe src="plantillas/panel_detalle-credito.html"
-                                            class="iframe_detalles-credito" id="iframe_detalles-credito" sandbox=""></iframe>
+                                            class="iframe_detalles-credito" id="iframe_detalles-credito"
+                                            sandbox=""></iframe>
 
                                         <!--
                                         <div class="card-body">
@@ -342,7 +260,7 @@
                                     </div>
 
                                 </section>
-
+                                <!--Boton deslizar detalle de credito-->
                                 <div class="btn-slide-invert  mb-5 justify-content-center border-bottom order-2 text-center"
                                     id="btn-detalles">
 
@@ -373,7 +291,7 @@
     </div>
 
     <!-- SCRIPT JQUERY-->
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>

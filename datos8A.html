@@ -51,55 +51,6 @@
             display: block;
         }
 
-        /*
-        input[type="file"]#identificacion {
-            width: 0.1px;
-            height: 0.1px;
-            opacity: 0;
-            overflow: hidden;
-            position: absolute;
-            z-index: -1;
-        }
-        */
-
-        /*
-        label[for="identificacion"] {
-            font-size: 13px;
-            font-weight: 300;
-            color: #fff;
-            background-color: #0d6efd;
-            display: inline-block;
-            transition: all .5s;
-            cursor: pointer;
-            padding: 15px 15px;
-            text-transform: uppercase;
-            width: 80%;
-            text-align: center;
-        }
-        */
-        .sin-estilo_input-file {
-            width: 0.1px;
-            height: 0.1px;
-            opacity: 0;
-            overflow: hidden;
-            position: absolute;
-            z-index: -1;
-        }
-
-        .label_input-file {
-            font-size: 13px;
-            font-weight: 300;
-            color: #fff;
-            background-color: #0d6efd;
-            display: inline-block;
-            transition: all .5s;
-            cursor: pointer;
-            padding: 15px 15px;
-            text-transform: uppercase;
-            width: 80%;
-            text-align: center;
-        }
-
         @media(max-width:991px) {
 
             .iframe_detalles-credito {
@@ -184,21 +135,7 @@
                                     <form name="registrationForm" class="my-1">
 
                                         <!--row 1 en columna izquierda-->
-
-                                        <div class="row mb-3">
-                                            <div class="col-lg-12">
-                                                <p class="text-secondary">
-                                                    Selecciona los documentos requeridos. Procura que no sean mayores a
-                                                    10 Mb y no olvides cuidar
-                                                    que las fotografías no estén borrosas.
-                                                </p>
-                                            </div>
-
-
-                                        </div>
-                                        <!--row 2 en columna izquierda-->
-
-                                        <div class="row mb-5">
+                                        <div class="row mb-4">
                                             <div class="form-check text-center">
                                                 <label class="form-check-label" for="defaultCheck1">
                                                     <input class="form-check-input" type="checkbox" value=""
@@ -208,67 +145,32 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="row mb-3">
+
+                                            
+
+
+                                            <h2 class="subtitle text-secondary d-flex justify-content-start">¿ES LA FOTO LEGIBLE?</h2>
+                                            <p class="text-secondary">Procura que los datos de la credencial se puedan leer claramente y que la foto no se vea borrosa, oscura o con brillos.</p>
+
+                                        </div>
+                                        <!--row 2 en columna izquierda-->
+
+                                        <div class="row mb-5 justify-content-center">
+                                            
+                                                <img src="images/EjemploIfeBien.jpg" class="w-75 " alt="">
+
+                                            
+                                        </div>
                                         <!--row 3 en columna izquierda-->
                                         <div class="row mb-5">
-                                            <div class="col-lg-12 ">
-                                                <h6 class="text-secondary ">¿Qué identificación presentarás?
-                                                </h6>
-                                                <div class="row-cols-auto">
-                                                    <div class="btn-group d-flex justify-content-center" role="group"
-                                                        aria-label="Basic radio toggle button group">
-
-                                                        <input type="radio" class="btn-check" name="identificacion"
-                                                            id="ine-ife" autocomplete="off" checked>
-                                                        <label class="btn btn-outline-primary" for="ine-ife">INE/IFE
-                                                        </label>
-                                                        <input type="radio" class="btn-check" name="identificacion"
-                                                            id="pasaporte" autocomplete="off">
-                                                        <label class="btn btn-outline-primary" for="pasaporte">pasaporte
-                                                        </label>
-
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
 
 
                                         </div>
                                         <!--row 4 en columna izquierda-->
                                         <div class="row ">
-                                            <h6 class="text-secondary ">Sube una foto del frente de tu
-                                                credencial</h6>
-                                            <div class="col-lg-6 col-12  ">
-                                                <div class="row mb-3 justify-content-center ">
-                                                    <span class="identificacion">
-                                                        <input type="file"
-                                                            class="input_informacion sin-estilo_input-file"
-                                                            id="identificacion">
-                                                    </span>
-                                                    <label for="identificacion" class="label_input-file">
-                                                        <span>Escoger documento</span>
-                                                    </label>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="col-lg-6 col-12">
-                                                <!--
-                                                <div class="row justify-content-center">
-                                                    <input type="file" class="input_informacion " id="camara"
-                                                        capture="camera">
-                                                </div>
-                                                -->
-                                                <div class="row mb-3 justify-content-center ">
-                                                    <span class="camara">
-                                                        <input type="file"
-                                                            class="input_informacion sin-estilo_input-file" id="camara"
-                                                            capture="camera">
-                                                    </span>
-                                                    <label for="camara" class="label_input-file">
-                                                        <span>Sacar foto</span>
-                                                    </label>
-                                                </div>
-
-                                            </div>
+                                            
 
                                         </div>
 
@@ -396,7 +298,7 @@
 
     <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
 
-    <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos7A.js"></SCRipt>
+    <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos1A.js"></SCRipt>
 
     <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

@@ -135,46 +135,70 @@
                                     <form name="registrationForm" class="my-1">
 
                                         <!--row 1 en columna izquierda-->
-                                        <div class="row mb-4">
+                                        <div class="row mb-5">
+
                                             <div class="form-check text-center">
                                                 <label class="form-check-label" for="defaultCheck1">
                                                     <input class="form-check-input" type="checkbox" value=""
-                                                        id="defaultCheck1">
+                                                        id="defaultCheck1" checked>
 
                                                     IDENTIFICACIÓN OFICIAL FRENTE
                                                 </label>
                                             </div>
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
+
+                                                    IDENTIFICACIÓN OFICIAL VUELTA
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
+
+                                                    COMPROBANTE DE DOMICILIO 1
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
+
+                                                    COMPROBANTE DE DOMICILIO 2
+                                                </label>
+                                            </div>
+
                                         </div>
-                                        <div class="row mb-3">
 
-                                            
-
-
-                                            <h2 class="subtitle text-secondary d-flex justify-content-start">¿ES LA FOTO LEGIBLE?</h2>
-                                            <p class="text-secondary">Procura que los datos de la credencial se puedan leer claramente y que la foto no se vea borrosa, oscura o con brillos.</p>
-
-                                        </div>
                                         <!--row 2 en columna izquierda-->
 
-                                        <div class="row mb-5 justify-content-center">
-                                            
-                                                <img src="images/EjemploIfeBien.jpg" class="w-75 " alt="">
+                                        <div class="row mb-5 ">
+                                            <div class="col-lg-12">
+                                                <h6 class="text-secondary">
+                                                    Carga tu estado de cuenta en .xml de los últimos 3 meses.
+                                                </h6>
+                                                <div class="row">
+                                                    <div class="col-1g-12 text-center">
+                                                        <div class="row mb-3 ">
+                                                            <span class="identificacion">
+                                                                <input type="file"
+                                                                    class="input_informacion sin-estilo_input-file"
+                                                                    id="identificacion">
+                                                            </span>
+                                                            <label for="identificacion" class="label_input-file">
+                                                                <span>Escoger documento</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
 
-                                            
+
+
                                         </div>
-                                        <!--row 3 en columna izquierda-->
-                                        <div class="row mb-5">
-                                            
-
-
-                                        </div>
-                                        <!--row 4 en columna izquierda-->
-                                        <div class="row ">
-                                            
-
-                                        </div>
-
-
                                         <!--Botones confirmar y regresar-->
                                         <div class="row mt-5 ">
 
@@ -182,16 +206,17 @@
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto mb-3">
 
                                                     <a class="btn btn-light text-secondary shadow-sm rounded text-dark"
-                                                        href="/SS/datos7A.html">
-                                                        REPETIR FOTO
+                                                        href="/SS/datos6A.html">
+                                                        Regresar
                                                     </a>
                                                 </div>
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
-                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos9A.html">
-                                                        ES LEGIBLE
+                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos8A.html">
+                                                        Confirmar
                                                     </a>
                                                 </div>
                                             </div>
+
                                         </div>
 
 
@@ -209,6 +234,9 @@
                                             class="iframe_detalles-credito" id="iframe_detalles-credito"
                                             sandbox=""></iframe>
 
+                                        <!--    
+                                        <object data="plantillas/panel_detalle-credito.html" type="" class="iframe_detalles-credito"></object>
+                                        -->
                                         <!--
                                         <div class="card-body">
                                             <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>

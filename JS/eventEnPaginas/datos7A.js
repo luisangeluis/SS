@@ -16,10 +16,8 @@ $(document).ready(function () {
     $(camara).on({
         change: function(){
             var filename = jQuery(this).val().split('\\').pop();
-        var idname = jQuery(this).attr('id');
-        console.log(jQuery(this));
-        console.log(filename);
-        console.log(idname);
+            var idname = jQuery(this).attr('id');
+        
         jQuery('span.' + idname).next().find('span').html(filename);
         }
     });

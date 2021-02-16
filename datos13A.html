@@ -135,60 +135,66 @@
                                     <form name="registrationForm" class="my-1">
 
                                         <!--row 1 en columna izquierda-->
-                                        <div class="row mb-4">
+                                        <div class="row mb-5">
+
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
+
+                                                    IDENTIFICACIÓN OFICIAL FRENTE
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
+
+                                                    IDENTIFICACIÓN OFICIAL VUELTA
+                                                </label>
+                                            </div>
                                             <div class="form-check text-center">
                                                 <label class="form-check-label" for="defaultCheck1">
                                                     <input class="form-check-input" type="checkbox" value=""
                                                         id="defaultCheck1">
 
-                                                    IDENTIFICACIÓN OFICIAL FRENTE
+                                                    COMPROBANTE DE DOMICILIO 1
                                                 </label>
                                             </div>
-                                        </div>
-                                        <div class="row mb-3">
-
-                                            
-
-
-                                            <h2 class="subtitle text-secondary d-flex justify-content-start">¿ES LA FOTO LEGIBLE?</h2>
-                                            <p class="text-secondary">Procura que los datos de la credencial se puedan leer claramente y que la foto no se vea borrosa, oscura o con brillos.</p>
 
                                         </div>
+
                                         <!--row 2 en columna izquierda-->
 
-                                        <div class="row mb-5 justify-content-center">
-                                            
-                                                <img src="images/EjemploIfeBien.jpg" class="w-75 " alt="">
+                                        <div class="row mb-5 ">
+                                            <div class="col-lg-12">
+                                                <p class="text-secondary ">
+                                                    Si tu comprobante es de CFE, escribe los números que se encuentran
+                                                    en la parte de arriba del código de barras del <span
+                                                        class="Tittleftbold">recibo de CFE no mayor a 3 meses</span>.
 
-                                            
-                                        </div>
-                                        <!--row 3 en columna izquierda-->
-                                        <div class="row mb-5">
-                                            
-
-
-                                        </div>
-                                        <!--row 4 en columna izquierda-->
-                                        <div class="row ">
-                                            
-
-                                        </div>
+                                                </p>
+                                                <div class="row mb-3">
 
 
-                                        <!--Botones confirmar y regresar-->
-                                        <div class="row mt-5 ">
-
-                                            <div class="col-lg-12 ">
-                                                <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto mb-3">
-
-                                                    <a class="btn btn-light text-secondary shadow-sm rounded text-dark"
-                                                        href="/SS/datos7A.html">
-                                                        REPETIR FOTO
-                                                    </a>
+                                                    <div class=" justify-content-center">
+                                                        <input type="text" value="" class="input_information"
+                                                            style="width: 50%;" placeholder="30 dígitos">
+                                                    </div>
                                                 </div>
+                                                <div class="row justify-content-center">
+                                                    <img src="images/ejemploCfe.jpg" alt="codigo de barras" class="w-50">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Botones confirmar y regresar-->
+                                        <div class="row">
+
+                                            <div class="col-lg-12 mt-3">
+
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
-                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos9A.html">
-                                                        ES LEGIBLE
+                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos10A.html">
+                                                        CONTINUAR
                                                     </a>
                                                 </div>
                                             </div>
@@ -209,6 +215,9 @@
                                             class="iframe_detalles-credito" id="iframe_detalles-credito"
                                             sandbox=""></iframe>
 
+                                        <!--    
+                                        <object data="plantillas/panel_detalle-credito.html" type="" class="iframe_detalles-credito"></object>
+                                        -->
                                         <!--
                                         <div class="card-body">
                                             <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>

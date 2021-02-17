@@ -51,6 +51,55 @@
             display: block;
         }
 
+        /*
+        input[type="file"]#identificacion {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        */
+
+        /*
+        label[for="identificacion"] {
+            font-size: 13px;
+            font-weight: 300;
+            color: #fff;
+            background-color: #0d6efd;
+            display: inline-block;
+            transition: all .5s;
+            cursor: pointer;
+            padding: 15px 15px;
+            text-transform: uppercase;
+            width: 80%;
+            text-align: center;
+        }
+        */
+        .sin-estilo_input-file {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .label_input-file {
+            font-size: 13px;
+            font-weight: 300;
+            color: #fff;
+            background-color: #0d6efd;
+            display: inline-block;
+            transition: all .5s;
+            cursor: pointer;
+            padding: 15px 15px;
+            text-transform: uppercase;
+            width: 80%;
+            text-align: center;
+        }
+
         @media(max-width:991px) {
 
             .iframe_detalles-credito {
@@ -185,26 +234,38 @@
                                         </div>
                                         <!--row 4 en columna izquierda-->
                                         <div class="row ">
-                                            <div class="col-lg-12 col-12  ">
-                                                <div class="row ">
-                                                    <h6 class="text-secondary ">Sube una foto del frente de tu
-                                                        credencial</h6>
-                                                        
-                                                        
-
-                                                </div>
+                                            <h6 class="text-secondary ">Sube una foto del frente de tu
+                                                credencial</h6>
+                                            <div class="col-lg-6 col-12  ">
                                                 <div class="row mb-3 justify-content-center ">
-
-                                                    <input type="file" class="input_informacion"
-                                                        id="identificacion" >
-
+                                                    <span class="identificacion">
+                                                        <input type="file"
+                                                            class="input_informacion sin-estilo_input-file"
+                                                            id="identificacion">
+                                                    </span>
+                                                    <label for="identificacion" class="label_input-file">
+                                                        <span>Escoger documento</span>
+                                                    </label>
                                                 </div>
-                                                <div class="row justify-content-center">
 
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <!--
+                                                <div class="row justify-content-center">
                                                     <input type="file" class="input_informacion " id="camara"
                                                         capture="camera">
-
-
+                                                </div>
+                                                -->
+                                                <div class="row mb-3 justify-content-center ">
+                                                    <span class="camara">
+                                                        <input type="file"
+                                                            class="input_informacion sin-estilo_input-file" id="camara"
+                                                            capture="camera">
+                                                    </span>
+                                                    <label for="camara" class="label_input-file">
+                                                        <span>Sacar foto</span>
+                                                    </label>
                                                 </div>
 
                                             </div>
@@ -224,8 +285,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
-                                                    <a class="btn btn-primary  shadow-sm" href="#">
-                                                        Confirmar
+                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos8A.html">
+                                                        Verificar
                                                     </a>
                                                 </div>
                                             </div>
@@ -240,7 +301,7 @@
                                 <section class="col-12 col-lg-6  gx-5 order-1 order-lg-2 d-lg-block mb-lg-5"
                                     id="detalles_credito">
 
-                                    <div class="card text-center shadow-sm p-3  bg-white rounded">
+                                    <div class="card text-center shadow-sm p-3  bg-white rounded py-0">
 
                                         <iframe src="plantillas/panel_detalle-credito.html"
                                             class="iframe_detalles-credito" id="iframe_detalles-credito"
@@ -335,7 +396,7 @@
 
     <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
 
-    <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos1A.js"></SCRipt>
+    <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos7A.js"></SCRipt>
 
     <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

@@ -31,7 +31,7 @@
         .iframe_detalles-credito {
             width: 100%;
 
-            height:600px;
+            height: 585px;
             overflow: hidden;
             border: none;
             /*display: block;*/
@@ -51,6 +51,28 @@
             display: block;
         }
 
+        .sin-estilo_input-file {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .label_input-file {
+            font-size: 13px;
+            font-weight: 300;
+            color: #fff;
+            background-color: #0d6efd;
+            display: inline-block;
+            transition: all .5s;
+            cursor: pointer;
+            padding: 15px 15px;
+            text-transform: uppercase;
+            width: 80%;
+            text-align: center;
+        }
         @media(max-width:991px) {
 
             .iframe_detalles-credito {
@@ -129,159 +151,94 @@
                         <div class="container">
                             <div class="row ">
                                 <!--Seccion Izquierda-->
-                                <section class="col-12 col-lg-6 mb-2 mb-md-5 gx-5 order-3 order-lg-1">
-                                    <h2 class="subtitle text-secondary">Tipo de ingresos</h2>
+                                <section class="col-12 col-lg-6 mb-1 mb-md-5 gx-5 order-3 order-lg-1">
+                                    <h2 class="subtitle text-secondary">SUBIR DOCUMENTOS</h2>
 
-                                    <form name="registrationForm" class="my-5">
+                                    <form name="registrationForm" class="my-1">
 
                                         <!--row 1 en columna izquierda-->
                                         <div class="row mb-5">
-                                            <!--btones mancomunado y actividad col principal izquierda-->
-                                            <div class="col-md-6 mb-2">
-                                                <h6 class="text-secondary ">¿El credito será mancomunado?
-                                                </h6>
 
-                                                <div class="btn-group d-flex" role="group"
-                                                    aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check" name="mancomunado" id="no"
-                                                        autocomplete="off" checked>
-                                                    <label class="btn btn-outline-primary" for="no">NO
-                                                    </label>
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
 
-
-
-                                                    <input type="radio" class="btn-check" name="mancomunado" id="si"
-                                                        autocomplete="off">
-                                                    <label class="btn btn-outline-primary" for="si">SI
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6 mb-2">
-                                                <h6 class="text-secondary ">¿Qué tipo de actividad realizas?
-                                                </h6>
-
-                                                <div class="btn-group d-flex" role="group"
-                                                    aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check " name="actividad"
-                                                        id="asalariado" autocomplete="off" checked>
-                                                    <label class="btn btn-outline-primary w-25"
-                                                        for="asalariado">Asalariado
-                                                    </label>
-
-
-
-                                                    <input type="radio" class="btn-check col-6" name="actividad"
-                                                        id="otro" autocomplete="off">
-                                                    <label class="btn btn-outline-primary w-25" for="otro">Otro
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--row 2 columna izquierda-->
-                                        <div class="row mt-5 justify-content-center" >
-
-                                            <div class="col-lg-4 mb-3">
-                                                <div class="row">
-                                                    <label class="bb-input-label">
-                                                        <span class="bullet"></span>
-                                                        Ingreso Bruto Mensual
-                                                    </label>
-    
-                                                    <div>
-                                                        <input type="text" id="ingreso-bruto" value="$55,000" class="input_information formatoMoneda"
-                                                            style="width: 100%;" placeholder="$55,000.00">
-                                                    </div>
-                                                </div>
-
-                                                
-                                            </div>
-
-                                            <div class="col-lg-4 mb-3">
-                                                <div class="row">
-                                                    <label class="bb-input-label">
-                                                        <span class="bullet"></span>
-                                                        Agrega otro ingreso
-                                                    </label>
-                                                    <div>
-                                                        <input type="text" id="ingreso-1-form"value="$55,000" class="input_information formatoMoneda"
-                                                            style="width: 100%;" placeholder="$55,000.00">
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="col-lg-4 mb-3">
-                                                <div class="row">
-                                                    <label class="bb-input-label">
-                                                        <span class="bullet"></span>
-                                                        Describe otro ingreso
-                                                    </label>
-                                                    <div>
-                                                        <input type="text" placeholder="Descripción"
-                                                            class="input_information" style="width: 100%;" id=info-ingreso-1-form>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="btn-slide mb-2">
-                                            <div class="d-flex">
-                                                <i class="bi bi-plus-circle">
-                                                </i>
-                                                <p class="m-1">Otro ingreso</p>
-                                            </div>
-                                        </div>
-
-                                        <!--row 3 columna izquierda-->
-                                        <div class="row contenido-slide" style="display:none;">
-
-                                            <div class="col-md-4 mb-2">
-                                                <label class="bb-input-label ">
-                                                    <span class="bullet"></span>
-                                                    Agrega otro ingreso
+                                                    IDENTIFICACIÓN OFICIAL FRENTE
                                                 </label>
-
-                                                <div>
-                                                    <input type="text" id="ingreso-2-form"value="$55,000" class="input_information formatoMoneda"
-                                                        style="width: 100%;" placeholder="$55,000.00">
-                                                </div>
-
                                             </div>
-                                            <div class="col-md-4 mb-2">
-                                                <label class="bb-input-label">
-                                                    <span class="bullet"></span>
-                                                    Describe otro ingreso
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
+
+                                                    IDENTIFICACIÓN OFICIAL VUELTA
                                                 </label>
+                                            </div>
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
 
-                                                <div>
-                                                    <input type="text" placeholder="Descripcion"
-                                                        class="input_information" style="width: 100%;" id=info-ingreso-2-form>
-                                                </div>
+                                                    COMPROBANTE DE DOMICILIO 1
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-center">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="defaultCheck1" checked>
 
-
+                                                    COMPROBANTE DE DOMICILIO 2
+                                                </label>
                                             </div>
 
                                         </div>
+
+                                        <!--row 2 en columna izquierda-->
+
+                                        <div class="row mb-5 ">
+                                            <div class="col-lg-12">
+                                                <h6 class="text-secondary">
+                                                    Carga tu estado de cuenta en .xml de los últimos 3 meses.
+                                                </h6>
+                                                <div class="row ">
+                                                    <div class="col-1g-12">
+                                                        <div class="row mb-3 justify-content-center">
+                                                            <span class="identificacion">
+                                                                <input type="file"
+                                                                    class="input_informacion sin-estilo_input-file "
+                                                                    id="identificacion" >
+                                                            </span>
+                                                            <label for="identificacion" class="label_input-file w-50 px-0 mx-lg-0">
+                                                                <span>Escoger documento</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <!--Botones confirmar y regresar-->
                                         <div class="row mt-5 ">
 
                                             <div class="col-lg-12 ">
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto mb-3">
 
                                                     <a class="btn btn-light text-secondary shadow-sm rounded text-dark"
-                                                        href="#">
+                                                        href="/SS/datos16A.html">
                                                         Regresar
                                                     </a>
                                                 </div>
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
-                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos2A.html">
+                                                    <a class="btn btn-primary  shadow-sm" href="/SS/preaprobconfA.html">
                                                         Confirmar
                                                     </a>
                                                 </div>
                                             </div>
+
                                         </div>
 
 
@@ -290,14 +247,18 @@
                                 </section>
                                 <!-- Seccion Derecha -->
 
-                                <section class="col-12 col-lg-6  gx-5 order-1 order-lg-2 d-lg-block mb-lg-5"
+                                <section class="col-12 col-lg-6  gx-5 order-1 order-lg-2 d-lg-block mb-lg-5 mb-0"
                                     id="detalles_credito">
 
                                     <div class="card text-center shadow-sm p-3  bg-white rounded py-0">
 
                                         <iframe src="plantillas/panel_detalle-credito.html"
-                                            class="iframe_detalles-credito" id="iframe_detalles-credito" sandbox="allow-scripts"></iframe>
+                                            class="iframe_detalles-credito" id="iframe_detalles-credito"
+                                            sandbox=""></iframe>
 
+                                        <!--    
+                                        <object data="plantillas/panel_detalle-credito.html" type="" class="iframe_detalles-credito"></object>
+                                        -->
                                         <!--
                                         <div class="card-body">
                                             <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>
@@ -351,7 +312,7 @@
                                     </div>
 
                                 </section>
-
+                                <!--Boton deslizar detalle de credito-->
                                 <div class="btn-slide-invert  mb-5 justify-content-center border-bottom order-2 text-center"
                                     id="btn-detalles">
 
@@ -382,12 +343,14 @@
     </div>
 
     <!-- SCRIPT JQUERY-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--SCRIPT FUNCIONES DE ANIMACIONES-->
+
     <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
-    <!--SCRIPT PAGINA DATOS1-->
-    <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos1A.js"></SCRipt>
-    <!--SWEETAlert2 POPOVER-->
+
+    <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos17A.js"></SCRipt>
+
+    <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </body>

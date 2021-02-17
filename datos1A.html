@@ -186,12 +186,12 @@
                                                 <div class="row">
                                                     <label class="bb-input-label">
                                                         <span class="bullet"></span>
-                                                        Ingreso Mensual Neto
+                                                        Ingreso Bruto Mensual
                                                     </label>
     
                                                     <div>
-                                                        <input type="text" value="$55,000" class="input_information"
-                                                            style="width: 100%;">
+                                                        <input type="text" id="ingreso-bruto" value="$55,000" class="input_information formatoMoneda"
+                                                            style="width: 100%;" placeholder="$55,000.00">
                                                     </div>
                                                 </div>
 
@@ -205,8 +205,8 @@
                                                         Agrega otro ingreso
                                                     </label>
                                                     <div>
-                                                        <input type="text" value="$55,000" class="input_information"
-                                                            style="width: 100%;">
+                                                        <input type="text" id="ingreso-1-form"value="$55,000" class="input_information formatoMoneda"
+                                                            style="width: 100%;" placeholder="$55,000.00">
                                                     </div>
                                                 </div>
                                                 
@@ -219,7 +219,7 @@
                                                     </label>
                                                     <div>
                                                         <input type="text" placeholder="Descripción"
-                                                            class="input_information" style="width: 100%;">
+                                                            class="input_information" style="width: 100%;" id=info-ingreso-1-form>
                                                     </div>
                                                 </div>
                                                 
@@ -246,8 +246,8 @@
                                                 </label>
 
                                                 <div>
-                                                    <input type="text" value="$55,000" class="input_information"
-                                                        style="width: 100%;">
+                                                    <input type="text" id="ingreso-2-form"value="$55,000" class="input_information formatoMoneda"
+                                                        style="width: 100%;" placeholder="$55,000.00">
                                                 </div>
 
                                             </div>
@@ -259,7 +259,7 @@
 
                                                 <div>
                                                     <input type="text" placeholder="Descripcion"
-                                                        class="input_information" style="width: 100%;">
+                                                        class="input_information" style="width: 100%;" id=info-ingreso-2-form>
                                                 </div>
 
 
@@ -293,10 +293,10 @@
                                 <section class="col-12 col-lg-6  gx-5 order-1 order-lg-2 d-lg-block mb-lg-5"
                                     id="detalles_credito">
 
-                                    <div class="card text-center shadow-sm p-3  bg-white rounded">
+                                    <div class="card text-center shadow-sm p-3  bg-white rounded py-0">
 
                                         <iframe src="plantillas/panel_detalle-credito.html"
-                                            class="iframe_detalles-credito" id="iframe_detalles-credito" sandbox=""></iframe>
+                                            class="iframe_detalles-credito" id="iframe_detalles-credito" sandbox="allow-scripts"></iframe>
 
                                         <!--
                                         <div class="card-body">
@@ -382,14 +382,12 @@
     </div>
 
     <!-- SCRIPT JQUERY-->
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <!--SCRIPT FUNCIONES DE ANIMACIONES-->
     <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
-
+    <!--SCRIPT PAGINA DATOS1-->
     <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos1A.js"></SCRipt>
-
-    <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
+    <!--SWEETAlert2 POPOVER-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </body>

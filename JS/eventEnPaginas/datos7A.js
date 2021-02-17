@@ -1,9 +1,17 @@
 $(document).ready(function () {
     const identificacion = $('#identificacion');
     const camara = $('#camara');
-
-    //console.log(identificacion);
-
+    const btnSlideInvert=document.querySelectorAll('.btn-slide-invert');
+    
+        for(let x=0; x<btnSlideInvert.length;x++){
+            $(btnSlideInvert).on({
+                click: function(){
+                    expandirPanelInvert(btnSlideInvert[x],450);
+    
+                }
+            });
+        }
+    
     $(identificacion).change(function () {
         var filename = jQuery(this).val().split('\\').pop();
         var idname = jQuery(this).attr('id');

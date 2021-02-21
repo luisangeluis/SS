@@ -26,72 +26,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/mainstyles.css">
-
-    <style>
-        .container-fluid {
-
-            margin: 0;
-        }
-
-        .iframe_detalles-credito {
-            width: 100%;
-
-            height: 600px;
-            overflow: hidden;
-            border: none;
-            /*display: block;*/
-        }
-
-
-
-        #btn-detalles {
-            display: none;
-
-        }
-
-        #detalles_credito {
-            display: block;
-        }
-
-
-        html {
-            min-height: 100%;
-
-            /* position: relative; */
-        }
-
-        body {
-            margin: 0;
-
-        }
-
-        .footer {
-            position: relative;
-            bottom: 0;
-            /* width: 100%; */
-            /* height: 40px;
-            color: white; */
-        }
-
-
-        @media(max-width:991px) {
-
-            .iframe_detalles-credito {
-
-                height: 620px;
-
-            }
-
-            #btn-detalles {
-                display: block;
-                justify-content: center;
-            }
-
-            #detalles_credito {
-                display: none;
-            }
-        }
-    </style>
+    <!--STYLES DATOS-->
+    <link rel="stylesheet" href="/SS/styles/hojasDatosStyles.css">
+    
 </head>
 
 <body>
@@ -299,7 +236,7 @@
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto mb-3">
 
                                                     <a class="btn btn-light text-secondary shadow-sm rounded text-dark"
-                                                        href="#">
+                                                        href="/SS/privacidadA.html">
                                                         Regresar
                                                     </a>
                                                 </div>
@@ -418,33 +355,7 @@
     <!--SWEETAlert2 POPOVER-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script>
-
-        
-        $(document).ready(function () {
-            
-            ajustarFooter();
-            $(window).on({
-                resize: function () {
-                    
-                    ajustarFooter();
-                }
-            })
-        })
-        function ajustarFooter() {
-            height = screen.height;
-            if (height >= 930) {
-                $('.footer').addClass('position-absolute');
-            } else {
-                $('.footer').removeClass('position-absolute');
-
-            }
-        }
-
-
-
-
-    </script>
+    
 </body>
 
 </html>

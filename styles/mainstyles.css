@@ -16,15 +16,7 @@ body {
     list-style-type: none;
 }
 
-.nav-link__secondary{
-    font-size: 14px;
-    color:grey;
-    padding: 20px;
-    width: fit-content
-    ;
 
-  
-}
 
 
 p {
@@ -72,12 +64,29 @@ p {
     font-size: medium;
 }
 
+.nav-link__secondary{
+    font-size: 12px;
+    color:grey;
+    padding: 15px;
+    width:fit-content;
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  
+}
+
+.nav-link__secondary--color{
+    font-size: 10px;
+    color:grey;
+    padding: 15px;
+    width: fit-content;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link__secondary{
     background-color:#2f669e;
-    
 
+}
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link__secondary--color{
+    background-color:;
 }
 
 .nav__secondary{

@@ -105,23 +105,6 @@ let valorIngresoMensNeto = 0;
 let valorOtroIngreso = 0;
 const valorCAT=document.getElementById('cat');
 
-
-//VALORES TABLA FINAL
-/*
-let aniosAPagar=0;
-let pesosMensualidadSegYComi=0;
-let porcentajeTasaAnual=0;
-let porcentajeCAT=0;
-let porcentajeComisionApertura=0;
-let pesosGastosOriginacion=0;
-let pesosPorcentTasaAnual=0;
-*/
-
-
-
-
-
-
 //formato a las entradas de porcentajes y entradas de pesos
 $("#porcentajeenganche").mask("00%");
 $("#porcentCofi").mask("00%");
@@ -129,17 +112,29 @@ $("#ingresoMensNeto").maskMoney({ prefix: '$' });
 $("#otroIngreso").maskMoney({ prefix: '$' });
 
 //calculos al cargar la pagina
-asignarPorcentajeEnganche();
+
+//asignarPorcentajeEnganche();
+
+valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
+
 if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
     valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-    mostrarValorEnganche();
+    
+    //mostrarValorEnganche();
+    valorEnganchePesos.innerHTML=mostrarValorPesos(valorEnganchePesos);
+
     console.log(valorEnganchePesos.value);
 
     porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
-    mostrarPorcentFinanciamiento();
+
+    //mostrarPorcentFinanciamiento();
+    porcentFinanciamiento.innerHTML = mostrarValorPorcentaje(porcentFinanciamiento);
 
     valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-    mostrarValorFinanciamiento();
+
+    //mostrarValorFinanciamiento();
+    valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
 }
 
 
@@ -151,16 +146,28 @@ valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,(mesIn
 console.log(valorCAT.value.formatted);
 
 if (valorMensualidad.value > 0) {
-    mostrarValorMensualidad();
-    mostrarValorMensualidad2();
-    MostrarTazaInteres();
+
+    //mostrarValorMensualidad();
+    //mostrarValorMensualidad2();
+
+    valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+    valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);   
+
+    //MostrarTazaInteres();
+    valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
     mostrarCat();
 
     console.log(valorMensualidad.value);
 } else {
     valorMensualidad.value = 0;
-    mostrarValorMensualidad();
-    mostrarValorMensualidad2();
+
+    //mostrarValorMensualidad();
+    //mostrarValorMensualidad2();
+
+    valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+    valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
 
     console.log(valorFinanciamiento.value);
     console.log(mesInputId.value);
@@ -171,25 +178,21 @@ if (valorMensualidad.value > 0) {
 
 //calculos al mover la barra de valor del inmueble
 montoRango.addEventListener("mouseup", function () {
-    asignarPorcentajeEnganche();
+
+    //asignarPorcentajeEnganche();
+    valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
+
 
     if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
         if (panel == true) {
 
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+           
             valorCofin.value = calcularPorcentajeEnPesos(valorPorcentCofi, montoRango.value);
-            mostrarValorCofin();
+
+            //mostrarValorCofin();
+            valorCofin.innerHTML = mostrarValorPesos(valorCofin);
+
             console.log(panel);
 
             mostrarEngancheYFinanciamiento();
@@ -197,16 +200,7 @@ montoRango.addEventListener("mouseup", function () {
 
 
         } else {
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+           
             mostrarEngancheYFinanciamiento();
         }
 
@@ -225,17 +219,30 @@ montoRango.addEventListener("mouseup", function () {
 
 
         if (valorMensualidad.value > 0) {
-            mostrarValorMensualidad();
-            mostrarValorMensualidad2();
-            MostrarTazaInteres();
+
+            //mostrarValorMensualidad();
+            //mostrarValorMensualidad2();
+
+            valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+            valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+            //MostrarTazaInteres();
+
+            valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
             mostrarCat();
             console.log(valorCAT.value.formatted);
 
             console.log(valorMensualidad.value);
         } else {
             valorMensualidad.value = 0;
-            mostrarValorMensualidad();
-            mostrarValorMensualidad2();
+
+            //mostrarValorMensualidad();
+            //mostrarValorMensualidad2();
+
+            valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+            valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
 
             console.log(valorFinanciamiento.value);
             console.log(mesInputId.value);
@@ -262,25 +269,20 @@ montoRango.addEventListener("mouseup", function () {
 
 
 montoRango.addEventListener("touchend", function () {
-    asignarPorcentajeEnganche();
+
+    //asignarPorcentajeEnganche();
+    valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
 
     if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
         if (panel == true) {
 
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+            
             valorCofin.value = calcularPorcentajeEnPesos(valorPorcentCofi, montoRango.value);
-            mostrarValorCofin();
+
+            //mostrarValorCofin();
+            valorCofin.innerHTML = mostrarValorPesos(valorCofin);
+
             console.log(panel);
 
             mostrarEngancheYFinanciamiento();
@@ -288,16 +290,8 @@ montoRango.addEventListener("touchend", function () {
 
 
         } else {
-            /*
-            valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-            mostrarValorEnganche();
-            console.log(valorEnganchePesos.value);
-            porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-            mostrarPorcentFinanciamiento();
-
-            valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
-            */
+            
+            
             mostrarEngancheYFinanciamiento();
         }
         asignarTazaInteres()
@@ -305,17 +299,30 @@ montoRango.addEventListener("touchend", function () {
         valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,mesInputId.value*12,12);
 
         if (valorMensualidad.value > 0) {
-            mostrarValorMensualidad();
-            mostrarValorMensualidad2();
-            MostrarTazaInteres();
+
+            //mostrarValorMensualidad();
+            //mostrarValorMensualidad2();
+
+            valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+            valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+            //MostrarTazaInteres();
+            valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
+
             mostrarCat();
             console.log(valorMensualidad.value);
             console.log(valorCAT.value.formatted);
 
         } else {
             valorMensualidad.value = 0;
-            mostrarValorMensualidad();
-            mostrarValorMensualidad2();
+
+            //mostrarValorMensualidad();
+            //mostrarValorMensualidad2();
+
+            valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+            valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
 
             console.log(valorFinanciamiento.value);
             console.log(mesInputId.value);
@@ -341,26 +348,23 @@ montoRango.addEventListener("touchend", function () {
 
 //calculos al mover el valor de porcentaje enganche
 porcentajeEnganche.addEventListener("blur", function () {
-    //porcentajeEnganche.addEventListener("keyup", function (event) {
-    //console.log(valorPorcentEnganche);
+    
+    //asignarPorcentajeEnganche();
+    valorPorcentEnganche = asignarPorcentaje(porcentajeEnganche);
 
-    asignarPorcentajeEnganche();
-    //asignarPorcentEngancheK(event.path[0].value);
+
+
     console.log(valorPorcentEnganche);
 
     if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
-        /*
-        valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-        mostrarValorEnganche();
-        porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-        mostrarPorcentFinanciamiento();
-        valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-        mostrarValorFinanciamiento();
-        */
+        
         valorPorcentCofi = 0;
         valorCofin.value = 0;
-        mostrarValorCofin();
+
+        //mostrarValorCofin();
+        valorCofin.innerHTML = mostrarValorPesos(valorCofin);
+
         mostrarEngancheYFinanciamiento();
 
         asignarTazaInteres();
@@ -368,15 +372,29 @@ porcentajeEnganche.addEventListener("blur", function () {
         valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,mesInputId.value*12,12);
 
         if (valorMensualidad.value > 0) {
-            mostrarValorMensualidad();
-            mostrarValorMensualidad2();
-            MostrarTazaInteres();
+
+            //mostrarValorMensualidad();
+            //mostrarValorMensualidad2();
+
+            valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+            valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+            //MostrarTazaInteres();
+            valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
+
             mostrarCat();
             console.log(valorMensualidad.value);
         } else {
             valorMensualidad.value = 0;
-            mostrarValorMensualidad();
-            mostrarValorMensualidad2();
+
+            //mostrarValorMensualidad();
+            //mostrarValorMensualidad2();
+
+            valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+            valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
 
             console.log(valorFinanciamiento.value);
             console.log(mesInputId.value);
@@ -388,8 +406,7 @@ porcentajeEnganche.addEventListener("blur", function () {
 
 
     } else {
-        //valorPorcentEnganche = 0;
-        //valorPorcentEnganche = 10;
+       
 
         valorEnganchePesos.value = 0;
         porcentFinanciamiento.value = 0;
@@ -404,10 +421,17 @@ porcentajeEnganche.addEventListener("blur", function () {
 
         valorPorcentCofi = 0;
         valorCofin.value = 0;
-        mostrarValorCofin();
+
+        //mostrarValorCofin();
+        valorCofin.innerHTML = mostrarValorPesos(valorCofin);
+
         valorMensualidad.value = 0;
-        mostrarValorMensualidad();
-        mostrarValorMensualidad2();
+
+        //mostrarValorMensualidad();
+        //mostrarValorMensualidad2();
+
+        valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+        valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
 
 
     }
@@ -419,8 +443,7 @@ porcentajeEnganche.addEventListener("blur", function () {
         panel = false;
         // console.log(panel);
     }
-    //valorPorcentCofi.style.setProperty("--value", "0%");
-    //console.log(valorPorcentCofi);
+   
 
     valorSelectDeCofi = undefined;
     console.log("valor de tipo de infonavit " + valorSelectDeCofi);
@@ -430,17 +453,29 @@ porcentajeEnganche.addEventListener("blur", function () {
 porcentCofi.addEventListener("blur", function () {
 
     if (panel == true) {
-        asignarPorcentajeCofinanciamiento();
+        //asignarPorcentajeCofinanciamiento();
+
+        valorPorcentCofi = asignarPorcentaje(porcentCofi);
 
         if ((valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) && (valorPorcentCofi <= (100 - valorPorcentEnganche) - 1 && valorPorcentCofi >= 10)) {
 
             //porcentFinanciamiento.value=calcDifEnPorcentaje(porcentFinanciamiento.value,valorPorcentCofi);
             porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
-            mostrarPorcentFinanciamiento();
+
+            //mostrarPorcentFinanciamiento();
+            porcentFinanciamiento.innerHTML = mostrarValorPorcentaje(porcentFinanciamiento);
+
+
             valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-            mostrarValorFinanciamiento();
+
+            //mostrarValorFinanciamiento();
+            valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
             valorCofin.value = calcularPorcentajeEnPesos(valorPorcentCofi, montoRango.value);
-            mostrarValorCofin();
+
+            //mostrarValorCofin();
+            valorCofin.innerHTML = mostrarValorPesos(valorCofin);
+
             console.log(valorPorcentCofi);
 
             asignarTazaInteres();
@@ -448,15 +483,28 @@ porcentCofi.addEventListener("blur", function () {
             valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,mesInputId.value*12,12);
 
             if (valorMensualidad.value > 0) {
-                mostrarValorMensualidad();
-                mostrarValorMensualidad2();
-                MostrarTazaInteres();
+
+                //mostrarValorMensualidad();
+                //mostrarValorMensualidad2();
+
+                valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+                valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+                //MostrarTazaInteres();
+                valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
                 mostrarCat();
                 console.log(valorMensualidad.value);
             } else {
                 valorMensualidad.value = 0;
-                mostrarValorMensualidad();
-                mostrarValorMensualidad2();
+
+                //mostrarValorMensualidad();
+                //mostrarValorMensualidad2();
+
+                valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+                valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
 
                 console.log(valorFinanciamiento.value);
                 console.log(mesInputId.value);
@@ -474,19 +522,14 @@ porcentCofi.addEventListener("blur", function () {
             //investigar como actualizar los valores del input para no volver a recalcular todo
             if (valorPorcentEnganche >= 10 && valorPorcentEnganche <= 80) {
 
-                /*
-                valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-                mostrarValorEnganche();
-                porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-                mostrarPorcentFinanciamiento();
-                valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-                mostrarValorFinanciamiento();
-                */
+                
                 valorPorcentCofi = 0;
                 valorCofin.value = 0;
 
                 mostrarEngancheYFinanciamiento();
-                mostrarValorCofin();
+
+                //mostrarValorCofin();
+                valorCofin.innerHTML = mostrarValorPesos(valorCofin);
 
 
 
@@ -497,14 +540,26 @@ porcentCofi.addEventListener("blur", function () {
             asignarTazaInteres();
             valorMensualidad.value = calcularMensTotal(valorFinanciamiento.value, valorTazaInteres.value, mesInputId.value);
             if (valorMensualidad.value > 0) {
-                mostrarValorMensualidad();
-                mostrarValorMensualidad2();
-                MostrarTazaInteres();
+
+                //mostrarValorMensualidad();
+                //mostrarValorMensualidad2();
+
+                valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+                valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+                //MostrarTazaInteres();
+                valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
                 console.log(valorMensualidad.value);
             } else {
                 valorMensualidad.value = 0;
-                mostrarValorMensualidad();
-                mostrarValorMensualidad2();
+
+                //mostrarValorMensualidad();
+                //mostrarValorMensualidad2();
+
+                valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+                valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
 
 
 
@@ -539,15 +594,27 @@ mesInputId.addEventListener("mouseup", function () {
     valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,mesInputId.value*12,12);
 
     if (valorMensualidad.value > 0) {
-        mostrarValorMensualidad();
-        mostrarValorMensualidad2();
-        MostrarTazaInteres();
+
+        //mostrarValorMensualidad();
+        //mostrarValorMensualidad2();
+
+        valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+        valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+        //MostrarTazaInteres();
+        valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
         mostrarCat();
         console.log(valorMensualidad.value);
     } else {
         valorMensualidad.value = 0;
-        mostrarValorMensualidad();
-        mostrarValorMensualidad2();
+
+        //mostrarValorMensualidad();
+        //mostrarValorMensualidad2();
+
+        valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+        valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
 
 
 
@@ -563,40 +630,48 @@ mesInputId.addEventListener("touchend", function () {
     valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,mesInputId.value*12,12);
 
     if (valorMensualidad.value > 0) {
-        mostrarValorMensualidad();
-        mostrarValorMensualidad2();
-        MostrarTazaInteres();
+
+        //mostrarValorMensualidad();
+        //mostrarValorMensualidad2();
+
+        valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+        valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+        //MostrarTazaInteres();
+        valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
         mostrarCat();
         console.log(valorMensualidad.value);
     } else {
         valorMensualidad.value = 0;
-        mostrarValorMensualidad();
-        mostrarValorMensualidad2();
 
+        //mostrarValorMensualidad();
+        //mostrarValorMensualidad2();
 
-
+        valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+        valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
 
     }
 
 });
 
 //inician las funciones para asignar valores de porcentaje enganche y porcentaje cofinanciamiento
+
+
+/*
 function asignarPorcentajeEnganche() {
 
 
     valorPorcentEnganche = parseInt(porcentajeEnganche.value.replace(/%/g, ""));
 }
-/*
-function asignarPorcentEngancheK(valor){
-
-    valorPorcentEnganche =parseInt(valor.replace(/%/g, "")); 
-}
 */
-
+/*
 function asignarPorcentajeCofinanciamiento() {
 
     valorPorcentCofi = parseInt(porcentCofi.value.replace(/%/g, ""));
 }
+*/
 
 //Asigna el valor de la taza de acuerdo a los años
 function asignarTazaInteres() {
@@ -609,40 +684,64 @@ function asignarTazaInteres() {
 
 }
 
+
+
 //inician las funciones para mostrar valores en pantalla
+
+
+
+/*
 function mostrarValorEnganche() {
 
     valorEnganchePesos.innerHTML = "$" + formatMoney(valorEnganchePesos.value);
 
 }
+*/
 
+/*
 function mostrarPorcentFinanciamiento() {
     porcentFinanciamiento.innerHTML = porcentFinanciamiento.value + "%";
 
 }
+*/
 
+/*
 function mostrarValorFinanciamiento() {
 
     valorFinanciamiento.innerHTML = "$" + formatMoney(valorFinanciamiento.value);
 }
+*/
 
+/*
 function mostrarValorCofin() {
     valorCofin.innerHTML = "$" + formatMoney(valorCofin.value);
 }
+*/
 
 
 
 function mostrarEngancheYFinanciamiento() {
 
     valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-    mostrarValorEnganche();
+    //mostrarValorEnganche();
+    valorEnganchePesos.innerHTML=mostrarValorPesos(valorEnganchePesos);
+
+
     porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche) - valorPorcentCofi;
-    mostrarPorcentFinanciamiento();
+
+    //mostrarPorcentFinanciamiento();
+    porcentFinanciamiento.innerHTML = mostrarValorPorcentaje(porcentFinanciamiento);
+
+
+
     valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-    mostrarValorFinanciamiento();
+    //mostrarValorFinanciamiento();
+    valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
 
 }
 
+/*
 function mostrarValorMensualidad() {
     valorMensualidad.innerHTML = "$" + formatMoneyDecimales(valorMensualidad.value);
 
@@ -651,15 +750,17 @@ function mostrarValorMensualidad() {
 function mostrarValorMensualidad2() {
     valorMensualidad2.innerHTML = "$" + formatMoneyDecimales(valorMensualidad.value);
 }
-
+*/
+/*
 function MostrarMensTotal() {
     //pesosMensualidadSegYComi.innerHTML =
 }
-
+*/
+/*
 function MostrarTazaInteres() {
     valorTazaInteres.innerHTML = valorTazaInteres.value + "%";
 }
-
+*/
 function mostrarCat(){
 
     valorCAT.innerHTML= valorCAT.value.formatted + "%";
@@ -681,37 +782,7 @@ function calcDifEnPorcentaje(totalPorcentaje, porcentARestar) {
 
 }
 
-/*
-function calcularMensualidad(total, anios) {
-    let result = 0;
-    result = total / (anios * 12);
-    return result;
-}
-*/
-/*
-let aniosAPagar=0;
-let pesosMensualidadSegYComi=0;
-let porcentajeTasaAnual=0;
-let porcentajeCAT=0;
-let porcentajeComisionApertura=0;
-let pesosGastosOriginacion=0;
-let pesosPorcentTasaAnual=0;
-*/
 
-/*
-function calcularMensTotal(pPorcentTasaAnual,pAniosAPagar){
-    if(pPorcentTasaAnual>0){
-        porcentajeTasaAnual=pPorcentTasaAnual;
-        pesosPorcentTasaAnual= calcularPorcentajeEnPesos(porcentajeTasaAnual,valorFinanciamiento.value)
-        if(pAniosAPagar>0){
-            aniosAPagar = pAniosAPagar;
-        }
-        
-        pesosMensualidadSegYComi = (valorFinanciamiento.value+(pesosPorcentTasaAnual*aniosAPagar))/(aniosAPagar*12);
-    }
-    console.log(pesosMensualidadSegYComi);
-}
-*/
 
 function calcularMensTotal(cantidadPesos, porcentTaza, tiempoAnios) {
     let iMensual = 0;

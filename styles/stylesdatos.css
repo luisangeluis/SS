@@ -323,11 +323,20 @@ main {
     width: 100%;
 }
 
+
+
+.btn-slide-invert{
+    text-align: center;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #191970;
+}
+/*
 #btnexpandirresumen {
     text-align: center;
     margin: 0;
 }
-
+*/
 hr {
     height: .5px;
     background-color: silver;
@@ -466,19 +475,32 @@ form .engancheform .mensualidadform .ingresosform {
     /*background-color: sandybrown;*/
 }
 
+.btn-slide{
+    color: #191970;
+    font-size: 1.2rem;
+}
+
+
+
 .item-boton {
     color: #191970;
+    font-size: 1.2rem;
+
     /*width: 150px;*/
+    /*display:none;*/
 }
 
 .item-contenido {
-    overflow: hidden;
-    max-height: 0px;
+    
+    /*overflow: hidden;*/
+    max-height: 400px;
+    display:none;
 }
-
+/*
 .activo + .item-contenido {
     max-height: 500px;
 }
+*/
 
 .colorNegro {
     color: black;
@@ -486,7 +508,15 @@ form .engancheform .mensualidadform .ingresosform {
 
 /*clases para dar color a los botones*/
 
-.btnMancomunado, .btnActividad {
+.form_botonColor{
+    text-align: center;
+    font-family: 'proxima_nova_scosfregular', sans-serif;
+    width: 150px;
+    min-height: 3rem;
+}
+
+.btnMancomunado, .btnActividad,
+.btnSexo,.btnEdoCivil,.btnVivienda {
     /*opacity: 1;*/
     text-align: center;
     font-family: 'proxima_nova_scosfregular', sans-serif;
@@ -546,11 +576,6 @@ input {
     padding-right: 1rem;
     padding-left: 1rem;
 }
-
-.item-boton {
-    /*font-weight: bold;*/
-    font-size: 1.2rem;
-    }
 
 #porcentajeenganche, #porcentFinanciamiento, #porcentCofi {
     font-family: 'latoregular', sans-serif;
@@ -624,7 +649,7 @@ input {
     padding: 0 .5rem;
 }
 
-#valorbrutomens, #valorbrutomens2, #conceptobrutomens2, #valorbrutomens3, #conceptobrutomens3 {
+#valorbrutomens, #otroIngresoDatos1, #concepOtroIngresoDatos1, #otroIngreso_2_Datos1, #concepOtroIngreso_2_Datos1 {
     font-family: 'latoregular', sans-serif;
     box-sizing: border-box;
     text-align: right;
@@ -1193,11 +1218,22 @@ footer {
         margin-bottom: 0;
     }
 
+    
+    
+    /*
+    .btn-slide-invert{
+        text-align: center;
+        margin: 0;
+        color:#191970;
+        font-size: 1.2rem;
+    }
+    */
+    /*
     #btnexpandirresumen {
         text-align: right;
         margin: 0;
     }
-
+    */
     .Titd {
         color: black;
         font-weight: bolder;
@@ -1280,6 +1316,7 @@ footer {
     .bigblock {
         padding-left: 3rem;
     }
+
 }
 
 
@@ -1290,19 +1327,34 @@ footer {
                 padding-left: 7rem;
             }
 
+            /*
+            .btn-slide{
+                color: #191970;
+                font-size: 1.2rem;
+            }
+            */
             .item-boton {
+                /*
                 color: #191970;
                 width: 150px;
+                display:none;
+                */
             }
-
+            
             .item-contenido {
+                /*
                 overflow: hidden;
                 max-height: 0px;
+                */
+                
             }
-
+            /*
             .activo + .item-contenido {
                 max-height: 500px;
             }
+            */
+
+            
         }
 
         /*  color: #999999;  strong Gray*/

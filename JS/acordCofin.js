@@ -1,63 +1,6 @@
 
 
-/*
-let btnItemCofi = document.querySelectorAll(".item-boton");
-let panel = false;
-let btn;
-  
-  for(let i=0; i<btnItemCofi.length; i++){
-  
-    btnItemCofi[i].addEventListener("click", function(e){
-  
-      btn = e.target;
-  
-      if(btn.className=="item-boton activo"){
-  
-        btn.classList.remove("activo");
-        panel = false;
 
-        valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-        mostrarValorEnganche();
-
-        porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-        mostrarPorcentFinanciamiento();
-
-        valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-        mostrarValorFinanciamiento();
-        //console.log(valorPorcentEnganche);
-
-        valorPorcentCofi=0;
-        valorCofin.value=0;
-        mostrarValorCofin();
-        
-        valorMensualidad.value = calcularMensualidad(valorFinanciamiento.value,mesInputId.value);
-        if(valorMensualidad.value>0){
-          mostrarValorMensualidad();
-          console.log(valorMensualidad.value);
-        }else{
-          valorMensualidad.value=0;
-          mostrarValorMensualidad();
-          console.log(valorFinanciamiento.value);
-          console.log(mesInputId.value);
-          console.log(valorMensualidad.value);
-
-        
-        }
-        console.log(panel);
-      }else{
-        panel = true;
-
-        btn.classList.add("activo");
-        console.log(panel);
-
-      }
-  
-  
-    });
-  
-  }
-
-*/
 
 const btnItemCofi= document.getElementById('botonCofi');
 let panel = false;
@@ -67,13 +10,7 @@ const btnOtroIngreso = document.getElementById('btnOtroIngreso');
 let panelOtroIngreso = false;
 
 const inst = document.getElementById('inst');
-/*
-if(panel==true){
 
-  inst = document.getElementById('inst');
-  console.log("valoir de tipo de infonavit "+inst.value);
-}
-*/
 
 //ANIMACION DE LA OPCION COFINANCIAMIENTO
 btnItemCofi.addEventListener("click", function () {
@@ -85,19 +22,31 @@ btnItemCofi.addEventListener("click", function () {
 
     
     valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-    mostrarValorEnganche();
+
+    //mostrarValorEnganche();
+    valorEnganchePesos.innerHTML=mostrarValorPesos(valorEnganchePesos);
+
 
     porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-    mostrarPorcentFinanciamiento();
+
+    //mostrarPorcentFinanciamiento();
+    porcentFinanciamiento.innerHTML = mostrarValorPorcentaje(porcentFinanciamiento);
+
 
     valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-    mostrarValorFinanciamiento();
+
+    //mostrarValorFinanciamiento();
+    valorFinanciamiento.innerHTML = mostrarValorPesos(valorFinanciamiento);
+
     //console.log(valorPorcentEnganche);
     
     valorPorcentCofi = 0;
     valorCofin.value = 0;
     //mostrarEngancheYFinanciamiento();
-    mostrarValorCofin();
+
+    //mostrarValorCofin();
+    valorCofin.innerHTML = mostrarValorPesos(valorCofin);
+
 
     
     asignarTazaInteres();
@@ -105,16 +54,29 @@ btnItemCofi.addEventListener("click", function () {
     valorCAT.value=CAT.get(valorFinanciamiento.value,0,valorMensualidad.value,mesInputId.value*12,12);
 
     if (valorMensualidad.value > 0) {
-      mostrarValorMensualidad();
-      mostrarValorMensualidad2();
-      MostrarTazaInteres();
+
+      //mostrarValorMensualidad();
+      //mostrarValorMensualidad2();
+
+      valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+      valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
+      //MostrarTazaInteres();
+      valorTazaInteres.innerHTML = mostrarValorPorcentaje(valorTazaInteres);
+
+
       mostrarCat();
 
       console.log(valorMensualidad.value);
     } else {
       valorMensualidad.value = 0;
-      mostrarValorMensualidad();
-      mostrarValorMensualidad2
+
+      //mostrarValorMensualidad();
+      //mostrarValorMensualidad2
+
+      valorMensualidad.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+      valorMensualidad2.innerHTML = mostrarValorPesosConDecimales(valorMensualidad);
+
       console.log(valorFinanciamiento.value);
       console.log(mesInputId.value);
       console.log(valorMensualidad.value);
@@ -149,15 +111,7 @@ btnOtroIngreso.addEventListener("click",function(){
     panelOtroIngreso = false;
 
     
-    //valorEnganchePesos.value = calcularPorcentajeEnPesos(valorPorcentEnganche, montoRango.value);
-    //mostrarValorEnganche();
-
-    //porcentFinanciamiento.value = calcDifEnPorcentaje(100, valorPorcentEnganche);
-    //mostrarPorcentFinanciamiento();
-
-    //valorFinanciamiento.value = calcularPorcentajeEnPesos(porcentFinanciamiento.value, montoRango.value);
-    //mostrarValorFinanciamiento();
-    //console.log(valorPorcentEnganche);
+    
     valorOtroIngreso=0;
     ingresosTotales=0;
     calcularIngresosTotales();

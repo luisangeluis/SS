@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simulador Credito Hipotecario</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS only -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="fonts/webfontkit-20200730-220600/stylesheet.css" type="text/css" />
+
+    <!-- <link href="styles/stylesindex.css" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/mainstyles.css">
+    <!--STYLES DATOS-->
+    <link rel="stylesheet" href="/SS/styles/hojasDatosStyles.css">
+    
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header border-bottom mb-2">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./images/logo.png" class="navbar-logo ms-2" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav d-flex ">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Simulador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pre-Aprobador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Agenda tu Cita</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-outline-secondary ms-2" href="./inicioDeSesion.html"
+                                    role="button">Iniciar Sesi&oacute;n </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!--<hr>-->
+
+        <div class="container-fluid page-content">
+
+            <div>
+                <h1 class="title text-secondary p-2 bb-page-title"> SIMULADOR DE <span class="text-dark">CR&Eacute;DITO
+                        HIPOTECARIO.</span>
+                </h1>
+            </div>
+
+            <div>
+                <div class="tab-content " id="pills-tabContent">
+                    <div class="nav__secondary tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <!-- Contenido  -->
+                        <div class="container">
+                            <div class="row ">
+                                <!--Seccion Izquierda-->
+                                <section class="col-12 col-lg-6 mb-1 mb-md-5 gx-5 order-3 order-lg-1">
+                                    <h2 class="subtitle text-secondary">COMPROBACIÓN CON BURÓ DE CREDITO</h2>
+
+                                    <form name="registrationForm" class="my-1">
+
+                                        <!--row 1 en columna izquierda-->
+
+                                        <div class="row mb-3">
+                                            <div class="col-lg-12 ">
+                                                <label class="bb-input-label">
+                                                    <span class="bullet "></span>
+                                                    RFC con Homoclave
+                                                </label>
+
+                                                <div class="mb-3">
+                                                    <input type="text" value="" class="input_information"
+                                                        style="width: 75%;" placeholder="RHB4911108W9" id=rfc-homoclave>
+                                                </div>
+                                                
+                                            </div>
+
+
+                                        </div>
+                                        <!--row 2 en columna izquierda-->
+
+                                        <div class="row ">
+                                            <P class="text-secondary px-1">
+                                                Autorizo se lleven a cabo investigaciones sobre mi comportamiento e historial crediticio, así como de cualquier otra información de naturaleza análoga en las Sociedades de Información Crediticia que estime conveniente de acuerdo con los artículos 13 y 28 de la Ley para Regular las Sociedades de Información Crediticia. Igualmente, declaro que conozco la naturaleza y el alcance de la información que se solicitará. Asimismo, autorizo que mi Reporte de Crédito Especial incluya los resultados de Mi Score.
+
+                                            </P>
+                                            
+
+                                        </div>
+                                        <div class="row ">
+                                            <div class="form-check  text-center">
+                                                <label class="form-check-label " for="check-buro">
+                                                <input class="form-check-input" type="checkbox" value="" id="check-buro">
+
+                                                  Autorizo y Acepto
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+
+                                        <!--Botones confirmar y regresar-->
+                                        <div class="row mt-5 ">
+
+                                            <div class="col-lg-12 ">
+                                                <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto mb-3">
+
+                                                    <a class="btn btn-light text-secondary shadow-sm rounded text-dark"
+                                                        href="/SS/datos5A.html">
+                                                        Regresar
+                                                    </a>
+                                                </div>
+                                                <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
+                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos7A.html">
+                                                        Confirmar
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+
+                                </section>
+                                <!-- Seccion Derecha -->
+
+                                <section class="col-12 col-lg-6  gx-5 order-1 order-lg-2 d-lg-block mb-lg-5"
+                                    id="detalles_credito">
+
+                                    <div class="card text-center shadow-sm p-3  bg-white rounded py-0">
+
+                                        <iframe src="plantillas/panel_detalle-credito.html"
+                                            class="iframe_detalles-credito" id="iframe_detalles-credito"
+                                            sandbox=""></iframe>
+
+                                        
+                                    </div>
+
+                                </section>
+                                <!--Boton deslizar detalle de credito-->
+                                <div class="btn-slide-invert  mb-5 justify-content-center border-bottom order-2 text-center"
+                                    id="btn-detalles">
+
+                                    <div class="">
+
+                                        <i class="fas fa-angle-down mx-auto fs-1">
+
+                                        </i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="container-fluid footer mt-5">
+                    <div>
+                        <span>Copyright&copy; 2020 - go4it - Todos los derechos reservados</span>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT JQUERY-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
+
+    <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos6A.js"></SCRipt>
+
+    <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</body>
+
+</html>

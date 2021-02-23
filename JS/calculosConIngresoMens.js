@@ -5,21 +5,13 @@ let ingresosRequeridos=0;
 
 preApruebaHipoteca.disabled = true;
 
-
-
 ingresoMensNeto.addEventListener("blur", function (e) {
 
     valorIngresoMensNeto = e.path[0].value;
     valorIngresoMensNeto = parseFloat(valorIngresoMensNeto.replace(/\$|,/g, ""));
     console.log(valorIngresoMensNeto);
 
-    /*    
-    if(panelOtroIngreso==true){
-        ingresosTotales = valorIngresoMensNeto +valorOtroIngreso;
-    }else{
-        ingresosTotales = valorIngresoMensNeto;
-    }
-    */
+    
     ingresosRequeridos = valorMensualidad.value*3;
     if (valorIngresoMensNeto > 0) {
         calcularIngresosTotales();
@@ -50,12 +42,7 @@ ingresoMensNeto.addEventListener("blur", function (e) {
 
     }
 
-    /*
-    if(ingresosTotales<(valorMensualidad.value*3)){
-
-        alert("faltan ingresos");
-    }
-    */
+    
 
 });
 
@@ -181,15 +168,7 @@ return result;
 
 
 
-/*
-ingresosTotales=valorIngresoMensNeto+valorOtrosIngresos;
 
-if(ingresosTotales>=(valorMensualidad.value*3)){
-
-    preApruebaHipoteca.disabled=false;
-
-}
-*/
 
 
 

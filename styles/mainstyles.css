@@ -86,7 +86,6 @@ p {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link__secondary--color{
-    background-color:;
 }
 
 .nav__secondary{
@@ -299,4 +298,14 @@ input[type=range] {
 }
 .bb-input-label--light {
     color: #60a1e7;
+}
+
+.nav-link {
+    max-width: 150px;
+    align-items: center;
+    display: flex;
+}
+
+.nav-link.active.nuevo-color {
+    background-color: #60a1e7;
 }

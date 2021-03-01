@@ -34,6 +34,18 @@ function expandirPanelInvert(pElemento,pTiempo){
     $(pElemento).prev().slideToggle(pTiempo);
 
 }
+//HABILITAR Y DESHABILITAR ENLACES
+function habilitarEnlace(pElemento) {
+    $(pElemento).removeClass('disabled');
+    $(pElemento).attr('aria-disabled', false);
+    $(pElemento).attr('tabindex', 0);
+}
+
+function deshabilitarEnlace(pElemento) {
+    $(pElemento).addClass('disabled');
+    $(pElemento).attr('aria-disabled', true);
+    $(pElemento).attr('tabindex', -1);
+}
 
 
 

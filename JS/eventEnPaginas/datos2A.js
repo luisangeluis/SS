@@ -1,5 +1,16 @@
 $(document).ready(function(){
+
     const btnSlideInvert=document.querySelectorAll('.btn-slide-invert');
+    //CAMPO EMAIL
+    const email = document.querySelector('#email');
+    //BTN CONFIRMAR
+    const confirmar = document.querySelector('#confirmar');
+    //INPUT FECHA
+    const fechaNacimiento =document.querySelector('#fecha-nacimiento');
+    //INPUT NOMBRE
+    const nombre = document.querySelector('#nombre');
+    //INPUT APELLIDO PATERNO
+    const paterno = document.querySelector('#apellido-paterno'); 
 
     //AJUSTAR FOOTER HASTA ABAJO
     ajustarFooter();
@@ -19,4 +30,63 @@ $(document).ready(function(){
             }
         });
     }
+    //FUNCION PARA VALIDAR CORREO
+    $(email).on({
+        focusout:()=>{
+            //alert("hola");
+
+            if(!validarCorreo(email.value)){
+                formatoAlerta("correo no valido");
+                email.value="";
+            }
+        }
+    });
+    //VALIDA CAMPO NOMBRE
+    $(nombre).on({
+        focusout:()=>{
+            //alert("hola");
+
+            if(nombre.value==""){
+                formatoAlerta("Nombre no valido");
+                nombre.value="";
+            }
+        }
+    });
+    //VALIDA CAMPO APELLIDO PATERNO
+    $(paterno).on({
+        focusout:()=>{
+            //alert("hola");
+
+            if(paterno.value==""){
+                formatoAlerta("Apellido paterno no valido");
+                paterno.value="";
+            }
+        }
+    });
+
+    //VALIDAD NOMBRE APELLIDO Y CORREO
+    $(confirmar).on({
+        click:(e)=>{
+            if(nombre.value==""){
+                e.preventDefault();
+                formatoAlerta("Nombre no valido");
+
+            }
+
+            if(paterno.value==""){
+                e.preventDefault();
+
+                formatoAlerta("Apellido paterno no valido");
+
+            }
+            if(email.value==""){
+                e.preventDefault();
+
+                formatoAlerta("correo no valido");
+
+            }
+        }
+    });
+
+
 });

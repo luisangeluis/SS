@@ -43,23 +43,20 @@ $(document).ready(function () {
         })
 
     }
-    //console.log(btnConfirmar.value)
-    
-    
-   $(btnConfirmar).on({
-       click:(e)=>{
+    //BOTON CONFIRMAR
+
+    $(btnConfirmar).on({
+        click: (e) => {
             //e.preventDefault();
             //console.log(ingresoBruto.value);
-
-           if(ingresoBruto.value=="$" || asignarValorPesos(ingresoBruto)<=0 || ingresoBruto.value==""){
+            if (ingresoBruto.value == "$" || asignarValorPesos(ingresoBruto) <= 0 || ingresoBruto.value == "") {
                 e.preventDefault();
                 console.log(ingresoBruto.value);
+                formatoAlerta('INGRESA VALOR BRUTO');
+            }
 
-           }
-           
-           
-       }
-   });
+        }
+    });
 
 
 

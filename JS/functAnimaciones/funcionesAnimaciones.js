@@ -46,6 +46,18 @@ function deshabilitarEnlace(pElemento) {
     $(pElemento).attr('aria-disabled', true);
     $(pElemento).attr('tabindex', -1);
 }
+//ALERTA
 
+const formatoAlerta=(pMensaje)=>{
+    Swal.fire({
+        width:"55%",
+        text:pMensaje,
+        //html:'<h5 class="card-title text-dark">Ingrese el campo de valor bruto</5>',
+        icon:'warning',
+        confirmButtonColor:'#3d556f',
+        confirmButtonText:'Aceptar',
+        //position:'center',
+    })
+}
 
 

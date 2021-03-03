@@ -77,3 +77,9 @@ const mostrarValorPorcentaje=(pValorAMostrar)=>{
 	return result;
 
 }
+
+const asignarValorPesos=(pValor)=>{
+	let result=0;
+	result = parseFloat(pValor.value.replace(/\$/g,""));
+	return result;
+}

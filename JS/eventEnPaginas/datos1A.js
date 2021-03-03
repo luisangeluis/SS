@@ -6,9 +6,14 @@ $(document).ready(function () {
     const btnSlideInvert = document.querySelectorAll('.btn-slide-invert');
     /*FORMATO MONEDA A LOS INPUTS*/
     const formatoMoneda = document.querySelectorAll('.formatoMoneda');
+    //INPUT INGRESO BRUTO
+    const ingresoBruto = document.querySelector('#ingreso-bruto');
+    //BTN CONFIRMAR
+    const btnConfirmar = document.querySelector('#btn-confirmar');
 
     //AJUSTAR FOOTER HASTA ABAJO
     ajustarFooter();
+
     //EVENTO PARA AJUSTAR FOOTER
     $(window).on({
         resize: function () {
@@ -38,6 +43,20 @@ $(document).ready(function () {
         })
 
     }
+    //BOTON CONFIRMAR
+
+    $(btnConfirmar).on({
+        click: (e) => {
+            //e.preventDefault();
+            //console.log(ingresoBruto.value);
+            if (ingresoBruto.value == "$" || asignarValorPesos(ingresoBruto) <= 0 || ingresoBruto.value == "") {
+                e.preventDefault();
+                console.log(ingresoBruto.value);
+                formatoAlerta('INGRESA VALOR BRUTO');
+            }
+
+        }
+    });
 
 
 

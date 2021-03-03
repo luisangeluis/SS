@@ -67,23 +67,35 @@ $(document).ready(function(){
     //VALIDAD NOMBRE APELLIDO Y CORREO
     $(confirmar).on({
         click:(e)=>{
-            if(nombre.value==""){
+            let mensajesError = [];
+
+            if(nombre.value=="" ||nombre.value==null){
                 e.preventDefault();
-                formatoAlerta("Nombre no valido");
+                mensajesError.push('Ingresa tu nombre');
 
             }
 
-            if(paterno.value==""){
+            if(paterno.value==""|| paterno.value==null){
                 e.preventDefault();
 
-                formatoAlerta("Apellido paterno no valido");
+                mensajesError.push('Ingresa tu apellido paterno');
 
             }
-            if(email.value==""){
+            if(email.value=="" || email.value==null){
                 e.preventDefault();
 
-                formatoAlerta("correo no valido");
+                mensajesError.push('Ingresa tu correo electronico');
 
+            }
+            if(fechaNacimiento.value=="" || fechaNacimiento.value==null){
+                e.preventDefault();
+
+                mensajesError.push('Ingresa tu fecha de nacimiento');
+
+            }
+            //ACUMULA LOS MENSAJES DE ERROR
+            if(mensajesError.length>0){
+                formatoAlerta(mensajesError.join(' - '));
             }
         }
     });

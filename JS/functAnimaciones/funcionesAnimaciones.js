@@ -1,7 +1,7 @@
 //FUNCION AJUSTAR FOOTER HASTA ABAJO
 function ajustarFooter() {
     height = screen.height;
-    if (height >= 930) {
+    if (height > 1023) {
         $('.footer').addClass('position-absolute');
     } else {
         $('.footer').removeClass('position-absolute');
@@ -47,7 +47,6 @@ function deshabilitarEnlace(pElemento) {
     $(pElemento).attr('tabindex', -1);
 }
 //ALERTA
-
 const formatoAlerta=(pMensaje)=>{
     Swal.fire({
         width:"55%",
@@ -59,5 +58,8 @@ const formatoAlerta=(pMensaje)=>{
         //position:'center',
     })
 }
+
+
+
 
 

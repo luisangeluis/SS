@@ -1,5 +1,9 @@
 $(document).ready(function(){
     const btnSlideInvert=document.querySelectorAll('.btn-slide-invert');
+    //CHECK DE BURO
+    const checkBuro = document.querySelector('#check-buro')
+    //BOTON CONFIRMAR
+    const confirmarBuro =document.querySelector('#confirmar-buro');
 
     //AJUSTAR FOOTER HASTA ABAJO
     ajustarFooter();
@@ -19,4 +23,16 @@ $(document).ready(function(){
             }
         });
     }
+
+    $(checkBuro).on({
+        click: function () {
+            
+           if(confirmarBuro.classList.contains('disabled')){
+                habilitarEnlace(confirmarBuro);
+           }else{
+            deshabilitarEnlace($(confirmarBuro));  
+           }
+
+        }
+    });
 });

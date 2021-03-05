@@ -40,11 +40,11 @@ $(document).ready(function(){
 
             if(calle.value=="" || calle.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa tu calle');
+                mensajesError.push('Ingresa tu Calle');
             }
             if(exterior.value=="" || calle.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa tu numero exterior');
+                mensajesError.push('Ingresa tu Numero Exterior');
             }
             /*
             if(interior.value=="" || calle.value==null){
@@ -54,27 +54,28 @@ $(document).ready(function(){
             */
             if(CP.value=="" || calle.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa tu codigo postal');
+                mensajesError.push('Ingresa tu Codigo Postal');
             }
             if(colonia.value=="" || calle.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa colonia');
+                mensajesError.push('Ingresa Colonia');
             }
             if(municipio.value=="" || calle.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa municipio');
+                mensajesError.push('Ingresa Municipio');
             }
             if(ciudad.value=="" || calle.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa municipio');
+                mensajesError.push('Ingresa tu Ciudad');
             }
             if(estado.value=="" || calle.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa estado');
+                mensajesError.push('Ingresa tu Estado');
             }
             //ACUMULA LOS MENSAJES DE ERROR
             if(mensajesError.length>0){
-                formatoAlerta(mensajesError.join(', '));
+                //formatoAlerta(mensajesError.join(', '));
+                alerta(mensajesError.join(' - '));
             }
         }
     });

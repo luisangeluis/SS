@@ -36,7 +36,8 @@ $(document).ready(function(){
             //alert("hola");
 
             if(!validarCorreo(email.value)){
-                formatoAlerta("correo no valido");
+                //formatoAlerta("correo no valido");
+                alerta('Correo no valido');
                 email.value="";
             }
         }
@@ -48,6 +49,8 @@ $(document).ready(function(){
 
             if(nombre.value==""){
                 formatoAlerta("Nombre no valido");
+                alerta('Nombre no valido');
+
                 nombre.value="";
             }
         }
@@ -58,7 +61,8 @@ $(document).ready(function(){
             //alert("hola");
 
             if(paterno.value==""){
-                formatoAlerta("Apellido paterno no valido");
+                //formatoAlerta("Apellido paterno no valido");
+                alerta('Apellido paterno no valido');
                 paterno.value="";
             }
         }
@@ -71,31 +75,32 @@ $(document).ready(function(){
 
             if(nombre.value=="" ||nombre.value==null){
                 e.preventDefault();
-                mensajesError.push('Ingresa tu nombre');
+                mensajesError.push('Ingresa tu Nombre');
 
             }
 
             if(paterno.value==""|| paterno.value==null){
                 e.preventDefault();
 
-                mensajesError.push('Ingresa tu apellido paterno');
+                mensajesError.push('Ingresa tu Apellido Paterno');
 
             }
             if(email.value=="" || email.value==null){
                 e.preventDefault();
 
-                mensajesError.push('Ingresa tu correo electronico');
+                mensajesError.push('Ingresa tu Correo Electronico');
 
             }
             if(fechaNacimiento.value=="" || fechaNacimiento.value==null){
                 e.preventDefault();
 
-                mensajesError.push('Ingresa tu fecha de nacimiento');
+                mensajesError.push('Ingresa tu Fecha de Nacimiento');
 
             }
             //ACUMULA LOS MENSAJES DE ERROR
             if(mensajesError.length>0){
-                formatoAlerta(mensajesError.join(' - '));
+                //formatoAlerta(mensajesError.join(' - '));
+                alerta(mensajesError.join(' - '));
             }
         }
     });

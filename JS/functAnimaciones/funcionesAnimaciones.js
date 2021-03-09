@@ -59,6 +59,21 @@ const formatoAlerta=(pMensaje)=>{
     })
 }
 
+const alerta=(pMensaje)=>{
+    Swal.fire({
+        //width:"55%",
+        //text:pMensaje,
+        html:`<div class="row align-text-center justify-content-center">`+
+                `<div class="col-12 col-lg-12"> ${pMensaje}`+
+                `</div>`+
+              `</div>`,  
+        icon:'warning',
+        confirmButtonColor:'#3d556f',
+        confirmButtonText:'Aceptar',
+        //position:'center',
+    })
+}
+
 
 
 

@@ -52,7 +52,8 @@ $(document).ready(function () {
             if (ingresoBruto.value == "$" || asignarValorPesos(ingresoBruto) <= 0 || ingresoBruto.value == "") {
                 e.preventDefault();
                 console.log(ingresoBruto.value);
-                formatoAlerta('INGRESA VALOR BRUTO');
+                //formatoAlerta('INGRESA VALOR BRUTO');
+                alerta('Ingresa valor bruto');
             }
 
         }

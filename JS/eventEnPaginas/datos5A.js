@@ -45,7 +45,8 @@ $(document).ready(function(){
                 mensajesError.push('Ingresa tu CURP');
             }
             if(mensajesError.length>0){
-                formatoAlerta(mensajesError.join(', '));
+                //formatoAlerta(mensajesError.join(', '));
+                alerta(mensajesError.join(' - '));
             }
         }
     });

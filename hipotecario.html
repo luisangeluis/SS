@@ -294,7 +294,8 @@
                                   valorFinanciamiento.value = valorCasa.value - rangeEngancheFinanciamiento.value;
                                   porcentajeFinanciamiento.value=((valorFinanciamiento.value * 100) /valorCasa.value ) + '%';
                                   valorCofinanciamiento.value= valorCasa.value-valorEnganche.value-valorFinanciamiento.value;
-                                  porcentajeCofinanciamiento.value=((valorCofinanciamiento.value * 100) /valorCasa.value ) + '%';
+                                  porcentajeCofinanciamiento.value= 
+                                  valorCofinanciamiento.value= ((porcentajeCofinanciamiento.value * valorFinanciamiento)/100)
                                   
                                 "
                               >

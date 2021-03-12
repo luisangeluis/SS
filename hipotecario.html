@@ -248,15 +248,40 @@
                                         </input>
                                       </form>
                                     </div>
-                                    <div class="mt-3">
+                                    <div class="multicollapse mt-3">
                                       <h5>Superficie Construida</h5>
                                       <form action="Superficie" class="d-flex justify-content-center">
                                         <input class="form-control me-2" type="search" placeholder="m2"
                                           style="width: 30%;">
                                       </form>
                                       <p>La superficie minima son 40m2</p>
+                                      <button type="button" data-bs-toggle="collapse" 
+                                      data-bs-target="#recomendacionBoton"
+                                       aria-expanded="false"
+                                        aria-controls="multiCollapseExample2"
+                                        class="btn btn-secondary"
+                                         style="width: 100%;" >
+                                        Obtener Recomendacion</button>
                                     </div>
-
+                                    <div class="collapse multi-collapse mt-3" id="recomendacionBoton" >
+                                      <h5>De acuerdo a la informaci&oacute;n que nos proporcionaste t sugerimos elegir entre los siguientes valores</h5>
+                                      <table class="table  table-hover">
+                                        <tbody >
+                                          <tr>
+                                            <td scope="row">1</td>
+                                          </tr>
+                                          <tr>
+                                            <td scope="row">2</th>
+                                          </tr>
+                                          <tr>
+                                            <td scope="row">3</th>
+                                          </tr>
+                                          <tr>
+                                            <td scope="row">4</th>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
                                   </div>
                                 </div>
                                 <div class="modal-footer ">
@@ -835,9 +860,11 @@
                                           <input class="form-control me-2" type="search" placeholder="m2"
                                             style="width: 30%;">
                                         </form>
+                                        
                                         <p>La superficie minima son 40m2</p>
+                                        
                                       </div>
-  
+
                                     </div>
                                   </div>
                                   <div class="modal-footer ">

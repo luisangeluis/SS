@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="./styles/mainstyles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
 
 </head>
 
@@ -71,8 +74,7 @@
               <div class="col">
                 <div class="card bs-card shadow-sm p-3 mb-5 bg-white rounded">
                   <img src="images/comprar_casa.svg" class="img-fluid bs-card__image" alt="imagen comprar casa">
-                  <div class="card-body">
-                    <h6 class="stretched-link">Comprar Casa</h6>
+                  <div class="card-body"> 
                     <a href="./hipotecario-movil.html" class="stretched-link bs-card__link">COMPRAR
                       UNA
                       CASA</a>
@@ -138,13 +140,13 @@
             <button class="nav-link active nav-link__secondary border-end" id="pills-home-tab" data-bs-toggle="pill"
               data-bs-target="#comprar-casa" type="button" role="tab" aria-controls="pills-home"
               aria-selected="true">COMPRAR UNA CASA</button>
-            <button class="nav-link nav-link__secondary border-end" id="pills-profile-tab" data-bs-toggle="pill"
+            <button class="nav-link nav-link__secondary border-end" id="pills-land-tab" data-bs-toggle="pill"
               data-bs-target="#elegir-terreno" type="button" role="tab" aria-controls="pills-terreno"
               aria-selected="false">ELEGIR UN TERRENO</button>
-            <button class="nav-link nav-link__secondary border-end" id="pills-contact-tab" data-bs-toggle="pill"
+            <button class="nav-link nav-link__secondary border-end" id="pills-liquidity-tab" data-bs-toggle="pill"
               data-bs-target="#obtener-liquidez" type="button" role="tab" aria-controls="pills-liquidez"
               aria-selected="false">OBTENER LIQUIDEZ</button>
-            <button class="nav-link nav-link__secondary border-end" id="pills-contact-tab" data-bs-toggle="pill"
+            <button class="nav-link nav-link__secondary border-end" id="pills-refinance-tab" data-bs-toggle="pill"
               data-bs-target="#refinanciar" type="button" role="tab" aria-controls="pills-refinanciar"
               aria-selected="false">REFINANCIAR</button>
           </div>
@@ -165,17 +167,18 @@
                       DE LA PROPIEDAD</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link nav-link__secondary--color border-end nuevo-color" id="pills-profile-tab"
+                    <button class="nav-link nav-link__secondary--color border-end nuevo-color" id="pills-monthl-tab"
                       data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
                       aria-controls="pills-profile" aria-selected="false">MENSUALIDAD</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <button class="nav-link nav-link__secondary--color border-end nuevo-color" id="pills-contact-tab"
+                    <button class="nav-link nav-link__secondary--color border-end nuevo-color" id="pills-incoming-tab"
                       data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
                       aria-controls="pills-contact" aria-selected="false">INGRESO MENSUAL</button>
                   </li>
                 </ul>
               </div>
+
               <!-- Valor de la Propiedad -->
               <div class="tab-content ">
 
@@ -190,12 +193,11 @@
                         <form name="registrationForm" class="mb-3">
                           <div class="row align-items-center d-flex justify-content-center">
                             <div class="formatoacifra col-lg-5  border border-1">
-                              <output name="prOutputName" id="prOutputId">
-                                <span class="currency-usd ">2,500,000</span>
-                              </output>
+                              <input type="text" id="valorCasa" value="2500000">
 
                             </div>
-                            <div class="justify-content-center p-2">
+                            <div class="justify-content-center p-2 d-flex">
+                              <p class="me-3">No conoces el valor?</p>
                               <p><a type="button" class="text-decoration-none" data-bs-toggle="modal"
                                   data-bs-target="#exampleModal">
                                   Valuar Propiedad
@@ -241,18 +243,45 @@
                                         postal&#63;</h5>
                                       <form action="CP" class="col-md-3 ms-auto ">
                                         <input class="form-control me-2  " type="search" placeholder="C.P."
-                                          style="width: 30%;"> </input>
+                                          style="width: 30%;"
+                                          href="https://mexico-zip-codes.p.rapidapi.com/buscar/?codigo_postal=646">
+                                        </input>
                                       </form>
                                     </div>
-                                    <div class="mt-3">
+                                    <div class="multicollapse mt-3">
                                       <h5>Superficie Construida</h5>
                                       <form action="Superficie" class="d-flex justify-content-center">
                                         <input class="form-control me-2" type="search" placeholder="m2"
                                           style="width: 30%;">
                                       </form>
                                       <p>La superficie minima son 40m2</p>
+                                      <button type="button" data-bs-toggle="collapse" 
+                                      data-bs-target="#recomendacionBoton"
+                                       aria-expanded="false"
+                                        aria-controls="multiCollapseExample2"
+                                        class="btn btn-secondary"
+                                         style="width: 100%;" >
+                                        Obtener Recomendacion</button>
                                     </div>
-
+                                    <div class="collapse multi-collapse mt-3" id="recomendacionBoton" >
+                                      <h5>De acuerdo a la informaci&oacute;n que nos proporcionaste t sugerimos elegir entre los siguientes valores</h5>
+                                      <table class="table  table-hover">
+                                        <tbody >
+                                          <tr>
+                                            <td scope="row">1</td>
+                                          </tr>
+                                          <tr>
+                                            <td scope="row">2</th>
+                                          </tr>
+                                          <tr>
+                                            <td scope="row">3</th>
+                                          </tr>
+                                          <tr>
+                                            <td scope="row">4</th>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
                                   </div>
                                 </div>
                                 <div class="modal-footer ">
@@ -261,93 +290,151 @@
                               </div>
                             </div>
                           </div>
-                          <div class="rango ">
-                            <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
-                              min="500000" max="10000000" step="100000">
+                          <div class="rango">
+                            <div id="cofinanciamientoRange" style="display: none;">
+                              <input
+                                id="ex12c"
+                                type="range"
+                                class="forms-range"
+                                name="valorcasa"
+                                value="2500000"
+                                min="500000"
+                                max="10000000"
+                                step="100000"
+                              /> 
+                            </div>
+                            <div id="noCofinanciamientoRange">
+                              <input
+                                type="range"
+                                class="forms-range"
+                                name="valorcasa"
+                                id="rangeEngancheFinanciamiento"
+                                value="2500000"
+                                min="500000"
+                                max="2500000"
+                                step="100000"
+                                oninput="
+                                  valorEnganche.value = rangeEngancheFinanciamiento.value;
+                                  test.value = ((rangeEngancheFinanciamiento.value * 100) / valorCasa.value) + '%';
+                                  valorFinanciamiento.value = valorCasa.value - rangeEngancheFinanciamiento.value;
+                                  porcentajeFinanciamiento.value=((valorFinanciamiento.value * 100) /valorCasa.value ) + '%';
+                                  valorCofinanciamiento.value= valorCasa.value-valorEnganche.value-valorFinanciamiento.value;
+                                  porcentajeCofinanciamiento.value= 
+                                  valorCofinanciamiento.value= ((porcentajeCofinanciamiento.value * valorFinanciamiento)/100)
+                                  
+                                "
+                              >
+                            </div>
                           </div>
                           <div class="d-flex">
                             <p class="m-1">Min $500,000</p>
                             <p class="m-1">Max $10'000,000</p>
                           </div>
-                        </form>
-                        <div class="row">
-                          <div class="col-12 col-lg-6 mb-3">
-                            <label class="enganche bb-input-sdmfcfdmlabel">
-                              <span class="bullet"></span>
-                              Enganche
-                            </label>
-                            <div class="row">
-                              <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
-                                  value="10" class="input_information text-end" style="width: 100%">
-                              </div>
-                              <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
-                                  class="input_information text-end" style="width: 100%">
+                          <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="enganche bb-input-sdmfcfdmlabel">
+                                <span class="bullet"></span>
+                                Enganche
+                              </label>
+                              <div class="row">
+                                <div class="col-6">
+                                  <input
+                                    name="user_name"
+                                    id="test"
+                                    placeholder="10%"
+                                    value="10"
+                                    class="input_information text-end"
+                                    style="width: 100%"
+                                  >
+                                </div>
+                                <div class="col-6">
+                                  <input
+                                    id="valorEnganche"
+                                    type="text"
+                                    placeholder="10%"
+                                    value="10"
+                                    class="input_information text-end"
+                                    style="width: 100%"
+                                  >
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="col-12 col-lg-6 mb-3">
-                            <label class="bb-input-label">
-                              <span class="bullet--light"></span>
-                              Financiamiento
-                            </label>
-                            <div class="row">
-                              <div class="col-6"><input type="text" value="$380,000" class="input_information text-end"
-                                  style="width: 100%">
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="bb-input-label">
+                                <span class="bullet--light"></span>
+                                Financiamiento
+                              </label>
+                              <div class="row">
+                                <div class="col-6">
+                                  <input type="text" 
+                                  id="porcentajeFinanciamiento" value="80%" class="input_information text-end" style="width: 100%">
+                                </div>
+                                <div class="col-6">
+                                  <input type="text" id="valorFinanciamiento" value="$380,000" class="input_information text-end" style="width: 100%">
+                                </div>
+                                
                               </div>
-                              <div class="col-6"><input type="text" value="80%" class="input_information text-end"
-                                  style="width: 100%">
-                              </div>
-                            </div>
-                            <div class="">
-                              <div class="d-flex p-2 justify-content-end align-items-center">
-                                <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
-                                  data-bs-target="#collapseExample"></i>
-                                <p class="m-1 collapse.show" id="botonCofi" data-bs-toggle="collapse"
-                                  data-bs-target="#collapseExample">Agregar
-                                  Cofinanciamiento</p></i>
-                              </div>
-                              <div>
-                                <div class="collapse" id="collapseExample">
-                                  <div class="d-flex p-2">
-                                    <i class="bi bi-dash-circle m-1 collapse"></i>
-                                    <p class="m-1"> Cofinanciamiento</p>
-                                  </div>
-                                  <div>
-                                    <select class="form-select collapse.show " aria-label="Default select example">
-                                      <option selected>Infonavit</option>
-                                      <option value="1">Cofinavit</option>
-                                      <option value="2">Otro</option>
-                                    </select>
-
-                                    <input type="text" class="input_information ">
-                                    <input type="text" class="input_information ">
-
+                              <div class="">
+                                <div
+                                  class="d-flex p-2 justify-content-end align-items-center"
+                                  id="botonCofi"
+                                  onclick="
+                                    isCofinanciamiento.value = isCofinanciamiento.value === 'true' ? 'false' : 'true';
+                                    if (isCofinanciamiento.value === 'true') {
+                                      cofinanciamientoRange.style.display = 'block';
+                                      noCofinanciamientoRange.style.display = 'none';
+                                    } else {
+                                      cofinanciamientoRange.style.display = 'none';
+                                      noCofinanciamientoRange.style.display = 'block';
+                                    }
+                                  ">
+                                  <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample"></i>
+                                  <p class="m-1 collapse.show"  data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample">Agregar
+                                    Cofinanciamiento</p></i>
+                                  <input type="hidden" id="isCofinanciamiento" value="false">
+                                </div>
+                                <div>
+                                  <div class="collapse" id="collapseExample">
+                                    <div class="d-flex p-2">
+                                      <i class="bi bi-dash-circle m-1 collapse"></i>
+                                      <p class="m-1"> Cofinanciamiento</p>
+                                    </div>
+                                    <div>
+                                      <select class="form-select collapse.show " aria-label="Default select example">
+                                        <option selected>Infonavit</option>
+                                        <option value="1">Cofinavit</option>
+                                        <option value="2">Otro</option>
+                                      </select>
+  
+                                      <input type="text" class="input_information " id="porcentajeCofinanciamiento">
+                                      <input type="text" class="input_information" id="valorCofinanciamiento">
+  
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-
                             </div>
                           </div>
-                        </div>
+                        </form>
                         <div class="mt-5">
                           <div>
                             <h6 class="text-secondary"> &iquest;A cu&aacute;ntos a&ntilde;os
                               quieres
                               pagar&#63;</h6>
                           </div>
-                          <div class="formatoaciframes">
-                            <output name="mesOutputName" id="mesOutputId">
-                              <span class="elmes">20</span>
+                          <div class=" col-lg-5  border border-1">
+                            <input type="text" id="anosFinanciamiento" value="20" min="5" max="30">
 
-                            </output>
                           </div>
                         </div>
 
-                        <div class="rangomes mb-4">
-                          <input type="range" name="mensualidades" class="forms-range" id="mesInputId" value="20"
-                            min="5" max="30" step="1" oninput="mesOutputId.value = mesInputId.value">
+                        <div class=" mb-4">
+                          <input type="range" name="anos__range" class="forms-range" id="rangeAnos" value="20"
+                            min="5" max="30" step="1" 
+                           oninput="anosFinanciamiento.value= rangeAnos.value ">
                         </div>
-
                         <div class="row">
                           <div class="col-12 col-lg-6 mb-3">
                             <label class="bb-input-label">
@@ -355,10 +442,15 @@
                               Mensualidad
                             </label>
                             <div class="row">
-                              <div class="col-6"><input type="text" class="input_information text-end" name="user_name"
-                                  value="$18,000" style="width: 100%;"></div>
-                              <div class="col-6"><input type="text" value="33%" class="input_information text-end"
-                                  style="width: 100%">
+                              <div class="col-6">
+                                <label for=""></label>
+                                <output id="valorMensualidad"  class="input_information"     oninput="porcentajeMensualidad.value * ingresoMensual.value"></output>
+                                <input type="text" class="input_information text-end" name="user_name"
+                                  value="$18,000" style="width: 100%;" id="valorMensualidad"  >
+                                </div>
+                              <div class="col-6">
+                                <input type="text" value="33%" class="input_information text-end"
+                                  style="width: 100%" id="porcentajeMensualidad">
                               </div>
                             </div>
                           </div>
@@ -368,7 +460,7 @@
                               Ingreso Mensual Neto
                             </label>
                             <div>
-                              <input type="text" value="$55,000" class="input_information" style="width: 100%;">
+                              <input type="text" value="$55,000" class="input_information" style="width: 100%;" id="ingresoMensual">
                             </div>
                             <div class="d-flex p-2 justify-content-">
                               <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
@@ -379,7 +471,7 @@
 
                               <div class="collapse" id="collapseExample2">
                                 <i class="bi bi-dash-circle m-1"></i>
-                                <p class="m-1"> Otros Ingresos</p>
+                                <p class="m-1" id="btnOtroIngreso"> Otros Ingresos</p>
                               </div>
 
                             </div>
@@ -390,7 +482,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Menusalidad -->
+                <!-- Menalidad -->
                 <div class="nav__secondary tab-pane fade " id="pills-profile" role="tabpanel"
                   aria-labelledby="pills-profile-tab">
                   <div class="container">
@@ -664,7 +756,528 @@
               </div>
             </div>
             <div class="tab-pane fade" id="elegir-terreno" role="tabpanel" aria-labelledby="elegir-terreno">
-              x
+              <div class="tab-pane fade show active" id="comprarCasa" role="tabpanel" aria-labelledby="pills-home-tab">
+                <!-- Navegador Modo a Calcular -->
+                <hr>
+                <div class="Secondary__nav container-xxl container-fluid">
+                  <h6 class="text-secondary d-flex justify-content-start ms-4 ">Elige el modo para
+                    calcular
+                  </h6>
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active nav-link__secondary--color border-end nuevo-color"
+                        id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab"
+                        aria-controls="pills-home" aria-selected="true">VALOR
+                        DE LA PROPIEDAD</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link nav-link__secondary--color border-end nuevo-color" id="pills-monthl-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
+                        aria-controls="pills-profile" aria-selected="false">MENSUALIDAD</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link nav-link__secondary--color border-end nuevo-color" id="pills-incoming-tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                        aria-controls="pills-contact" aria-selected="false">INGRESO MENSUAL</button>
+                    </li>
+                  </ul>
+                </div>
+  
+                <!-- Valor de la Propiedad -->
+                <div class="tab-content ">
+  
+                  <div class="nav__secondary tab-pane fade show active" id="pills-home" role="tabpanel"
+                    aria-labelledby="pills-home-tab">
+                    <!-- Contenido  -->
+                    <div class="container">
+                      <div class="row ">
+                        <!--Seccion Izquierda-->
+                        <section>
+                          <h2 class="subtitle text-secondary">Valor del inmueble</h2>
+                          <form name="registrationForm" class="mb-3">
+                            <div class="row align-items-center d-flex justify-content-center">
+                              <div class="formatoacifra col-lg-5  border border-1">
+                                <output name="prOutputName" id="prOutputId">
+                                  <span class="currency-usd ">2,500,000</span>
+                                </output>
+  
+                              </div>
+                              <div class="justify-content-center p-2 d-flex">
+                                <p class="me-3">No conoces el valor?</p>
+                                <p><a type="button" class="text-decoration-none" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Valuar Propiedad
+                                  </a></p>
+                              </div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                              aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                      &iquest;Qu&eacute;
+                                      tipo de propiedad habitacional es&#63;</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                      aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="row">
+                                      <div class="col-sm-6">
+                                        <div class="card  shadow-sm p-2 mb-3 bg-white rounded">
+                                          <img src="images/casa4.png" class="img-fluid " alt="imagen comprar casa">
+                                          <div class="card-body">
+                                            <a href="" class="stretched-link bs-card__link">
+                                              CASA</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-6">
+                                        <div class=" card  shadow-sm p-2 mb-3 bg-white rounded">
+                                          <img src="images/edificio4.png" class="img-fluid " alt="imagen comprar terreno">
+                                          <div class="card-body">
+                                            <a href="" class="stretched-link bs-card__link">
+                                              DEPARTAMENTO</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="container container-fluid ">
+                                      <div class=" row mt-3 d-flex justify-content-center">
+                                        <h5>&iquest;Cu&aacute;l es el c&oacute;digo
+                                          postal&#63;</h5>
+                                        <form action="CP" class="col-md-3 ms-auto ">
+                                          <input class="form-control me-2  " type="search" placeholder="C.P."
+                                            style="width: 30%;"
+                                            href="https://mexico-zip-codes.p.rapidapi.com/buscar/?codigo_postal=646">
+                                          </input>
+                                        </form>
+                                      </div>
+                                      <div class="mt-3">
+                                        <h5>Superficie Construida</h5>
+                                        <form action="Superficie" class="d-flex justify-content-center">
+                                          <input class="form-control me-2" type="search" placeholder="m2"
+                                            style="width: 30%;">
+                                        </form>
+                                        
+                                        <p>La superficie minima son 40m2</p>
+                                        
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer ">
+                                    <button type="button" class="btn btn-primary" style="width: 100%;">Confirmar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="rango ">
+                              <input id="ex12c"  type="range" class="forms-range" name="valorcasa"  value="2500000"
+                              min="500000" max="10000000" step="100000"/>
+                              <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
+                                min="500000" max="10000000" step="100000">
+                            </div>
+                            <div class="d-flex">
+                              <p class="m-1">Min $500,000</p>
+                              <p class="m-1">Max $10'000,000</p>
+                            </div>
+                          </form>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="enganche bb-input-sdmfcfdmlabel">
+                                <span class="bullet"></span>
+                                Enganche
+                              </label>
+                              <div class="row">
+                                <div class="col-6"><input name="user_name" placeholder="10%" value="10"
+                                    class="input_information text-end" style="width: 100%">
+                                </div>
+                                <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                                    class="input_information text-end" style="width: 100%">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="bb-input-label">
+                                <span class="bullet--light"></span>
+                                Financiamiento
+                              </label>
+                              <div class="row">
+                                <div class="col-6"><input type="text" value="$380,000" class="input_information text-end"
+                                    style="width: 100%">
+                                </div>
+                                <div class="col-6"><input type="text" value="80%" class="input_information text-end"
+                                    style="width: 100%">
+                                </div>
+                              </div>
+                              <div class="">
+                                <div class="d-flex p-2 justify-content-end align-items-center">
+                                  <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample"></i>
+                                  <p class="m-1 collapse.show" id="botonCofi" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample">Agregar
+                                    Cofinanciamiento</p></i>
+                                </div>
+                                <div>
+                                  <div class="collapse" id="collapseExample">
+                                    <div class="d-flex p-2">
+                                      <i class="bi bi-dash-circle m-1 collapse"></i>
+                                      <p class="m-1"> Cofinanciamiento</p>
+                                    </div>
+                                    <div>
+                                      <select class="form-select collapse.show " aria-label="Default select example">
+                                        <option selected>Infonavit</option>
+                                        <option value="1">Cofinavit</option>
+                                        <option value="2">Otro</option>
+                                      </select>
+  
+                                      <input type="text" class="input_information ">
+                                      <input type="text" class="input_information ">
+  
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-5">
+                            <div>
+                              <h6 class="text-secondary"> &iquest;A cu&aacute;ntos a&ntilde;os
+                                quieres
+                                pagar&#63;</h6>
+                            </div>
+                            <div class="formatoaciframes">
+                              <output name="mesOutputName" id="mesOutputId">
+                                <span class="elmes">20</span>
+  
+                              </output>
+                            </div>
+                          </div>
+  
+                          <div class="rangomes mb-4">
+                            
+                            <input type="range" name="mensualidades" class="forms-range" id="mesInputId" value="20"
+                              min="5" max="30" step="1" oninput="mesOutputId.value = mesInputId.value">
+                          </div>
+  
+                          <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="bb-input-label">
+                                <span class="bullet"></span>
+                                Mensualidad
+                              </label>
+                              <div class="row">
+                                <div class="col-6"><input type="text" class="input_information text-end" name="user_name"
+                                    value="$18,000" style="width: 100%;"></div>
+                                <div class="col-6"><input type="text" value="33%" class="input_information text-end"
+                                    style="width: 100%">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="bb-input-label">
+                                <span class="bullet"></span>
+                                Ingreso Mensual Neto
+                              </label>
+                              <div>
+                                <input type="text" value="$55,000" class="input_information" style="width: 100%;">
+                              </div>
+                              <div class="d-flex p-2 justify-content-">
+                                <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
+                                  data-bs-target="#collapseExample2"></i>
+                                <p class="m-1">Agregar Otros Ingresos</p>
+                              </div>
+                              <div>
+  
+                                <div class="collapse" id="collapseExample2">
+                                  <i class="bi bi-dash-circle m-1"></i>
+                                  <p class="m-1" id="btnOtroIngreso"> Otros Ingresos</p>
+                                </div>
+  
+                              </div>
+  
+                        </section>
+                       
+  
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Mensualidad -->
+                  <div class="nav__secondary tab-pane fade " id="pills-profile" role="tabpanel"
+                    aria-labelledby="pills-profile-tab">
+                    <div class="container">
+                      <div class="row ">
+                        <!--Seccion Izquierda-->
+                        <section>
+                          <h2 class="subtitle text-secondary">Mensualidad</h2>
+                          <form name="registrationForm" class="mb-3">
+                            <div class="row align-items-center d-flex justify-content-center">
+                              <div class="formatoacifra col-lg-5  border border-1">
+                                <output name="prOutputName" id="prOutputId">
+                                  <span class="currency-usd ">2,500,000</span>
+                                </output>
+                              </div>
+  
+                            </div>
+                            <div class="rango ">
+                              <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
+                                min="500000" max="10000000" step="100000">
+                            </div>
+                            <div class="d-flex">
+                              <p class="m-1">Min $500,000</p>
+                              <p class="m-1">Max $10'000,000</p>
+                            </div>
+                          </form>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="enganche bb-input-label">
+                                <span class="bullet"></span>
+                                Enganche
+                              </label>
+                              <div class="row">
+                                <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
+                                    value="10" class="input_information text-end" style="width: 100%">
+                                </div>
+                                <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                                    class="input_information text-end" style="width: 100%">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="bb-input-label">
+                                <span class="bullet--light"></span>
+                                Financiamiento
+                              </label>
+                              <div class="row">
+                                <div class="col-6"><input type="text" value="$380,000" class="input_information text-end"
+                                    style="width: 100%">
+                                </div>
+                                <div class="col-6"><input type="text" value="80%" class="input_information text-end"
+                                    style="width: 100%">
+                                </div>
+                              </div>
+                              <div class="">
+                                <div class="d-flex p-2 justify-content-">
+                                  <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample"></i>
+                                  <p class="m-1">Agregar Cofinanciamiento</p></i>
+                                </div>
+                                <div>
+                                  <div class="collapse" id="collapseExample">
+                                    <div class="d-flex p-2">
+                                      <i class="bi bi-dash-circle m-1"></i>
+                                      <p class="m-1"> Cofinanciamiento</p>
+                                    </div>
+                                    <div>
+                                      <select class="form-select" aria-label="Default select example">
+                                        <option selected>Infonavit</option>
+                                        <option value="1">Cofinavit</option>
+                                        <option value="2">Otro</option>
+                                      </select>
+  
+                                      <input type="text" class="input_information ">
+                                      <input type="text" class="input_information ">
+  
+                                    </div>
+                                  </div>
+                                </div>
+  
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-5">
+                            <div>
+                              <h6 class="text-secondary"> &iquest;A cu&aacute;ntos a&ntilde;os
+                                quieres
+                                pagar&#63;</h6>
+                            </div>
+                            <div class="rango mb-4">
+                              <input type="range " id="rangomes" class="forms-range " name="valorcasa" value="2500000"
+                                min="500000" max="10000000" step="100000">
+                            </div>
+                            <div class="row">
+                              <div class="col-12 col-lg-6 mb-3">
+                                <label class="bb-input-label">
+                                  <span class="bullet"></span>
+                                  Mensualidad
+                                </label>
+                                <div class="row">
+                                  <div class="col-6">
+                                    <input type="text" class="input_information text-end" name="user_name" value="$18,000"
+                                      style="width: 100%;"></div>
+                                  <div class="col-6">
+                                    <input type="text" value="33%" class="input_information text-end" style="width: 100%">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12 col-lg-6 mb-3">
+                                <label class="bb-input-label">
+                                  <span class="bullet"></span>
+                                  Ingreso Mensual Neto
+                                </label>
+                                <div>
+                                  <input type="text" value="$55,000" class="input_information" style="width: 100%;">
+                                </div>
+                                <div class="d-flex p-2 justify-content-">
+                                  <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample2"></i>
+                                  <p class="m-1">Agregar Otros Ingresos</p>
+                                </div>
+                                <div>
+  
+                                  <div class="collapse" id="collapseExample2">
+                                    <i class="bi bi-dash-circle m-1"></i>
+                                    <p class="m-1"> Otros Ingresos</p>
+                                  </div>
+  
+                                </div>
+  
+                        </section>
+                       
+  
+                      </div>
+                    </div>
+  
+                  </div>
+                  <!-- Ingreso mensual -->
+                  <div class="nav__secondary tab-pane fade " id="pills-contact" role="tabpanel"
+                    aria-labelledby="pills-contact-tab">
+                    <div class="container">
+                      <div class="row ">
+                        <!--Seccion Izquierda-->
+                        <section>
+                          <h2 class="subtitle text-secondary">Ingreso Mensual</h2>
+                          <form name="registrationForm" class="mb-3">
+                            <div class="row align-items-center d-flex justify-content-center">
+                              <div class="formatoacifra col-lg-5  border border-1">
+                                <output name="prOutputName" id="prOutputId">
+                                  <span class="currency-usd">50,000</span>
+                                </output>
+                              </div>
+                            </div>
+                            <div class="rango ">
+                              <input type="range" class="forms-range" name="valoringresototal" id="prInputId"
+                                value="50000" min="7000" max="250000" step="250">
+                            </div>
+                            <div class="d-flex">
+                              <p class="m-1">Min $5,000</p>
+                              <p class="m-1">Max $50,000</p>
+                            </div>
+                          </form>
+                          <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="enganche bb-input-label">
+                                <span class="bullet"></span>
+                                Enganche
+                              </label>
+                              <div class="row">
+                                <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
+                                    value="10" class="input_information text-end" style="width: 100%">
+                                </div>
+                                <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                                    class="input_information text-end" style="width: 100%">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="bb-input-label">
+                                <span class="bullet--light"></span>
+                                Financiamiento
+                              </label>
+                              <div class="row">
+                                <div class="col-6"><input type="text" value="$380,000" class="input_information text-end"
+                                    style="width: 100%">
+                                </div>
+                                <div class="col-6"><input type="text" value="80%" class="input_information text-end"
+                                    style="width: 100%">
+                                </div>
+                              </div>
+                              <div class="">
+                                <div class="d-flex p-2 justify-content-">
+                                  <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample"></i>
+                                  <p class="m-1">Agregar Cofinanciamiento</p></i>
+                                </div>
+                                <div>
+                                  <div class="collapse" id="collapseExample">
+                                    <div class="d-flex p-2">
+                                      <i class="bi bi-dash-circle m-1"></i>
+                                      <p class="m-1"> Cofinanciamiento</p>
+                                    </div>
+                                    <div>
+                                      <select class="form-select" aria-label="Default select example">
+                                        <option selected>Infonavit</option>
+                                        <option value="1">Cofinavit</option>
+                                        <option value="2">Otro</option>
+                                      </select>
+  
+                                      <input type="text" class="input_information ">
+                                      <input type="text" class="input_information ">
+  
+                                    </div>
+                                  </div>
+                                </div>
+  
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-5">
+                            <div>
+                              <h6 class="text-secondary"> &iquest;A cu&aacute;ntos a&ntilde;os
+                                quieres
+                                pagar&#63;</h6>
+                            </div>
+                            <div class="rango mb-4">
+                              <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
+                                min="500000" max="10000000" step="100000">
+                            </div>
+                            <div class="row">
+                              <div class="col-12 col-lg-6 mb-3">
+                                <label class="bb-input-label">
+                                  <span class="bullet"></span>
+                                  Mensualidad
+                                </label>
+                                <div class="row">
+                                  <div class="col-6"><input type="text" class="input_information text-end"
+                                      name="user_name" value="$18,000" style="width: 100%;"></div>
+                                  <div class="col-6"><input type="text" value="33%" class="input_information text-end"
+                                      style="width: 100%">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12 col-lg-6 mb-3">
+                                <label class="bb-input-label">
+                                  <span class="bullet"></span>
+                                  Ingreso Mensual Neto
+                                </label>
+                                <div>
+                                  <input type="text" value="$55,000" class="input_information" style="width: 100%;">
+                                </div>
+                                <div class="d-flex p-2 justify-content-">
+                                  <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample2"></i>
+                                  <p class="m-1">Agregar Otros Ingresos</p>
+                                </div>
+                                <div>
+  
+                                  <div class="collapse" id="collapseExample2">
+                                    <i class="bi bi-dash-circle m-1"></i>
+                                    <p class="m-1"> Otros Ingresos</p>
+                                  </div>
+  
+                                </div>
+  
+                        </section>
+                        
+  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
             </div>
             <div class="tab-pane fade" id="obtener-liquidez" role="tabpanel" aria-labelledby="obtener-liquidez">
               ...</div>
@@ -678,7 +1291,7 @@
               <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>
               <div class="m-4">
                 <div class="text-secondary">Te prestamos:</div>
-                <div class="fs-5" style="color: #60a1e7">$1,620,000</div>
+                <div class="fs-5" id="total" style="color: #60a1e7">$1,620,000</div>
               </div>
               <div class="row">
                 <div class="col-6 text-end text-secondary">Mensualidad con
@@ -712,7 +1325,148 @@
                 </div>
                 <div class="col-6 text-start">1.0%</div>
               </div>
-              <div class="m-4"><a href="#">Ver tabla de amortizaci&oacute;n</a>
+              <div class="m-4">
+                <a class="" data-bs-toggle="modal" data-bs-target="#tablaDeAmortizacion">
+                  Ver tabla de amortizaci&oacute;n
+                </a>
+
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="tablaDeAmortizacion" tabindex="-1" aria-labelledby="tablaDeAmortizacion"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-center align-items-">
+                      <div class="col-2">
+                        <i class="bi bi-caret-left"></i> ver detalles de credito
+                      </div>
+                      <div class="flex-grow-1 mt-3">
+                        <h5 class="modal-title" id="exampleModalLabel">CR&Eacute;DITO TRADICIONAL</h5>
+                        <p>Tabla de Amortizaci&oacute;n</p>
+                      </div>
+                      <div class="col-2">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">PAGO</th>
+                            <th scope="col">SALDO INSOLUTO</th>
+                            <th scope="col">INTER&Eacute;S</th>
+                            <th scope="col">AMORITIZACI&Oacute;N</th>
+                            <th scope="col">SEGURO DE VIDA Y DANOS</th>
+                            <th scope="col">COMISI&Oacute;N AUT. DIF.</th>
+                            <th scope="col">APORTACI&Oacute;N A CAPITAL</th>
+                            <th scope="col">MENSUALIDAD TOTAL</th>
+
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="d-flex justify-content-center" style="padding: 40px 20px;">
+                      <button type="button" class="btn btn-light  text-secondary shadow-sm  rounded col-4"
+                        data-bs-target="#masInformacion" >
+                        ENVIAR LOS DATOS A MI CORREO 
+                      </button>
+                      <div class="col-1"></div>
+                      <button type="button" class="btn btn-primary col-4" href="./privacidadA.html"
+                        id="preApruebaHipoteca"> PRE
+                        APRUEBA TU HIPOTECA
+                      </button>
+
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <!-- Button trigger modal -->
@@ -728,25 +1482,147 @@
               <div class="modal fade" id="masInformacion" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog  modal-xl">
-                  <div class="modal-content">
+                  <div class="modal-content  p-5">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="flex-grow-1 mt-3 ">
+                        <h5 class="modal-title" id="exampleModalLabel">CR&Eacute;DITO TRADICIONAL</h5>
+                        <p class="text-secondary">Datos del Cr&eacute;dito</p>
+                      </div>
+                      <div>
+                        <i class="bi bi-printer-fill"></i>
+                        <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                      </div>
+                      <div class="col-2 m-0 vertical-align-top">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
                     </div>
-                    <div class="modal-body">
-                      ...
+                    <div class="row">
+                    <div class="modal-body col-12 col-lg-6 mb-5 gx-5 mt-5">
+                      <div class="flex-grow-1 mt-3">
+                        <h6 class="modal-title" id="exampleModalLabel">Bx+ Casa Tradicional</h6>
+                      <hr>
+                      <table class="table table-hover table-borderless">
+                        <div >
+                        <tbody class=" justify-content-start">
+                          <tr>
+                            <td scope="row">Tasa de inter&eacute;s fija anual</td>
+                            <td>9.85%</td>
+                          </tr>
+                          <tr >
+                            <td scope="row">CAT</td>
+                            <td>12.7%</td>
+                          </tr>
+                          <tr >
+                            <td scope="row">Comisi&oacute;n por administraci&oacute;n mensual sin IVA</td>
+                            <td>$349</td>
+                            <tr >
+                              <td scope="row">Seguro de danos mensual</td>
+                              <td>$547</td>
+                            </tr>
+                            <tr >
+                              <td scope="row">Seguro de vida mensual</td>
+                              <td>$624</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="d-block"> 
+                        <p class="justify-center">*CAT sin IVA para fines informativos y de comparaci&oacute;n. Fecha de c&aacute;lculo <span>17 de julio de 2021</span>.
+                           Vigencia de la oferta hasta el 17 de Julio de 2021</p>
+                          <a href="">Ver tabla de amoritzaci&oacute;n</a>
+                      </div>
+                      </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                    <div class="modal-body col-12 col-lg-6 mb-5 gx-5 mt-5">
+                     <div class="row">
+                      <div class="flex-grow-1 mt-3">
+                        <h6 class="modal-title" id="exampleModalLabel">Datos del cr&eacute;dito</h6>
+                      <hr>
+                      <table class="table table-hover table-borderless">
+                        
+                        <tbody>
+                          <tr>
+                            <td scope="row">Cr&eacute;dito Bx+</td>
+                            <td>$1,200,000</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">Valor de la propiedad</td>
+                            <td>$1,528,000</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">Financiamiento Real</td>
+                            <td>79%</td>
+                            <tr>
+                              <td scope="row">Mensualidad</td>
+                              <td>$20,000</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">Plazo</td>
+                              <td>20 anos</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                     </div>
+                     <div class="row">
+                      <div class="flex-grow-1 mt-3">
+                        <h6 class="modal-title" id="exampleModalLabel">Gastos de originaci&oacute;n</h6>
+                      <hr>
+                      <table class="table table-hover table-borderless">
+                        
+                        <tbody>
+                          <tr>
+                            <td scope="row">Gastos notariales (6%)</td>
+                            <td>$168,080</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">Gastos de </td>
+                            <td>$750</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">Comisi&oacute;n por administraci&oacute;n mensual sin IVA</td>
+                            <td>$4,431</td>
+                            <tr>
+                              <td scope="row">Seguro de danos mensual</td>
+                              <td>$12,000</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">Seguro de vida mensual</td>
+                              <td>$200,000</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">Seguro de vida mensual</td>
+                            <td>$385,261</td>
+                        </tr>
+                        </tbody>
+                      </table>
+
+                      </div>
+                     </div>
+                    </div>
+                  </div>
+                    <div class="modal-footerd-flex justify-content-center" style="padding: 40px 20px;">
+                    <div class="d-flex justify-content-center" style="padding: 40px 20px;">
+                      <button type="button" class="btn btn-light  text-secondary shadow-sm  rounded col-4"
+                        data-bs-target="#masInformacion" >
+                        ENVIAR LOS DATOS A MI CORREO 
+                      </button>
+                      <div class="col-1"></div>
+                      <button type="button" class="btn btn-primary col-4" href="./privacidadA.html"
+                        id="preApruebaHipoteca"> PRE
+                        APRUEBA TU HIPOTECA
+                      </button>
+                    </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="col-12">
-                <button type="button" class="btn btn-primary" style="width: 100%;">PRE APRUEBA TU
-                  HIPOTECA</button>
+                <a href="./privacidadA.html"> <button type="button" class="btn btn-primary" id="preApruebaHipoteca"
+                    style="width: 100%;"> PRE
+                    APRUEBA TU HIPOTECA
+                  </button></a>
               </div>
             </div>
             <div>
@@ -766,16 +1642,31 @@
   </div>
 
   </div>
+  <div class="chrome">
+  
+   
+   
+  </div>
+  <script>
+    var sliderC = new Slider("#ex12c", {
+      id: "slider12c",
+      min: 500000,
+      max: 10000000 ,
+      range: true,
+      value: [50000, 190000]
+    });
+    
+  </script>
 
 
-  <footer class="footer">
-    <div class="d-flex justify-content-center text-center">
+  <footer class="footer d-flex justify-content-center">
+    <div class="text-center">
       <span>Copyright&copy; 2020 - go4it - Todos los derechos reservados</span>
     </div>
   </footer>
   </div>
 
-  
+
 
 
   <!-- SCRIPT JQUERY-->

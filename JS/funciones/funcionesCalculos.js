@@ -80,6 +80,7 @@ const mostrarValorPorcentaje=(pValorAMostrar)=>{
 
 const asignarValorPesos=(pValor)=>{
 	let result=0;
-	result = parseFloat(pValor.value.replace(/\$/g,""));
+	result = parseFloat(pValor.value.replace(/\$/g, ""));
+	//result =parseFloat(pValor.value.replace('$',""));
 	return result;
 }

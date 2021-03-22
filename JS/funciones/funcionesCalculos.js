@@ -84,3 +84,4 @@ const asignarValorPesos=(pValor)=>{
 	//result =parseFloat(pValor.value.replace('$',""));
 	return result;
 }
+

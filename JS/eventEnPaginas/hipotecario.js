@@ -1,73 +1,68 @@
-let saldoTotalTabla = valorFinanciamiento.value.replace('$','');
-let  numDePeriodos=rangeAnos.value*12;
+let saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
+let numDePeriodos = rangeAnos.value * 12;
 const tBody = document.querySelector('#amortizacion tbody');
 
-//tBody.removeChild(tBody.children[0]);
-getTablaAmortizacion(saldoTotalTabla,numDePeriodos,tBody);
+getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
 
-valorFinanciamiento.addEventListener('change',()=>{
-    
+rangeEngancheFinanciamiento.addEventListener('mouseup', () => {
 
-    getTablaAmortizacion(saldoTotalTabla,numDePeriodos,tBody);
+    let elementosArray = Array.from(tBody.children);
+    console.log(elementosArray);
 
-});
+    for (let x = 0; x < elementosArray.length; x++) {
+        tBody.removeChild(elementosArray[x]);
+    }
 
-rangeAnos.addEventListener('change',()=>{
-    
-    numDePeriodos=rangeAnos.value*12;
-    getTablaAmortizacion(saldoTotalTabla,numDePeriodos,tBody);
-
+    saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
+    getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
 
 });
 
+rangeAnos.addEventListener('mouseup', () => {
 
-function getTablaAmortizacion(pSaldoTotalTabla, pNumDePeriodos,pElementoInicial){
-     //let saldoTotalTabla = valorFinanciamiento.value.replace('$','');
-    //Otra cantidad
-    //let saldoTotalTabla = 10000000
-    //let  numDePeriodos=rangeAnos.value*12;
-    //Otro numero de periodos
-    //let numDePeriodos = 360;
-    //Valores de la tabla
+    clearTablaAmortizacion(tBody);
+    /*
+    let elementosArray = Array.from(tBody.children);
+    console.log(elementosArray);
+
+    for (let x = 0; x < elementosArray.length; x++) {
+        tBody.removeChild(elementosArray[x]);
+    }
+    */
+    getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
+
+
+});
+
+function clearTablaAmortizacion(pElementoHijos){
+    let elementosArray = Array.from(pElementoHijos.children);
+    //console.log(elementosArray);
+
+    for (let x = 0; x < elementosArray.length; x++) {
+        pElementoHijos.removeChild(elementosArray[x]);
+    }
+}
+
+
+function getTablaAmortizacion(pSaldoTotalTabla, pNumDePeriodos, pElementoInicial) {
+
     let amortizacion = 0;
     let saldoRestanteTabla = parseFloat(pSaldoTotalTabla);
     let cuotaTabla = 0;
     let porcentajeTazaTabla = 2;
     let interesPesosTabla = 0;
 
-    amortizacion = myRound(pSaldoTotalTabla / pNumDePeriodos, 10);
-
-    
-    /*
-    console.log(saldoRestanteTabla);
-    console.log(`amortizacion ${amortizacion}`);
-    
-    for(let i=0;i<numDePeriodos;i++){
-        
-        interesPesosTabla = calcularPorcentajeEnPesos(porcentajeTazaTabla,saldoRestanteTabla);
-    
-        cuotaTabla = myRound(interesPesosTabla+amortizacion,10);
-    
-        saldoRestanteTabla=myRound(saldoRestanteTabla,10)-amortizacion;
-        saldoRestanteTabla = myRound(saldoRestanteTabla,10);
-        
-        console.log(`${i+1} Saldo restante ${myRound(saldoRestanteTabla)}`);
-        console.log(`interes: ${myRound(interesPesosTabla)}`);
-        console.log(`cuota: ${myRound(cuotaTabla)}`)
-        
-    }
-    */
-
-    //const tBody = document.querySelector('#amortizacion tbody');
-    //tBody = document.querySelector('#amortizacion tbody');
-
     let fragmentTr = document.createDocumentFragment();
     let fragmentGroupTd = document.createDocumentFragment();
+
+    let valores = [];
+
+    pNumDePeriodos = rangeAnos.value * 12;
+    amortizacion = myRound(pSaldoTotalTabla / pNumDePeriodos, 10);
 
     for (let x = 0; x < pNumDePeriodos; x++) {
 
         let tr = document.createElement('tr')
-        let valores = [];
 
         fragmentTr.appendChild(tr);
 
@@ -99,10 +94,8 @@ function getTablaAmortizacion(pSaldoTotalTabla, pNumDePeriodos,pElementoInicial)
 
     }
 
-    //tBody.appendChild(fragmentTr);
     pElementoInicial.appendChild(fragmentTr);
 
-    //console.log(tBody);
 }
 
 /*
@@ -121,25 +114,25 @@ const getTablaAmortizacionn=(pSaldoTotalTabla, pNumDePeriodos,pElementoInicial)=
     let interesPesosTabla = 0;
 
     amortizacion = myRound(saldoTotalTabla / numDePeriodos, 10);
-    
+
     //console.log(saldoRestanteTabla);
     //console.log(`amortizacion ${amortizacion}`);
-    
+
     //for(let i=0;i<numDePeriodos;i++){
-        
+
         //interesPesosTabla = calcularPorcentajeEnPesos(porcentajeTazaTabla,saldoRestanteTabla);
-    
+
    //     cuotaTabla = myRound(interesPesosTabla+amortizacion,10);
-    
+
      //   saldoRestanteTabla=myRound(saldoRestanteTabla,10)-amortizacion;
        // saldoRestanteTabla = myRound(saldoRestanteTabla,10);
-        
+
         //console.log(`${i+1} Saldo restante ${myRound(saldoRestanteTabla)}`);
         //console.log(`interes: ${myRound(interesPesosTabla)}`);
         //console.log(`cuota: ${myRound(cuotaTabla)}`)
-        
+
     //}
-    
+
 
     //const tBody = document.querySelector('#amortizacion tbody');
     //tBody = document.querySelector('#amortizacion tbody');

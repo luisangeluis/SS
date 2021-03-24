@@ -190,11 +190,18 @@
                       <!--Seccion Izquierda-->
                       <section>
                         <h2 class="subtitle text-secondary">Valor del inmueble</h2>
-                        <form name="registrationForm" class="mb-3">
+                        <form name="registrationForm" class="mb-3" id="valorInmuebleForm">
                           <div class="row align-items-center d-flex justify-content-center">
                             <div class="formatoacifra col-lg-5  border border-1">
-                              <input type="text" id="valorCasa" value="2500000">
-
+                              <input
+                                type="number"
+                                max="10000000"
+                                min="500000"
+                                id="valorCasa"
+                                value="2500000"
+                                change="handleValorCasaChange(this.value)"
+                                required
+                              >
                             </div>
                             <div class="justify-content-center p-2 d-flex">
                               <p class="me-3">No conoces el valor?</p>
@@ -244,7 +251,7 @@
                                       <form action="CP" class="col-md-3 ms-auto ">
                                         <input class="form-control me-2  " type="search" placeholder="C.P."
                                           style="width: 30%;"
-                                          href="https://mexico-zip-codes.p.rapidapi.com/buscar/?codigo_postal=646">
+                                         >
                                         </input>
                                       </form>
                                     </div>
@@ -299,7 +306,7 @@
                                 name="valorcasa"
                                 value="2500000"
                                 min="500000"
-                                max="10000000"
+                                max="2500000"
                                 step="100000"
                               /> 
                             </div>
@@ -313,16 +320,7 @@
                                 min="500000"
                                 max="2500000"
                                 step="100000"
-                                oninput="
-                                  valorEnganche.value = rangeEngancheFinanciamiento.value;
-                                  test.value = ((rangeEngancheFinanciamiento.value * 100) / valorCasa.value) + '%';
-                                  valorFinanciamiento.value = valorCasa.value - rangeEngancheFinanciamiento.value;
-                                  porcentajeFinanciamiento.value=((valorFinanciamiento.value * 100) /valorCasa.value ) + '%';
-                                  valorCofinanciamiento.value= valorCasa.value-valorEnganche.value-valorFinanciamiento.value;
-                                  porcentajeCofinanciamiento.value= 
-                                  valorCofinanciamiento.value= ((porcentajeCofinanciamiento.value * valorFinanciamiento)/100)
-                                  
-                                "
+                                oninput="handleRangeChange()"
                               >
                             </div>
                           </div>
@@ -340,7 +338,7 @@
                                 <div class="col-6">
                                   <input
                                     name="user_name"
-                                    id="test"
+                                    id="porcentajeEnganche"
                                     placeholder="10%"
                                     value="10"
                                     class="input_information text-end"
@@ -407,10 +405,9 @@
                                         <option value="1">Cofinavit</option>
                                         <option value="2">Otro</option>
                                       </select>
-  
-                                      <input type="text" class="input_information " id="porcentajeCofinanciamiento">
-                                      <input type="text" class="input_information" id="valorCofinanciamiento">
-  
+                                        <input id="porcentajeCofinanciamiento" value="50%" class="input_information text-end" style="width: 100%">
+                                        <input id="valorCofinanciamiento" value="190000" class="input_information text-end" style="width: 100%;">
+                                     
                                     </div>
                                   </div>
                                 </div>
@@ -477,7 +474,6 @@
                             </div>
 
                       </section>
-                      <!-- Seccion Derecha -->
 
                     </div>
                   </div>
@@ -874,7 +870,7 @@
                               </div>
                             </div>
                             <div class="rango ">
-                              <input id="ex12c"  type="range" class="forms-range" name="valorcasa"  value="2500000"
+                              <input id="ex12ccfc"  type="range" class="forms-range" name="valorcasa"  value="2500000"
                               min="500000" max="10000000" step="100000"/>
                               <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
                                 min="500000" max="10000000" step="100000">
@@ -1647,17 +1643,6 @@
    
    
   </div>
-  <script>
-    var sliderC = new Slider("#ex12c", {
-      id: "slider12c",
-      min: 500000,
-      max: 10000000 ,
-      range: true,
-      value: [50000, 190000]
-    });
-    
-  </script>
-
 
   <footer class="footer d-flex justify-content-center">
     <div class="text-center">
@@ -1698,7 +1683,57 @@
   <script type="text/javascript" src="JS/calculosConIngresoMens.js"></script>
 
 
+  <script>
+    var sliderC = new Slider("#ex12c", {
+      id: "slider12c",
+      min: 500000,
+      max: 2500000 ,
+      range: true,
+      value: [50000, 190000]
+    });
 
+    const getElement = (id) => document.getElementById(id);
+
+    const  form = getElement('valorInmuebleForm');
+
+    const handleValorCasaChange = (value) => {
+      const  isValid = form.checkValidity();
+    };
+
+    const handleRangeChange = () => {
+      const valorTotalInmueble =  Number(getElement('valorCasa').value);
+      const enganche = Number(getElement('rangeEngancheFinanciamiento').value);
+      const porcentajeEnganche = getElement('porcentajeEnganche');
+      const valorEnganche = getElement('valorEnganche');
+      const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
+      const valorFinanciamiento = getElement('valorFinanciamiento');
+
+      porcentajeEnganche.value = `${enganche * 100 / valorTotalInmueble}%`;
+      valorEnganche.value = enganche;
+      porcentajeFinanciamiento.value = `${(valorTotalInmueble - enganche) * 100 / valorTotalInmueble}%`;
+      valorFinanciamiento.value = valorTotalInmueble - enganche;
+    };
+
+    sliderC.on('change', (e) => {
+      const [min, max] = e.newValue;
+      const valorTotalInmueble =  Number(getElement('valorCasa').value);
+      const porcentajeEnganche = getElement('porcentajeEnganche');
+      const valorEnganche = getElement('valorEnganche');
+      const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
+      const valorFinanciamiento = getElement('valorFinanciamiento');
+      const porcentajeCofinanciamiento = getElement('porcentajeCofinanciamiento');
+      const valorCofinanciamiento =  getElement('valorCofinanciamiento');
+      
+      valorFinanciamiento.value = max - min;
+      porcentajeFinanciamiento.value = `${(max - min) * 100 / valorTotalInmueble}%`;
+      valorEnganche.value = min;
+      porcentajeEnganche.value = `${min * 100 / valorTotalInmueble}%`;
+      valorCofinanciamiento.value = valorTotalInmueble - max;
+      porcentajeCofinanciamiento.value = `${(valorTotalInmueble - max) * 100 / valorTotalInmueble}%`
+      console.log(min, max);
+    });
+
+  </script>
 </body>
 
 </html>

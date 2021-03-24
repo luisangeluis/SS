@@ -10,7 +10,7 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-  </script>
+    </script>
   <link rel="stylesheet" href="./styles/mainstyles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -74,7 +74,7 @@
               <div class="col">
                 <div class="card bs-card shadow-sm p-3 mb-5 bg-white rounded">
                   <img src="images/comprar_casa.svg" class="img-fluid bs-card__image" alt="imagen comprar casa">
-                  <div class="card-body"> 
+                  <div class="card-body">
                     <a href="./hipotecario-movil.html" class="stretched-link bs-card__link">COMPRAR
                       UNA
                       CASA</a>
@@ -255,18 +255,17 @@
                                           style="width: 30%;">
                                       </form>
                                       <p>La superficie minima son 40m2</p>
-                                      <button type="button" data-bs-toggle="collapse" 
-                                      data-bs-target="#recomendacionBoton"
-                                       aria-expanded="false"
-                                        aria-controls="multiCollapseExample2"
-                                        class="btn btn-secondary"
-                                         style="width: 100%;" >
+                                      <button type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#recomendacionBoton" aria-expanded="false"
+                                        aria-controls="multiCollapseExample2" class="btn btn-secondary"
+                                        style="width: 100%;">
                                         Obtener Recomendacion</button>
                                     </div>
-                                    <div class="collapse multi-collapse mt-3" id="recomendacionBoton" >
-                                      <h5>De acuerdo a la informaci&oacute;n que nos proporcionaste t sugerimos elegir entre los siguientes valores</h5>
+                                    <div class="collapse multi-collapse mt-3" id="recomendacionBoton">
+                                      <h5>De acuerdo a la informaci&oacute;n que nos proporcionaste t sugerimos elegir
+                                        entre los siguientes valores</h5>
                                       <table class="table  table-hover">
-                                        <tbody >
+                                        <tbody>
                                           <tr>
                                             <td scope="row">1</td>
                                           </tr>
@@ -292,28 +291,12 @@
                           </div>
                           <div class="rango">
                             <div id="cofinanciamientoRange" style="display: none;">
-                              <input
-                                id="ex12c"
-                                type="range"
-                                class="forms-range"
-                                name="valorcasa"
-                                value="2500000"
-                                min="500000"
-                                max="10000000"
-                                step="100000"
-                              /> 
+                              <input id="ex12c" type="range" class="forms-range" name="valorcasa" value="2500000"
+                                min="500000" max="10000000" step="100000" />
                             </div>
                             <div id="noCofinanciamientoRange">
-                              <input
-                                type="range"
-                                class="forms-range"
-                                name="valorcasa"
-                                id="rangeEngancheFinanciamiento"
-                                value="2500000"
-                                min="500000"
-                                max="2500000"
-                                step="100000"
-                                oninput="
+                              <input type="range" class="forms-range" name="valorcasa" id="rangeEngancheFinanciamiento"
+                                value="2500000" min="500000" max="2500000" step="100000" oninput="
                                   valorEnganche.value = rangeEngancheFinanciamiento.value;
                                   test.value = ((rangeEngancheFinanciamiento.value * 100) / valorCasa.value) + '%';
                                   valorFinanciamiento.value = valorCasa.value - rangeEngancheFinanciamiento.value;
@@ -322,8 +305,7 @@
                                   porcentajeCofinanciamiento.value= 
                                   valorCofinanciamiento.value= ((porcentajeCofinanciamiento.value * valorFinanciamiento)/100)
                                   
-                                "
-                              >
+                                ">
                             </div>
                           </div>
                           <div class="d-flex">
@@ -338,24 +320,12 @@
                               </label>
                               <div class="row">
                                 <div class="col-6">
-                                  <input
-                                    name="user_name"
-                                    id="test"
-                                    placeholder="10%"
-                                    value="10"
-                                    class="input_information text-end"
-                                    style="width: 100%"
-                                  >
+                                  <input name="user_name" id="test" placeholder="10%" value="10"
+                                    class="input_information text-end" style="width: 100%">
                                 </div>
                                 <div class="col-6">
-                                  <input
-                                    id="valorEnganche"
-                                    type="text"
-                                    placeholder="10%"
-                                    value="10"
-                                    class="input_information text-end"
-                                    style="width: 100%"
-                                  >
+                                  <input id="valorEnganche" type="text" placeholder="10%" value="10"
+                                    class="input_information text-end" style="width: 100%">
                                 </div>
                               </div>
                             </div>
@@ -366,19 +336,17 @@
                               </label>
                               <div class="row">
                                 <div class="col-6">
-                                  <input type="text" 
-                                  id="porcentajeFinanciamiento" value="80%" class="input_information text-end" style="width: 100%">
+                                  <input type="text" id="porcentajeFinanciamiento" value="80%"
+                                    class="input_information text-end" style="width: 100%">
                                 </div>
                                 <div class="col-6">
-                                  <input type="text" id="valorFinanciamiento" value="$380,000" class="input_information text-end" style="width: 100%">
+                                  <input type="text" id="valorFinanciamiento" value="380000"
+                                    class="input_information text-end formato-moneda" style="width: 100%">
                                 </div>
-                                
+
                               </div>
                               <div class="">
-                                <div
-                                  class="d-flex p-2 justify-content-end align-items-center"
-                                  id="botonCofi"
-                                  onclick="
+                                <div class="d-flex p-2 justify-content-end align-items-center" id="botonCofi" onclick="
                                     isCofinanciamiento.value = isCofinanciamiento.value === 'true' ? 'false' : 'true';
                                     if (isCofinanciamiento.value === 'true') {
                                       cofinanciamientoRange.style.display = 'block';
@@ -390,7 +358,7 @@
                                   ">
                                   <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample"></i>
-                                  <p class="m-1 collapse.show"  data-bs-toggle="collapse"
+                                  <p class="m-1 collapse.show" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample">Agregar
                                     Cofinanciamiento</p></i>
                                   <input type="hidden" id="isCofinanciamiento" value="false">
@@ -407,10 +375,10 @@
                                         <option value="1">Cofinavit</option>
                                         <option value="2">Otro</option>
                                       </select>
-  
+
                                       <input type="text" class="input_information " id="porcentajeCofinanciamiento">
                                       <input type="text" class="input_information" id="valorCofinanciamiento">
-  
+
                                     </div>
                                   </div>
                                 </div>
@@ -431,9 +399,8 @@
                         </div>
 
                         <div class=" mb-4">
-                          <input type="range" name="anos__range" class="forms-range" id="rangeAnos" value="20"
-                            min="5" max="30" step="1" 
-                           oninput="anosFinanciamiento.value= rangeAnos.value ">
+                          <input type="range" name="anos__range" class="forms-range" id="rangeAnos" value="20" min="5"
+                            max="30" step="1" oninput="anosFinanciamiento.value= rangeAnos.value ">
                         </div>
                         <div class="row">
                           <div class="col-12 col-lg-6 mb-3">
@@ -444,13 +411,14 @@
                             <div class="row">
                               <div class="col-6">
                                 <label for=""></label>
-                                <output id="valorMensualidad"  class="input_information"     oninput="porcentajeMensualidad.value * ingresoMensual.value"></output>
-                                <input type="text" class="input_information text-end" name="user_name"
-                                  value="$18,000" style="width: 100%;" id="valorMensualidad"  >
-                                </div>
+                                <output id="valorMensualidad" class="input_information"
+                                  oninput="porcentajeMensualidad.value * ingresoMensual.value"></output>
+                                <input type="text" class="input_information text-end" name="user_name" value="$18,000"
+                                  style="width: 100%;" id="valorMensualidad">
+                              </div>
                               <div class="col-6">
-                                <input type="text" value="33%" class="input_information text-end"
-                                  style="width: 100%" id="porcentajeMensualidad">
+                                <input type="text" value="33%" class="input_information text-end" style="width: 100%"
+                                  id="porcentajeMensualidad">
                               </div>
                             </div>
                           </div>
@@ -460,7 +428,8 @@
                               Ingreso Mensual Neto
                             </label>
                             <div>
-                              <input type="text" value="$55,000" class="input_information" style="width: 100%;" id="ingresoMensual">
+                              <input type="text" value="$55,000" class="input_information" style="width: 100%;"
+                                id="ingresoMensual">
                             </div>
                             <div class="d-flex p-2 justify-content-">
                               <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
@@ -584,7 +553,8 @@
                               <div class="row">
                                 <div class="col-6">
                                   <input type="text" class="input_information text-end" name="user_name" value="$18,000"
-                                    style="width: 100%;"></div>
+                                    style="width: 100%;">
+                                </div>
                                 <div class="col-6">
                                   <input type="text" value="33%" class="input_information text-end" style="width: 100%">
                                 </div>
@@ -782,10 +752,10 @@
                     </li>
                   </ul>
                 </div>
-  
+
                 <!-- Valor de la Propiedad -->
                 <div class="tab-content ">
-  
+
                   <div class="nav__secondary tab-pane fade show active" id="pills-home" role="tabpanel"
                     aria-labelledby="pills-home-tab">
                     <!-- Contenido  -->
@@ -800,7 +770,7 @@
                                 <output name="prOutputName" id="prOutputId">
                                   <span class="currency-usd ">2,500,000</span>
                                 </output>
-  
+
                               </div>
                               <div class="justify-content-center p-2 d-flex">
                                 <p class="me-3">No conoces el valor?</p>
@@ -835,7 +805,8 @@
                                       </div>
                                       <div class="col-sm-6">
                                         <div class=" card  shadow-sm p-2 mb-3 bg-white rounded">
-                                          <img src="images/edificio4.png" class="img-fluid " alt="imagen comprar terreno">
+                                          <img src="images/edificio4.png" class="img-fluid "
+                                            alt="imagen comprar terreno">
                                           <div class="card-body">
                                             <a href="" class="stretched-link bs-card__link">
                                               DEPARTAMENTO</a>
@@ -860,22 +831,23 @@
                                           <input class="form-control me-2" type="search" placeholder="m2"
                                             style="width: 30%;">
                                         </form>
-                                        
+
                                         <p>La superficie minima son 40m2</p>
-                                        
+
                                       </div>
 
                                     </div>
                                   </div>
                                   <div class="modal-footer ">
-                                    <button type="button" class="btn btn-primary" style="width: 100%;">Confirmar</button>
+                                    <button type="button" class="btn btn-primary"
+                                      style="width: 100%;">Confirmar</button>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div class="rango ">
-                              <input id="ex12c"  type="range" class="forms-range" name="valorcasa"  value="2500000"
-                              min="500000" max="10000000" step="100000"/>
+                              <input id="ex12c" type="range" class="forms-range" name="valorcasa" value="2500000"
+                                min="500000" max="10000000" step="100000" />
                               <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
                                 min="500000" max="10000000" step="100000">
                             </div>
@@ -905,8 +877,8 @@
                                 Financiamiento
                               </label>
                               <div class="row">
-                                <div class="col-6"><input type="text" value="$380,000" class="input_information text-end"
-                                    style="width: 100%">
+                                <div class="col-6"><input type="text" value="$380,000"
+                                    class="input_information text-end" style="width: 100%">
                                 </div>
                                 <div class="col-6"><input type="text" value="80%" class="input_information text-end"
                                     style="width: 100%">
@@ -932,10 +904,10 @@
                                         <option value="1">Cofinavit</option>
                                         <option value="2">Otro</option>
                                       </select>
-  
+
                                       <input type="text" class="input_information ">
                                       <input type="text" class="input_information ">
-  
+
                                     </div>
                                   </div>
                                 </div>
@@ -951,17 +923,17 @@
                             <div class="formatoaciframes">
                               <output name="mesOutputName" id="mesOutputId">
                                 <span class="elmes">20</span>
-  
+
                               </output>
                             </div>
                           </div>
-  
+
                           <div class="rangomes mb-4">
-                            
+
                             <input type="range" name="mensualidades" class="forms-range" id="mesInputId" value="20"
                               min="5" max="30" step="1" oninput="mesOutputId.value = mesInputId.value">
                           </div>
-  
+
                           <div class="row">
                             <div class="col-12 col-lg-6 mb-3">
                               <label class="bb-input-label">
@@ -969,8 +941,8 @@
                                 Mensualidad
                               </label>
                               <div class="row">
-                                <div class="col-6"><input type="text" class="input_information text-end" name="user_name"
-                                    value="$18,000" style="width: 100%;"></div>
+                                <div class="col-6"><input type="text" class="input_information text-end"
+                                    name="user_name" value="$18,000" style="width: 100%;"></div>
                                 <div class="col-6"><input type="text" value="33%" class="input_information text-end"
                                     style="width: 100%">
                                 </div>
@@ -990,17 +962,17 @@
                                 <p class="m-1">Agregar Otros Ingresos</p>
                               </div>
                               <div>
-  
+
                                 <div class="collapse" id="collapseExample2">
                                   <i class="bi bi-dash-circle m-1"></i>
                                   <p class="m-1" id="btnOtroIngreso"> Otros Ingresos</p>
                                 </div>
-  
+
                               </div>
-  
+
                         </section>
-                       
-  
+
+
                       </div>
                     </div>
                   </div>
@@ -1019,7 +991,7 @@
                                   <span class="currency-usd ">2,500,000</span>
                                 </output>
                               </div>
-  
+
                             </div>
                             <div class="rango ">
                               <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
@@ -1051,8 +1023,8 @@
                                 Financiamiento
                               </label>
                               <div class="row">
-                                <div class="col-6"><input type="text" value="$380,000" class="input_information text-end"
-                                    style="width: 100%">
+                                <div class="col-6"><input type="text" value="$380,000"
+                                    class="input_information text-end" style="width: 100%">
                                 </div>
                                 <div class="col-6"><input type="text" value="80%" class="input_information text-end"
                                     style="width: 100%">
@@ -1076,14 +1048,14 @@
                                         <option value="1">Cofinavit</option>
                                         <option value="2">Otro</option>
                                       </select>
-  
+
                                       <input type="text" class="input_information ">
                                       <input type="text" class="input_information ">
-  
+
                                     </div>
                                   </div>
                                 </div>
-  
+
                               </div>
                             </div>
                           </div>
@@ -1105,10 +1077,12 @@
                                 </label>
                                 <div class="row">
                                   <div class="col-6">
-                                    <input type="text" class="input_information text-end" name="user_name" value="$18,000"
-                                      style="width: 100%;"></div>
+                                    <input type="text" class="input_information text-end" name="user_name"
+                                      value="$18,000" style="width: 100%;">
+                                  </div>
                                   <div class="col-6">
-                                    <input type="text" value="33%" class="input_information text-end" style="width: 100%">
+                                    <input type="text" value="33%" class="input_information text-end"
+                                      style="width: 100%">
                                   </div>
                                 </div>
                               </div>
@@ -1126,20 +1100,20 @@
                                   <p class="m-1">Agregar Otros Ingresos</p>
                                 </div>
                                 <div>
-  
+
                                   <div class="collapse" id="collapseExample2">
                                     <i class="bi bi-dash-circle m-1"></i>
                                     <p class="m-1"> Otros Ingresos</p>
                                   </div>
-  
+
                                 </div>
-  
+
                         </section>
-                       
-  
+
+
                       </div>
                     </div>
-  
+
                   </div>
                   <!-- Ingreso mensual -->
                   <div class="nav__secondary tab-pane fade " id="pills-contact" role="tabpanel"
@@ -1187,8 +1161,8 @@
                                 Financiamiento
                               </label>
                               <div class="row">
-                                <div class="col-6"><input type="text" value="$380,000" class="input_information text-end"
-                                    style="width: 100%">
+                                <div class="col-6"><input type="text" value="$380,000"
+                                    class="input_information text-end" style="width: 100%">
                                 </div>
                                 <div class="col-6"><input type="text" value="80%" class="input_information text-end"
                                     style="width: 100%">
@@ -1212,14 +1186,14 @@
                                         <option value="1">Cofinavit</option>
                                         <option value="2">Otro</option>
                                       </select>
-  
+
                                       <input type="text" class="input_information ">
                                       <input type="text" class="input_information ">
-  
+
                                     </div>
                                   </div>
                                 </div>
-  
+
                               </div>
                             </div>
                           </div>
@@ -1261,23 +1235,23 @@
                                   <p class="m-1">Agregar Otros Ingresos</p>
                                 </div>
                                 <div>
-  
+
                                   <div class="collapse" id="collapseExample2">
                                     <i class="bi bi-dash-circle m-1"></i>
                                     <p class="m-1"> Otros Ingresos</p>
                                   </div>
-  
+
                                 </div>
-  
+
                         </section>
-                        
-  
+
+
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-  
+
             </div>
             <div class="tab-pane fade" id="obtener-liquidez" role="tabpanel" aria-labelledby="obtener-liquidez">
               ...</div>
@@ -1349,7 +1323,7 @@
                       </div>
                     </div>
                     <div class="modal-body">
-                      <table class="table table-hover">
+                      <table class="table table-hover" id="amortizacion">
                         <thead>
                           <tr>
                             <th scope="col">PAGO</th>
@@ -1363,7 +1337,7 @@
 
                         </thead>
                         <tbody>
-                          <tr>
+                          <!--<tr>
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
@@ -1449,14 +1423,14 @@
                             <td>@mdo</td>
                             <td>@mdo</td>
 
-                          </tr>
+                          </tr>-->
                         </tbody>
                       </table>
                     </div>
                     <div class="d-flex justify-content-center" style="padding: 40px 20px;">
                       <button type="button" class="btn btn-light  text-secondary shadow-sm  rounded col-4"
-                        data-bs-target="#masInformacion" >
-                        ENVIAR LOS DATOS A MI CORREO 
+                        data-bs-target="#masInformacion">
+                        ENVIAR LOS DATOS A MI CORREO
                       </button>
                       <div class="col-1"></div>
                       <button type="button" class="btn btn-primary col-4" href="./privacidadA.html"
@@ -1497,122 +1471,123 @@
                       </div>
                     </div>
                     <div class="row">
-                    <div class="modal-body col-12 col-lg-6 mb-5 gx-5 mt-5">
-                      <div class="flex-grow-1 mt-3">
-                        <h6 class="modal-title" id="exampleModalLabel">Bx+ Casa Tradicional</h6>
-                      <hr>
-                      <table class="table table-hover table-borderless">
-                        <div >
-                        <tbody class=" justify-content-start">
-                          <tr>
-                            <td scope="row">Tasa de inter&eacute;s fija anual</td>
-                            <td>9.85%</td>
-                          </tr>
-                          <tr >
-                            <td scope="row">CAT</td>
-                            <td>12.7%</td>
-                          </tr>
-                          <tr >
-                            <td scope="row">Comisi&oacute;n por administraci&oacute;n mensual sin IVA</td>
-                            <td>$349</td>
-                            <tr >
-                              <td scope="row">Seguro de danos mensual</td>
-                              <td>$547</td>
-                            </tr>
-                            <tr >
-                              <td scope="row">Seguro de vida mensual</td>
-                              <td>$624</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <div class="d-block"> 
-                        <p class="justify-center">*CAT sin IVA para fines informativos y de comparaci&oacute;n. Fecha de c&aacute;lculo <span>17 de julio de 2021</span>.
-                           Vigencia de la oferta hasta el 17 de Julio de 2021</p>
-                          <a href="">Ver tabla de amoritzaci&oacute;n</a>
+                      <div class="modal-body col-12 col-lg-6 mb-5 gx-5 mt-5">
+                        <div class="flex-grow-1 mt-3">
+                          <h6 class="modal-title" id="exampleModalLabel">Bx+ Casa Tradicional</h6>
+                          <hr>
+                          <table class="table table-hover table-borderless">
+                            <div>
+                              <tbody class=" justify-content-start">
+                                <tr>
+                                  <td scope="row">Tasa de inter&eacute;s fija anual</td>
+                                  <td>9.85%</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">CAT</td>
+                                  <td>12.7%</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Comisi&oacute;n por administraci&oacute;n mensual sin IVA</td>
+                                  <td>$349</td>
+                                <tr>
+                                  <td scope="row">Seguro de danos mensual</td>
+                                  <td>$547</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Seguro de vida mensual</td>
+                                  <td>$624</td>
+                                </tr>
+                              </tbody>
+                          </table>
+                          <div class="d-block">
+                            <p class="justify-center">*CAT sin IVA para fines informativos y de comparaci&oacute;n.
+                              Fecha de c&aacute;lculo <span>17 de julio de 2021</span>.
+                              Vigencia de la oferta hasta el 17 de Julio de 2021</p>
+                            <a href="">Ver tabla de amoritzaci&oacute;n</a>
+                          </div>
+                        </div>
                       </div>
-                      </div>
-                    </div>
-                    <div class="modal-body col-12 col-lg-6 mb-5 gx-5 mt-5">
-                     <div class="row">
-                      <div class="flex-grow-1 mt-3">
-                        <h6 class="modal-title" id="exampleModalLabel">Datos del cr&eacute;dito</h6>
-                      <hr>
-                      <table class="table table-hover table-borderless">
-                        
-                        <tbody>
-                          <tr>
-                            <td scope="row">Cr&eacute;dito Bx+</td>
-                            <td>$1,200,000</td>
-                          </tr>
-                          <tr>
-                            <td scope="row">Valor de la propiedad</td>
-                            <td>$1,528,000</td>
-                          </tr>
-                          <tr>
-                            <td scope="row">Financiamiento Real</td>
-                            <td>79%</td>
-                            <tr>
-                              <td scope="row">Mensualidad</td>
-                              <td>$20,000</td>
-                            </tr>
-                            <tr>
-                              <td scope="row">Plazo</td>
-                              <td>20 anos</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                      <div class="modal-body col-12 col-lg-6 mb-5 gx-5 mt-5">
+                        <div class="row">
+                          <div class="flex-grow-1 mt-3">
+                            <h6 class="modal-title" id="exampleModalLabel">Datos del cr&eacute;dito</h6>
+                            <hr>
+                            <table class="table table-hover table-borderless">
 
-                     </div>
-                     <div class="row">
-                      <div class="flex-grow-1 mt-3">
-                        <h6 class="modal-title" id="exampleModalLabel">Gastos de originaci&oacute;n</h6>
-                      <hr>
-                      <table class="table table-hover table-borderless">
-                        
-                        <tbody>
-                          <tr>
-                            <td scope="row">Gastos notariales (6%)</td>
-                            <td>$168,080</td>
-                          </tr>
-                          <tr>
-                            <td scope="row">Gastos de </td>
-                            <td>$750</td>
-                          </tr>
-                          <tr>
-                            <td scope="row">Comisi&oacute;n por administraci&oacute;n mensual sin IVA</td>
-                            <td>$4,431</td>
-                            <tr>
-                              <td scope="row">Seguro de danos mensual</td>
-                              <td>$12,000</td>
-                            </tr>
-                            <tr>
-                              <td scope="row">Seguro de vida mensual</td>
-                              <td>$200,000</td>
-                          </tr>
-                          <tr>
-                            <td scope="row">Seguro de vida mensual</td>
-                            <td>$385,261</td>
-                        </tr>
-                        </tbody>
-                      </table>
+                              <tbody>
+                                <tr>
+                                  <td scope="row">Cr&eacute;dito Bx+</td>
+                                  <td>$1,200,000</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Valor de la propiedad</td>
+                                  <td>$1,528,000</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Financiamiento Real</td>
+                                  <td>79%</td>
+                                <tr>
+                                  <td scope="row">Mensualidad</td>
+                                  <td>$20,000</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Plazo</td>
+                                  <td>20 anos</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
 
+                        </div>
+                        <div class="row">
+                          <div class="flex-grow-1 mt-3">
+                            <h6 class="modal-title" id="exampleModalLabel">Gastos de originaci&oacute;n</h6>
+                            <hr>
+                            <table class="table table-hover table-borderless">
+
+                              <tbody>
+                                <tr>
+                                  <td scope="row">Gastos notariales (6%)</td>
+                                  <td>$168,080</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Gastos de </td>
+                                  <td>$750</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Comisi&oacute;n por administraci&oacute;n mensual sin IVA</td>
+                                  <td>$4,431</td>
+                                <tr>
+                                  <td scope="row">Seguro de danos mensual</td>
+                                  <td>$12,000</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Seguro de vida mensual</td>
+                                  <td>$200,000</td>
+                                </tr>
+                                <tr>
+                                  <td scope="row">Seguro de vida mensual</td>
+                                  <td>$385,261</td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                          </div>
+                        </div>
                       </div>
-                     </div>
                     </div>
-                  </div>
                     <div class="modal-footerd-flex justify-content-center" style="padding: 40px 20px;">
-                    <div class="d-flex justify-content-center" style="padding: 40px 20px;">
-                      <button type="button" class="btn btn-light  text-secondary shadow-sm  rounded col-4"
-                        data-bs-target="#masInformacion" >
-                        ENVIAR LOS DATOS A MI CORREO 
-                      </button>
-                      <div class="col-1"></div>
-                      <button type="button" class="btn btn-primary col-4" href="./privacidadA.html"
-                        id="preApruebaHipoteca"> PRE
-                        APRUEBA TU HIPOTECA
-                      </button>
-                    </div>
+                      <div class="d-flex justify-content-center" style="padding: 40px 20px;">
+                        <button type="button" class="btn btn-light  text-secondary shadow-sm  rounded col-4"
+                          data-bs-target="#masInformacion">
+                          ENVIAR LOS DATOS A MI CORREO
+                        </button>
+                        <div class="col-1"></div>
+                        <button type="button" class="btn btn-primary col-4" href="./privacidadA.html"
+                          id="preApruebaHipoteca"> PRE
+                          APRUEBA TU HIPOTECA
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1643,19 +1618,19 @@
 
   </div>
   <div class="chrome">
-  
-   
-   
+
+
+
   </div>
   <script>
     var sliderC = new Slider("#ex12c", {
       id: "slider12c",
       min: 500000,
-      max: 10000000 ,
+      max: 10000000,
       range: true,
       value: [50000, 190000]
     });
-    
+
   </script>
 
 
@@ -1672,20 +1647,18 @@
   <!-- SCRIPT JQUERY-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
+    </script>
   <!-- SCRIPT MASK-->
   <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <!--CALCULOS CON EL VALOR DE RANGO-->
   <!--SCRIPT MASK MONEY-->
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js">
-  </script>
+    </script>
 
-  <!--ANIMACIONES DE BOTONES--->
-  <SCRipt type="text/javascript" src="JS/animacionBotones.js"></SCRipt>
+  
 
-  <!--SWEETAlert2 DE SI NO CUMPLE CON INGRESOS MINIMOS-->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
 
   <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
   <script type="text/javascript" src="JS/acordCofin.js"></script>
@@ -1696,7 +1669,11 @@
   <!-- CALCULOS CON RANGO E INGRESOS -->
   <script type="text/javascript" src="JS/calculosConRango2.js"></script>
   <script type="text/javascript" src="JS/calculosConIngresoMens.js"></script>
-
+  <!--PARA DECIMALES EXACTOS-->
+  <script src="JS/funciones/decimal.min.js"></script>
+  <script type="text/javascript" src=JS/funciones/funcionesCalculos.js></script>
+  <script src="JS/functAnimaciones/funcionesAnimaciones.js"></script>
+  <script type="text/javascript" src="JS/eventEnPaginas/hipotecario.js"></script>
 
 
 </body>

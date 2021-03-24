@@ -804,11 +804,13 @@ function calcularMensTotal(cantidadPesos, porcentTaza, tiempoAnios) {
     return result;
 }
 
-
+/*
 function myRound(num, dec) {
     var exp = Math.pow(10, dec || 2); // 2 decimales por defecto
     return parseInt(num * exp, 10) / exp;
 }
+*/
+
 
 
 

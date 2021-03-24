@@ -80,6 +80,82 @@ const mostrarValorPorcentaje=(pValorAMostrar)=>{
 
 const asignarValorPesos=(pValor)=>{
 	let result=0;
-	result = parseFloat(pValor.value.replace(/\$/g,""));
+	result = parseFloat(pValor.value.replace(/\$/g, ""));
+	//result =parseFloat(pValor.value.replace('$',""));
 	return result;
 }
+//Asignar numero de decimales a numero
+function myRound(num, dec) {
+    var exp = Math.pow(10, dec || 2); // 2 decimales por defecto
+    return parseInt(num * exp, 10) / exp;
+}
+
+//Limpiar tabla de amortizacion 
+function clearTablaAmortizacion(pElementoHijos) {
+    let elementosArray = Array.from(pElementoHijos.children);
+    //console.log(elementosArray);
+
+    for (let x = 0; x < elementosArray.length; x++) {
+        pElementoHijos.removeChild(elementosArray[x]);
+    }
+}
+
+//Mostrar tabla de amortizacion
+function getTablaAmortizacion(pSaldoTotalTabla, pNumDePeriodos, pElementoInicial) {
+
+    let amortizacion = 0;
+    let saldoRestanteTabla = parseFloat(pSaldoTotalTabla);
+    let cuotaTabla = 0;
+    let porcentajeTazaTabla = 2;
+    let interesPesosTabla = 0;
+
+	//Fragmento de elemento tr
+    let fragmentTr = document.createDocumentFragment();
+	//Fragmento de elementos td
+    let fragmentGroupTd = document.createDocumentFragment();
+
+    let valores = [];
+
+    //pSaldoTotalTabla = valorFinanciamiento.value.replace('$', '');
+    pNumDePeriodos = rangeAnos.value * 12;
+    amortizacion = myRound(pSaldoTotalTabla / pNumDePeriodos, 10);
+
+    for (let x = 0; x < pNumDePeriodos; x++) {
+
+        let tr = document.createElement('tr')
+
+        fragmentTr.appendChild(tr);
+
+        interesPesosTabla = calcularPorcentajeEnPesos(porcentajeTazaTabla, saldoRestanteTabla);
+
+        cuotaTabla = myRound(interesPesosTabla + amortizacion, 10);
+
+        saldoRestanteTabla = myRound(saldoRestanteTabla, 10) - amortizacion;
+        saldoRestanteTabla = myRound(saldoRestanteTabla, 10);
+
+		//Guarda los valores en el arreglo para asignarlos posteriormente
+        valores = [x + 1, saldoRestanteTabla, interesPesosTabla, amortizacion, 0, 0, amortizacion, cuotaTabla];
+
+        for (let i = 0; i < 8; i++) {
+            let td = document.createElement('td');
+            fragmentGroupTd.appendChild(td);
+
+        }
+
+        fragmentGroupTd.children[0].textContent = `${x + 1}`;
+        fragmentGroupTd.children[1].textContent = `$${formatMoneyDecimales(myRound(saldoRestanteTabla))}`;
+        fragmentGroupTd.children[2].textContent = `$${formatMoneyDecimales(myRound(interesPesosTabla))}`;
+        fragmentGroupTd.children[3].textContent = `$${myRound(amortizacion)}`;
+        fragmentGroupTd.children[4].textContent = `$${formatMoneyDecimales(0)}`;
+        fragmentGroupTd.children[5].textContent = `$${formatMoneyDecimales(0)}`;
+        fragmentGroupTd.children[6].textContent = `$${myRound(amortizacion)}`;
+        fragmentGroupTd.children[7].textContent = `$${formatMoneyDecimales(myRound(cuotaTabla))}`;
+
+        fragmentTr.children[x].appendChild(fragmentGroupTd);
+
+    }
+
+    pElementoInicial.appendChild(fragmentTr);
+
+}
+

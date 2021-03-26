@@ -25,10 +25,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/ca02942170.js" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">-->
     <link rel="stylesheet" href="./styles/mainstyles.css">
     <!--STYLES DATOS-->
     <link rel="stylesheet" href="/SS/styles/hojasDatosStyles.css">
-    
+
 </head>
 
 <body>
@@ -149,9 +150,9 @@
                                                     </label>
 
                                                     <div>
-                                                        <input type="text" id="ingreso-bruto" value="$55,000"
+                                                        <input type="text" id="ingreso-bruto" 
                                                             class="input_information formatoMoneda" style="width: 100%;"
-                                                            placeholder="$55,000.00">
+                                                            placeholder="$55,000.00" required>
                                                     </div>
                                                 </div>
 
@@ -241,7 +242,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="row d-grid gap-2 col-10 col-lg-8 mx-auto">
-                                                    <a class="btn btn-primary  shadow-sm" href="/SS/datos2A.html">
+                                                    <a class="btn btn-primary  shadow-sm " href="/SS/datos2A.html"
+                                                        id="btn-confirmar">
                                                         Confirmar
                                                     </a>
                                                 </div>
@@ -336,7 +338,7 @@
                     </div>
                 </div>
 
-                <footer class="container-fluid footer ">
+                <footer class="container-fluid footer">
                     <div>
                         <span>Copyright&copy; 2020 - go4it - Todos los derechos reservados</span>
                     </div>
@@ -350,12 +352,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--SCRIPT FUNCIONES DE ANIMACIONES-->
     <SCRipt type="text/javascript" src="JS/functAnimaciones/funcionesAnimaciones.js"></SCRipt>
+    <!--FUNCIONES CALCULOS-->
+    <script src="JS/funciones/funcionesCalculos.js"></script>
     <!--SCRIPT PAGINA DATOS1-->
     <SCRipt type="text/javascript" src="JS/eventEnPaginas/datos1A.js"></SCRipt>
     <!--SWEETAlert2 POPOVER-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
     
+
 </body>
 
 </html>

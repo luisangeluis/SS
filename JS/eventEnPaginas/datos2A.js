@@ -1,5 +1,16 @@
 $(document).ready(function(){
+
     const btnSlideInvert=document.querySelectorAll('.btn-slide-invert');
+    //CAMPO EMAIL
+    const email = document.querySelector('#email');
+    //BTN CONFIRMAR
+    const confirmar = document.querySelector('#confirmar');
+    //INPUT FECHA
+    const fechaNacimiento =document.querySelector('#fecha-nacimiento');
+    //INPUT NOMBRE
+    const nombre = document.querySelector('#nombre');
+    //INPUT APELLIDO PATERNO
+    const paterno = document.querySelector('#apellido-paterno'); 
 
     //AJUSTAR FOOTER HASTA ABAJO
     ajustarFooter();
@@ -19,4 +30,80 @@ $(document).ready(function(){
             }
         });
     }
+    //FUNCION PARA VALIDAR CORREO
+    $(email).on({
+        focusout:()=>{
+            //alert("hola");
+
+            if(!validarCorreo(email.value)){
+                //formatoAlerta("correo no valido");
+                alerta('Correo no valido');
+                email.value="";
+            }
+        }
+    });
+    //VALIDA CAMPO NOMBRE
+    $(nombre).on({
+        focusout:()=>{
+            //alert("hola");
+
+            if(nombre.value==""){
+                formatoAlerta("Nombre no valido");
+                alerta('Nombre no valido');
+
+                nombre.value="";
+            }
+        }
+    });
+    //VALIDA CAMPO APELLIDO PATERNO
+    $(paterno).on({
+        focusout:()=>{
+            //alert("hola");
+
+            if(paterno.value==""){
+                //formatoAlerta("Apellido paterno no valido");
+                alerta('Apellido paterno no valido');
+                paterno.value="";
+            }
+        }
+    });
+
+    //VALIDAD NOMBRE APELLIDO Y CORREO
+    $(confirmar).on({
+        click:(e)=>{
+            let mensajesError = [];
+
+            if(nombre.value=="" ||nombre.value==null){
+                e.preventDefault();
+                mensajesError.push('Ingresa tu Nombre');
+
+            }
+
+            if(paterno.value==""|| paterno.value==null){
+                e.preventDefault();
+
+                mensajesError.push('Ingresa tu Apellido Paterno');
+
+            }
+            if(email.value=="" || email.value==null){
+                e.preventDefault();
+
+                mensajesError.push('Ingresa tu Correo Electronico');
+
+            }
+            if(fechaNacimiento.value=="" || fechaNacimiento.value==null){
+                e.preventDefault();
+
+                mensajesError.push('Ingresa tu Fecha de Nacimiento');
+
+            }
+            //ACUMULA LOS MENSAJES DE ERROR
+            if(mensajesError.length>0){
+                //formatoAlerta(mensajesError.join(' - '));
+                alerta(mensajesError.join(' - '));
+            }
+        }
+    });
+
+
 });

@@ -190,122 +190,156 @@
                       <!--Seccion Izquierda-->
                       <section>
                         <h2 class="subtitle text-secondary">Valor del inmueble</h2>
-                        <form name="registrationForm" class="mb-3">
+                        <form name="registrationForm" class="mb-3" id="valorInmuebleForm">
                           <div class="row align-items-center d-flex justify-content-center">
-                            <div class="formatoacifra col-lg-5  border border-1">
-                              <input type="text" id="valorCasa" value="2500000">
-
+                            <div>
+                              <input
+                                type="number"
+                                max="10000000"
+                                min="500000"
+                                id="valorCasa"
+                                value="2500000"
+                                change="handleValorCasaChange(this.value)"
+                                required
+                                class="formatoacifra col-lg-5  border border-1"
+                              >
                             </div>
                             <div class="justify-content-center p-2 d-flex">
                               <p class="me-3">No conoces el valor?</p>
-                              <p><a type="button" class="text-decoration-none" data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal">
-                                  Valuar Propiedad
-                                </a></p>
+                              <p><a type="button" class="text-decoration-none" data-bs-toggle="modal" href="#modal" role="button">
+                                Valuar Propiedad
+                              </a></p>
+
                             </div>
                           </div>
-                          <!-- Modal -->
-                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">
-                                    &iquest;Qu&eacute;
-                                    tipo de propiedad habitacional es&#63;</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="row">
-                                    <div class="col-sm-6">
-                                      <div class="card  shadow-sm p-2 mb-3 bg-white rounded">
-                                        <img src="images/casa4.png" class="img-fluid " alt="imagen comprar casa">
-                                        <div class="card-body">
-                                          <a href="" class="stretched-link bs-card__link">
-                                            CASA</a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                      <div class=" card  shadow-sm p-2 mb-3 bg-white rounded">
-                                        <img src="images/edificio4.png" class="img-fluid " alt="imagen comprar terreno">
-                                        <div class="card-body">
-                                          <a href="" class="stretched-link bs-card__link">
-                                            DEPARTAMENTO</a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="container container-fluid ">
-                                    <div class=" row mt-3 d-flex justify-content-center">
-                                      <h5>&iquest;Cu&aacute;l es el c&oacute;digo
-                                        postal&#63;</h5>
-                                      <form action="CP" class="col-md-3 ms-auto ">
-                                        <input class="form-control me-2  " type="search" placeholder="C.P."
-                                          style="width: 30%;"
-                                          href="https://mexico-zip-codes.p.rapidapi.com/buscar/?codigo_postal=646">
-                                        </input>
-                                      </form>
-                                    </div>
-                                    <div class="multicollapse mt-3">
-                                      <h5>Superficie Construida</h5>
-                                      <form action="Superficie" class="d-flex justify-content-center">
-                                        <input class="form-control me-2" type="search" placeholder="m2"
-                                          style="width: 30%;">
-                                      </form>
-                                      <p>La superficie minima son 40m2</p>
-                                      <button type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#recomendacionBoton" aria-expanded="false"
-                                        aria-controls="multiCollapseExample2" class="btn btn-secondary"
-                                        style="width: 100%;">
-                                        Obtener Recomendacion</button>
-                                    </div>
-                                    <div class="collapse multi-collapse mt-3" id="recomendacionBoton">
-                                      <h5>De acuerdo a la informaci&oacute;n que nos proporcionaste t sugerimos elegir
-                                        entre los siguientes valores</h5>
-                                      <table class="table  table-hover">
-                                        <tbody>
-                                          <tr>
-                                            <td scope="row">1</td>
-                                          </tr>
-                                          <tr>
-                                            <td scope="row">2</th>
-                                          </tr>
-                                          <tr>
-                                            <td scope="row">3</th>
-                                          </tr>
-                                          <tr>
-                                            <td scope="row">4</th>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="modal-footer ">
-                                  <button type="button" class="btn btn-primary" style="width: 100%;">Confirmar</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                          <!-- First modal dialog -->
+<div class="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            &iquest;Qu&eacute;
+            tipo de propiedad habitacional es&#63;</h5>
+          <button type="button" class="btn-close mb-5 button__closing" data-bs-dismiss="modal"
+            aria-label="Close" > </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card  shadow-sm p-2 mb-3 bg-white rounded">
+                <img src="images/casa4.png" class="img-fluid " alt="imagen comprar casa">
+                <div class="card-body">
+                  <a href="" class="stretched-link bs-card__link">
+                    CASA</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class=" card  shadow-sm p-2 mb-3 bg-white rounded">
+                <img src="images/edificio4.png" class="img-fluid " alt="imagen comprar terreno">
+                <div class="card-body">
+                  <a href="" class="stretched-link bs-card__link">
+                    DEPARTAMENTO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container container-fluid ">
+            <div class=" row mt-3 d-flex justify-content-center">
+              <h5>&iquest;Cu&aacute;l es el c&oacute;digo
+                postal&#63;</h5>
+              <form action="CP" class="col-md-3 ms-auto ">
+                <input class="form-control me-2  " type="search" placeholder="C.P."
+                  style="width: 30%;"
+                 >
+                </input>
+              </form>
+            </div>
+            <div class="multicollapse mt-3">
+              <h5>Superficie Construida</h5>
+              <form action="Superficie" class="d-flex justify-content-center">
+                <input class="form-control me-2" type="search" placeholder="m2"
+                  style="width: 30%;">
+              </form>
+              <p>La superficie minima son 40m2</p>
+            </div>
+          </div>
+        </div>
+
+      <div class="modal-footer">
+        <!-- Toogle to second dialog -->
+        <button class="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal" data-bs-dismiss="modal" 
+        style="width: 100%;" >Obtener Recomendaci&oacute;n</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Second modal dialog -->
+<div class="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+              De acuerdo a la informaci&oacute;n que nos proporcionaste te sugerimos elegir entre los siguientes valores</h5>
+          <button type="button" class="btn-close mb-5 button__closing" data-bs-dismiss="modal"
+            aria-label="Close" > </button>
+        </div>
+        <div class="modal-body">
+          <table class="table  table-hover">
+              <tbody >
+                <tr>
+                  <td scope="row">1</td>
+                </tr>
+                <tr>
+                  <td scope="row">2</th>
+                </tr>
+                <tr>
+                  <td scope="row">3</th>
+                </tr>
+                <tr>
+                  <td scope="row">4</th>
+                </tr>
+              </tbody>
+            </table>
+
+
+        </div>
+    
+      <div class="modal-footer">
+        <!-- Toogle to first dialog, `data-bs-dismiss` attribute can be omitted - clicking on link will close dialog anyway -->
+        <a class="btn btn-primary " style="width: 100%;"  aria-label="Close" role="button"  data-bs-dismiss="modal"
+        aria-label="Close" >Confirmar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
                           <div class="rango">
                             <div id="cofinanciamientoRange" style="display: none;">
-                              <input id="ex12c" type="range" class="forms-range" name="valorcasa" value="2500000"
-                                min="500000" max="10000000" step="100000" />
+                              <input
+                                id="ex12c"
+                                type="range"
+                                class="forms-range"
+                                name="valorcasa"
+                                value="2500000"
+                                min="500000"
+                                max="2500000"
+                                step="100000"
+                              /> 
                             </div>
                             <div id="noCofinanciamientoRange">
-                              <input type="range" class="forms-range" name="valorcasa" id="rangeEngancheFinanciamiento"
-                                value="2500000" min="500000" max="2500000" step="100000" oninput="
-                                  valorEnganche.value = rangeEngancheFinanciamiento.value;
-                                  test.value = ((rangeEngancheFinanciamiento.value * 100) / valorCasa.value) + '%';
-                                  valorFinanciamiento.value = valorCasa.value - rangeEngancheFinanciamiento.value;
-                                  porcentajeFinanciamiento.value=((valorFinanciamiento.value * 100) /valorCasa.value ) + '%';
-                                  valorCofinanciamiento.value= valorCasa.value-valorEnganche.value-valorFinanciamiento.value;
-                                  porcentajeCofinanciamiento.value= 
-                                  valorCofinanciamiento.value= ((porcentajeCofinanciamiento.value * valorFinanciamiento)/100)
-                                  
-                                ">
+                              <input
+                                type="range"
+                                class="forms-range"
+                                name="valorcasa"
+                                id="rangeEngancheFinanciamiento"
+                                value="2500000"
+                                min="500000"
+                                max="2500000"
+                                step="100000"
+                                oninput="handleRangeChange()"
+                              >
+
                             </div>
                           </div>
                           <div class="d-flex">
@@ -320,8 +354,15 @@
                               </label>
                               <div class="row">
                                 <div class="col-6">
-                                  <input name="user_name" id="test" placeholder="10%" value="10"
-                                    class="input_information text-end" style="width: 100%">
+                                  <input
+                                    name="user_name"
+                                    id="porcentajeEnganche"
+                                    placeholder="10%"
+                                    value="10"
+                                    class="input_information text-end"
+                                    style="width: 100%"
+                                  >
+
                                 </div>
                                 <div class="col-6">
                                   <input id="valorEnganche" type="text" placeholder="10%" value="10"
@@ -375,9 +416,9 @@
                                         <option value="1">Cofinavit</option>
                                         <option value="2">Otro</option>
                                       </select>
-
-                                      <input type="text" class="input_information " id="porcentajeCofinanciamiento">
-                                      <input type="text" class="input_information" id="valorCofinanciamiento">
+                                        <input id="porcentajeCofinanciamiento" value="50%" class="input_information text-end" style="width: 100%">
+                                        <input id="valorCofinanciamiento" value="190000" class="input_information text-end" style="width: 100%;">
+                                     
 
                                     </div>
                                   </div>
@@ -392,8 +433,8 @@
                               quieres
                               pagar&#63;</h6>
                           </div>
-                          <div class=" col-lg-5  border border-1">
-                            <input type="text" id="anosFinanciamiento" value="20" min="5" max="30">
+                          <div class=" col-lg-5  ">
+                            <input type="text" id="anosFinanciamiento" value="20" min="5" max="30" class="formatoacifra col-lg-5  border border-1">
 
                           </div>
                         </div>
@@ -446,12 +487,11 @@
                             </div>
 
                       </section>
-                      <!-- Seccion Derecha -->
 
                     </div>
                   </div>
                 </div>
-                <!-- Menalidad -->
+                <!-- Mensualidad -->
                 <div class="nav__secondary tab-pane fade " id="pills-profile" role="tabpanel"
                   aria-labelledby="pills-profile-tab">
                   <div class="container">
@@ -846,8 +886,9 @@
                               </div>
                             </div>
                             <div class="rango ">
-                              <input id="ex12c" type="range" class="forms-range" name="valorcasa" value="2500000"
-                                min="500000" max="10000000" step="100000" />
+                              <input id="ex12ccfc"  type="range" class="forms-range" name="valorcasa"  value="2500000"
+                              min="500000" max="10000000" step="100000"/>
+
                               <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
                                 min="500000" max="10000000" step="100000">
                             </div>
@@ -1622,16 +1663,6 @@
 
 
   </div>
-  <script>
-    var sliderC = new Slider("#ex12c", {
-      id: "slider12c",
-      min: 500000,
-      max: 10000000,
-      range: true,
-      value: [50000, 190000]
-    });
-
-  </script>
 
 
   <footer class="footer d-flex justify-content-center">
@@ -1675,7 +1706,57 @@
   <script src="JS/functAnimaciones/funcionesAnimaciones.js"></script>
   <script type="text/javascript" src="JS/eventEnPaginas/hipotecario.js"></script>
 
+  <script>
+    var sliderC = new Slider("#ex12c", {
+      id: "slider12c",
+      min: 500000,
+      max: 2500000 ,
+      range: true,
+      value: [50000, 190000]
+    });
 
+    const getElement = (id) => document.getElementById(id);
+
+    const  form = getElement('valorInmuebleForm');
+
+    const handleValorCasaChange = (value) => {
+      const  isValid = form.checkValidity();
+    };
+
+    const handleRangeChange = () => {
+      const valorTotalInmueble =  Number(getElement('valorCasa').value);
+      const enganche = Number(getElement('rangeEngancheFinanciamiento').value);
+      const porcentajeEnganche = getElement('porcentajeEnganche');
+      const valorEnganche = getElement('valorEnganche');
+      const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
+      const valorFinanciamiento = getElement('valorFinanciamiento');
+
+      porcentajeEnganche.value = `${enganche * 100 / valorTotalInmueble}%`;
+      valorEnganche.value = enganche;
+      porcentajeFinanciamiento.value = `${(valorTotalInmueble - enganche) * 100 / valorTotalInmueble}%`;
+      valorFinanciamiento.value = valorTotalInmueble - enganche;
+    };
+
+    sliderC.on('change', (e) => {
+      const [min, max] = e.newValue;
+      const valorTotalInmueble =  Number(getElement('valorCasa').value);
+      const porcentajeEnganche = getElement('porcentajeEnganche');
+      const valorEnganche = getElement('valorEnganche');
+      const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
+      const valorFinanciamiento = getElement('valorFinanciamiento');
+      const porcentajeCofinanciamiento = getElement('porcentajeCofinanciamiento');
+      const valorCofinanciamiento =  getElement('valorCofinanciamiento');
+      
+      valorFinanciamiento.value = max - min;
+      porcentajeFinanciamiento.value = `${(max - min) * 100 / valorTotalInmueble}%`;
+      valorEnganche.value = min;
+      porcentajeEnganche.value = `${min * 100 / valorTotalInmueble}%`;
+      valorCofinanciamiento.value = valorTotalInmueble - max;
+      porcentajeCofinanciamiento.value = `${(valorTotalInmueble - max) * 100 / valorTotalInmueble}%`
+      console.log(min, max);
+    });
+
+  </script>
 </body>
 
 </html>

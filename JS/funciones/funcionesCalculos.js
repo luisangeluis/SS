@@ -84,6 +84,15 @@ const asignarValorPesos=(pValor)=>{
 	//result =parseFloat(pValor.value.replace('$',""));
 	return result;
 }
+//Calcula el porcentaje de una cantidad
+function calcularPorcentajeEnPesos(porcentaje, total) {
+
+    let result = (porcentaje / 100) * total;
+
+    return result;
+
+}
+
 //Asignar numero de decimales a numero
 function myRound(num, dec) {
     var exp = Math.pow(10, dec || 2); // 2 decimales por defecto
@@ -158,4 +167,15 @@ function getTablaAmortizacion(pSaldoTotalTabla, pNumDePeriodos, pElementoInicial
     pElementoInicial.appendChild(fragmentTr);
 
 }
+//Calcula la primer mensualidad
+const getPrimerMensualidad = (pSaldoTotal, pInteresMensual,pAnos)=>{
+	let numDePeriodos = pAnos*12;
+	let amortizacion =myRound(pSaldoTotal/numDePeriodos,10);
+	let interes = myRound(calcularPorcentajeEnPesos(pInteresMensual,pSaldoTotal),10);
+
+	let result;
+	return myRound(result=amortizacion+interes);
+
+}
+
 

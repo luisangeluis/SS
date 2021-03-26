@@ -2,11 +2,17 @@ let saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
 let numDePeriodos = rangeAnos.value * 12;
 const tBody = document.querySelector('#amortizacion tbody');
 
+let valorMensualidad = document.querySelector('#valorMensualidad');
+
+valorMensualidad.value = '$'+getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value);
 getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
 
 rangeEngancheFinanciamiento.addEventListener('change', () => {
 
+    //Actualiza el saldo total de la tabla  
     saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
+    //Calcula la mensualidad
+    valorMensualidad.value = '$'+getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value);
 
     clearTablaAmortizacion(tBody);
     getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
@@ -14,14 +20,11 @@ rangeEngancheFinanciamiento.addEventListener('change', () => {
 });
 
 rangeAnos.addEventListener('change', () => {
-    /*
-        let elementosArray = Array.from(tBody.children);
-        console.log(elementosArray);
     
-        for (let x = 0; x < elementosArray.length; x++) {
-            tBody.removeChild(elementosArray[x]);
-        }
-    */
+    saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
+
+    valorMensualidad.value ='$'+getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value);
+
     clearTablaAmortizacion(tBody);
     getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
 

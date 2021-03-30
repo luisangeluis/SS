@@ -56,6 +56,8 @@ const asignarPorcentaje=(pValorAsignar)=>{
 	return result;
 }
 
+
+
 const mostrarValorPesos=(pValorAMostrar)=>{
 
 	let result = "$"+formatMoney(pValorAMostrar.value);

@@ -454,7 +454,7 @@
                                 <label for=""></label>
                                 <output id="valorMensualida" class="input_information"
                                   oninput="porcentajeMensualidad.value * ingresoMensual.value"></output>
-                                <input type="text" class="input_information text-end" name="user_name" value=""
+                                <input type="text" class="input_information text-end" name="user_name"
                                   style="width: 100%;" id="valorMensualidad">
                               </div>
                               <div class="col-6">
@@ -469,7 +469,7 @@
                               Ingreso Mensual Neto
                             </label>
                             <div>
-                              <input type="text" value="$55,000" class="input_information" style="width: 100%;"
+                              <input type="text" placeholder="$0.00" class="input_information formato-moneda" style="width: 100%;"
                                 id="ingresoMensual">
                             </div>
                             <div class="d-flex p-2 justify-content-">
@@ -1635,10 +1635,10 @@
               </div>
 
               <div class="col-12">
-                <a href="./privacidadA.html"> <button type="button" class="btn btn-primary" id="preApruebaHipoteca"
-                    style="width: 100%;"> PRE
+                <a aria-disabled="true" tabindex="-1" id="preApruebaHipotecaPrincipal" class="btn btn-primary disabled" href="./privacidadA.html" style="width:100%"><!--<button  type="button" class="btn btn-primary" id="preApruebaHipoteca"
+                    style="width: 100%;">-->PRE
                     APRUEBA TU HIPOTECA
-                  </button></a>
+                  <!--</button>--></a>
               </div>
             </div>
             <div>

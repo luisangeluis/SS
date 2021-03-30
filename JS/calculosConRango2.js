@@ -767,13 +767,7 @@ function mostrarCat(){
 }
 
 //inician las funciones para hacer los calculos
-function calcularPorcentajeEnPesos(porcentaje, total) {
 
-    let result = (porcentaje / 100) * total;
-
-    return result;
-
-}
 
 function calcDifEnPorcentaje(totalPorcentaje, porcentARestar) {
     let result = 0;

@@ -4,26 +4,37 @@ const tBody = document.querySelector('#amortizacion tbody');
 
 let valorMensualidad = document.querySelector('#valorMensualidad');
 
-valorMensualidad.value = '$'+getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value);
+let preApruebaHipotecaPrincipal = document.querySelector('#preApruebaHipotecaPrincipal');
+let ingresoMensual = document.querySelector('#ingresoMensual');
+
+const formatoMoneda = document.querySelectorAll('.formato-moneda');
+
+darFormatoMoneda(formatoMoneda);
+
+
+
+valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value));
 getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
 
+//RANGO ENGANCHE FINANCIAMIENTO
 rangeEngancheFinanciamiento.addEventListener('change', () => {
 
     //Actualiza el saldo total de la tabla  
     saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
     //Calcula la mensualidad
-    valorMensualidad.value = '$'+getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value);
+    valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value));
 
     clearTablaAmortizacion(tBody);
     getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
 
 });
 
+//RANGO DE AÑOS
 rangeAnos.addEventListener('change', () => {
-    
-    saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
 
-    valorMensualidad.value ='$'+getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value);
+    //saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
+
+    valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value));
 
     clearTablaAmortizacion(tBody);
     getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
@@ -31,6 +42,22 @@ rangeAnos.addEventListener('change', () => {
 
 });
 
+//Input de ingreso mensual neto
+ingresoMensual.addEventListener('blur', (e) => {
+
+    let valor = e.path[0].value;
+    valor = parseFloat(valor.replace(/\$|,/g, ""));
+
+    if(valor/3>=parseFloat(valorMensualidad.value.replace(/\$|,/g,""))){
+        habilitarEnlace(preApruebaHipotecaPrincipal);
+
+    }else{
+
+        deshabilitarEnlace(preApruebaHipotecaPrincipal);
+
+    }
+
+});
 
 
 /*

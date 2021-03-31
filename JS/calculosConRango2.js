@@ -91,7 +91,7 @@ const porcentFinanciamiento = document.getElementById('porcentFinanciamiento');
 const valorFinanciamiento = document.getElementById('valorFinanciamiento');
 const porcentCofi = document.getElementById('porcentCofi');
 const valorCofin = document.getElementById('valorCofin');
-const valorMensualidad = document.getElementById('valorMensualidad');
+//const valorMensualidad = document.getElementById('valorMensualidad');
 const ingresoMensNeto = document.getElementById('ingresoMensNeto');
 const otroIngreso = document.getElementById('otroIngreso');
 const valorMensualidad2 = document.getElementById('valorMensualidad2');
@@ -767,13 +767,7 @@ function mostrarCat(){
 }
 
 //inician las funciones para hacer los calculos
-function calcularPorcentajeEnPesos(porcentaje, total) {
 
-    let result = (porcentaje / 100) * total;
-
-    return result;
-
-}
 
 function calcDifEnPorcentaje(totalPorcentaje, porcentARestar) {
     let result = 0;
@@ -792,8 +786,10 @@ function calcularMensTotal(cantidadPesos, porcentTaza, tiempoAnios) {
     iMensual = myRound(porcentTaza/12,10);
     //iMensual = myRound(porcentTaza/12,2);
 
-    console.log(porcentTaza);
-    console.log(iMensual);
+    console.log('porcentaje taza: '+porcentTaza);
+    console.log('interes mensual'+iMensual);
+    console.log('cantidad en pesos'+cantidadPesos);
+    console.log('tiempo en años: '+tiempoAnios);
 
     //result = cantidadPesos * (Math.pow(1 + (iMensual / 100), tiempoAnios * 12) * iMensual / 100 / (Math.pow(1 + (iMensual / 100), tiempoAnios * 12) - 1))
 

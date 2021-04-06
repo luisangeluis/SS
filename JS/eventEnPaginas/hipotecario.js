@@ -50,10 +50,11 @@ ingresoMensual.addEventListener('blur', (e) => {
 
     if(valor/3>=parseFloat(valorMensualidad.value.replace(/\$|,/g,""))){
         habilitarEnlace(preApruebaHipotecaPrincipal);
-
+        
     }else{
 
         deshabilitarEnlace(preApruebaHipotecaPrincipal);
+        alerta('Tu ingreso mensual debe ser 3 veces mayor al abono mensual ');
 
     }
 

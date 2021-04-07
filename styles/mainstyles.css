@@ -1,6 +1,4 @@
 
-
-
 body {
     font-family: 'latoregular', sans-serif;
     letter-spacing: 1px;
@@ -14,9 +12,6 @@ body {
     letter-spacing: 1px;
     list-style-type: none;
 }
-
-
-
 
 p {
     font-family: 'latoregular', sans-serif;
@@ -122,16 +117,16 @@ p {
 }
 #slider12a .slider-track-high,
       #slider12c .slider-track-high {
-        background: #2f669e;
+        background: grey;
       }
 
       #slider12b .slider-track-low,
       #slider12c .slider-track-low {
-        background: #3d556f;
+        background: #2f669e;
       }
 
       #slider12c .slider-selection {
-        background: grey;
+        background: #60a1e7;
       }
 
 
@@ -156,20 +151,31 @@ p {
     max-width: 100px;
 }
 
+.modal-card {
+    display: flex;
+    align-items:center;
+    
+    min-width: 120px;
+    max-width: 170px;
+    height: 180px;
+    margin: 20px auto;
+   
+}
+
+.modal-image{
+    height: 70%;
+    margin: 5px auto;
+
+   
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.modal-image__house{
+    height: 70%;
+    padding: 20px;
+    margin: 10px auto;
+   
+}
 
 
 
@@ -190,6 +196,15 @@ p {
     margin-right: 6px;
     display: inline-block;
     background: #60a1e7;
+}
+
+.bullet--grey {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 6px;
+    display: inline-block;
+    background: grey;
 }
 
 .label__information--blue {

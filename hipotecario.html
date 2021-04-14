@@ -201,12 +201,12 @@
                               <p class="me-3">No conoces el valor?</p>
                               <p><a type="button" class="text-decoration-none" data-bs-toggle="modal" href="#modal"
                                   role="button">
-                                  Valuar Propiedad
+                                  Estimar Valor
                                 </a></p>
 
                             </div>
                           </div>
-                          <!-- First modal dialog -->
+                          <!--Modal valuar propiedad-->
                           <div class="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
@@ -219,10 +219,12 @@
                                 </div>
                                 <div class="modal-body">
                                   <div class="row">
-                                    <div class="col-sm-6">
-                                      <div class="card modal-card shadow-sm p-2 mb-3 bg-white rounded">
-                                        <img src="images/house-grey.jpeg" class="img-fluid modal-image__house"
-                                          alt="imagen comprar casa">
+                                    <div class="col-sm-6 ">
+                                      <div class="card  modal-card shadow-sm p-2 mb-3 bg-white rounded"
+                                        id="card__selecccion--house" onclick="changeImage()">
+                                        <img src="images/house-grey.jpeg" id="image__house"
+                                          class="img-fluid modal-image__house " alt="imagen comprar casa">
+
                                         <div class="card-body">
                                           <p class="modal-card__link">
                                             CASA</p>
@@ -230,9 +232,10 @@
                                       </div>
                                     </div>
                                     <div class="col-sm-6">
-                                      <div class=" card modal-card shadow-sm p-2 mb-3 bg-white rounded">
+                                      <div class="card modal-card shadow-sm p-2 mb-3 bg-white rounded"
+                                        id="card__selecccion--building" onclick="changeImage()">
                                         <img src="images/building-grey.jpeg" class="img-fluid modal-image "
-                                          alt="imagen comprar terreno">
+                                          id="image__building" alt="imagen comprar terreno">
                                         <div class="card-body">
                                           <p class="modal-card__link">
                                             DEPARTAMENTO</p>
@@ -240,6 +243,8 @@
                                       </div>
                                     </div>
                                   </div>
+
+
                                   <div class="container container-fluid ">
                                     <div class=" row mt-3 d-flex justify-content-center">
                                       <h5>&iquest;Cu&aacute;l es el c&oacute;digo
@@ -262,14 +267,17 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                  <!-- Toogle to second dialog -->
-                                  <button class="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal"
-                                    data-bs-dismiss="modal" style="width: 100%;">Obtener Recomendaci&oacute;n</button>
+                                  <!-- Toogle to Obtener recomendacion-->
+                                  <button class="btn btn-primary" id="obtener-recomendacion" data-bs-target="#modal2"
+                                    data-bs-toggle="modal" data-bs-dismiss="modal" style="width: 100%;"
+                                    onclick="verificationOptions()">Obtener Recomendaci&oacute;n</button> 
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <!-- Second modal dialog -->
+                       
+
+                          <!-- Modal de Opciones de avaluo -->
                           <div class="modal fade" id="modal2" aria-hidden="true" aria-labelledby="..." tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
@@ -297,19 +305,16 @@
                                       </tr>
                                     </tbody>
                                   </table>
-
-
                                 </div>
-
+                                <!-- Toogle to first dialog, `data-bs-dismiss` attribute can be omitted - clicking on link will close dialog anyway -->
                                 <div class="modal-footer">
-                                  <!-- Toogle to first dialog, `data-bs-dismiss` attribute can be omitted - clicking on link will close dialog anyway -->
                                   <a class="btn btn-primary " style="width: 100%;" aria-label="Close" role="button"
                                     data-bs-dismiss="modal" aria-label="Close">Confirmar</a>
                                 </div>
                               </div>
                             </div>
                           </div>
-
+                          <!-- rangos con y sin cofinanciamiento -->
                           <div class="rango">
                             <div id="cofinanciamientoRange" style="display: none;">
                               <input id="ex12c" type="range" class="forms-range" name="valorcasa" value="2500000"
@@ -318,10 +323,9 @@
                             <div id="noCofinanciamientoRange">
                               <input type="range" class="forms-range" name="valorcasa" id="rangeEngancheFinanciamiento"
                                 value="2500000" min="500000" max="2500000" step="100000" oninput="handleRangeChange()">
-
                             </div>
                           </div>
-
+                          <!-- Indicadores de los rangos -->
                           <div class="row">
                             <div class="col-12 col-lg-6 mb-3">
                               <label class="enganche bb-input-sdmfcfdmlabel">
@@ -353,7 +357,6 @@
                                   <input type="text" id="valorFinanciamiento" placeholder="$1620000"
                                     class="input_information text-end formato-moneda" style="width: 100%">
                                 </div>
-
                               </div>
                               <div class="">
                                 <div class="d-flex p-2 justify-content-end align-items-center" id="botonCofi" onclick="
@@ -473,7 +476,7 @@
                             </div>
                           </div>
                           <div class="col-12 col-lg-8 mb-3 d-flex">
-                            <div  class="col-5 ">
+                            <div class="col-5 ">
                               <label class="bb-input-label">
                                 <span class="bullet--grey"></span>
                                 Tasa de Inter&eacute;s
@@ -486,7 +489,7 @@
                                 <option value="2">10.10</option>
                               </select>
                             </div>
-                            </div>
+                          </div>
                       </section>
 
                     </div>
@@ -594,7 +597,7 @@
                               </label>
                               <div class="row">
                                 <div class="col-6">
-                                  <input type="text" class="input_information text-end" name="user_name" value="$18,000"
+                                  <input type="text" class="input_information text-end" name="user_name" value="$18,000" id="mensualidad__ingresos"
                                     style="width: 100%;">
                                 </div>
                                 <div class="col-6">
@@ -1040,7 +1043,7 @@
                               </label>
                               <div class="row">
                                 <div class="col-6"><input type="text" class="input_information text-end"
-                                    name="user_name" value="$18,000" style="width: 100%;"></div>
+                                    name="user_name" value="$18,000" style="width: 100%;" ></div>
                                 <div class="col-6"><input type="text" value="33%" class="input_information text-end"
                                     style="width: 100%">
                                 </div>
@@ -1364,13 +1367,13 @@
               <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>
               <div class="m-4">
                 <div class="text-secondary">Te prestamos:</div>
-                <div class="fs-5" id="total" style="color: #60a1e7">$1,620,000</div>
+                <div class="fs-5" style="color: #60a1e7" id="te-prestamos">$1,620,000</div>
               </div>
               <div class="row">
                 <div class="col-6 text-end text-secondary">Mensualidad con
                   seguro y
                   comisiones:</div>
-                <div class="col-6 text-start">$18,000</div>
+                <div class="col-6 text-start" id="mensualidad__neta">$18,000</div>
               </div>
               <div class="row">
                 <div class="col-6 text-end text-secondary">Tipo de tasa:</div>
@@ -1449,93 +1452,7 @@
 
                         </thead>
                         <tbody>
-                          <!--<tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
 
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-
-                          </tr>
-                          <tr>
-                            <th scope="row">4</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-
-                          </tr>
-                          <tr>
-                            <th scope="row">5</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-
-                          </tr>
-                          <tr>
-                            <th scope="row">6</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-
-                          <tr>
-                            <th scope="row">7</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-
-                          </tr>
-                          <tr>
-                            <th scope="row">8</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-
-                          </tr>-->
                         </tbody>
                       </table>
                     </div>
@@ -1789,6 +1706,46 @@
   <script type="text/javascript" src="JS/eventEnPaginas/hipotecario.js"></script>
 
   <script>
+    // Opciones de Valuar Propiedad
+    const imageHouse = document.getElementById("image__house");
+    const cardHouse = document.getElementById("card__selecccion--house");
+    const cardBuilding = document.getElementById("card__selecccion--building");
+    const imagebuilding = document.getElementById("image__building");
+    let isSelectedHouse = false;
+    let isSelectedBuilding = false;
+    var myAlert = document.getElementById('myAlert');
+    let obtainRecomendation = document.getElementById('obtener-recomendacion');
+
+
+    document.getElementById('valorFinanciamiento').addEventListener('input', () => {
+      document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
+    });
+  
+
+
+    cardHouse.onclick = function (changeImage) {
+      isSelectedHouse = !isSelectedHouse;
+      if (isSelectedHouse) {
+        imageHouse.src = "images/house-blue.jpeg";
+        isSelectedBuilding = false;
+        imagebuilding.src = "images/building-grey.jpeg";
+      } else {
+        imageHouse.src = "images/house-grey.jpeg";
+      }
+    }
+    cardBuilding.onclick = function (changeImageB) {
+      isSelectedBuilding = !isSelectedBuilding;
+      if (isSelectedBuilding) {
+        imagebuilding.src = "images/building-blue.jpeg";
+        isSelectedHouse = false;
+        imageHouse.src = "images/house-grey.jpeg";
+      } else {
+        imagebuilding.src = "images/building-grey.jpeg";
+      }
+    }
+
+    
+    // Range de Financiamiento y Cofinanciamiento
     var sliderC = new Slider("#ex12c", {
       id: "slider12c",
       min: 500000,
@@ -1813,10 +1770,13 @@
       const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
       const valorFinanciamiento = getElement('valorFinanciamiento');
 
+
       porcentajeEnganche.value = `${Math.round(enganche * 100 / valorTotalInmueble)}%`;
-      valorEnganche.value = enganche;
+      valorEnganche.value = '$' + new Intl.NumberFormat().format(enganche);
       porcentajeFinanciamiento.value = `${Math.round((valorTotalInmueble - enganche) * 100 / valorTotalInmueble)}%`;
-      valorFinanciamiento.value = Math.round(valorTotalInmueble - enganche);
+      valorFinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(valorTotalInmueble - enganche));
+
+      document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
     };
 
     sliderC.on('change', (e) => {
@@ -1829,13 +1789,17 @@
       const porcentajeCofinanciamiento = getElement('porcentajeCofinanciamiento');
       const valorCofinanciamiento = getElement('valorCofinanciamiento');
 
-      valorFinanciamiento.value = Math.round(max - min);
+      valorFinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(max - min));
       porcentajeFinanciamiento.value = `${Math.round((max - min) * 100 / valorTotalInmueble)}%`;
-      valorEnganche.value = Math.round(min);
+      valorEnganche.value = '$' + new Intl.NumberFormat().format(Math.round(min));
       porcentajeEnganche.value = `${Math.round(min * 100 / valorTotalInmueble)}%`;
-      valorCofinanciamiento.value = Math.round(valorTotalInmueble - max);
+      valorCofinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(valorTotalInmueble - max));
       porcentajeCofinanciamiento.value = `${Math.round((valorTotalInmueble - max) * 100 / valorTotalInmueble)}%`
+
+      document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
     });
+
+    
   </script>
 </body>
 

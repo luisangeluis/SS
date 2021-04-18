@@ -1,6 +1,8 @@
 let saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
 let numDePeriodos = rangeAnos.value * 12;
 const tBody = document.querySelector('#amortizacion tbody');
+const tabla = document.querySelector('#amortizacion');
+
 
 let valorMensualidad = document.querySelector('#valorMensualidad');
 
@@ -48,10 +50,10 @@ ingresoMensual.addEventListener('blur', (e) => {
     let valor = e.path[0].value;
     valor = parseFloat(valor.replace(/\$|,/g, ""));
 
-    if(valor/3>=parseFloat(valorMensualidad.value.replace(/\$|,/g,""))){
+    if (valor / 3 >= parseFloat(valorMensualidad.value.replace(/\$|,/g, ""))) {
         habilitarEnlace(preApruebaHipotecaPrincipal);
-        
-    }else{
+
+    } else {
 
         deshabilitarEnlace(preApruebaHipotecaPrincipal);
         alerta('Tu ingreso mensual debe ser 3 veces mayor al abono mensual ');
@@ -59,6 +61,40 @@ ingresoMensual.addEventListener('blur', (e) => {
     }
 
 });
+
+
+//Imprimir pantalla
+
+window.onload = function () {
+
+    //const tablaArray = Array.from(tabla.children);
+    //imprim2();
+    //console.log(tabla.children[1].children);
+    //imprimirAmortizacion();
+    //printDiv(tabla);
+    document.querySelector('#print-pdf-amortizacion').addEventListener('click', () => {
+
+        const tab = document.getElementById('amortizacion');
+        
+        html2pdf(tab,{
+            filename: 'miArchivo.pdf',
+            margin:5,
+            image:{
+                type: 'jpeg', quality: 0.98
+            },
+            jsPDF:{
+                orientation: 'landscape',
+                format: 'letter',
+                unit: 'mm'
+            },
+            html2canvas:{
+                scale:2
+            }
+        })
+
+            
+    });
+}
 
 
 /*

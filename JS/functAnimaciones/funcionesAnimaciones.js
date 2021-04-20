@@ -74,6 +74,30 @@ const alerta=(pMensaje)=>{
     })
 }
 
+//Obtener pdf
+//function getPdf(pPDF){
+const getPDF = (pPDF) =>{
+    
+    html2pdf(pPDF, {
+        filename: 'miArchivo.pdf',
+        margin: 2,
+        image: {
+            type: 'jpeg',
+            quality: 0.98
+        },
+        jsPDF: {
+            orientation: 'landscape',
+            format: 'a4',
+            unit: 'mm'
+        },
+        html2canvas: {
+            scale: 1,
+            logging: true,
+            dpi: 192,
+            letterRendering: true
+        }
+    })
+}
 
 
 

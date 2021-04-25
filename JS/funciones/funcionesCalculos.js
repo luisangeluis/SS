@@ -52,7 +52,6 @@ const asignarPorcentaje=(pValorAsignar)=>{
 	
 	let result=0;
 	result = parseInt(pValorAsignar.value.replace(/%/g, ""))
-	console.log(`nuevo metodo de asignar porcentaje ${result}`);
 	return result;
 }
 
@@ -82,7 +81,7 @@ const mostrarValorPorcentaje=(pValorAMostrar)=>{
 
 const asignarValorPesos=(pValor)=>{
 	let result=0;
-	result = parseFloat(pValor.value.replace(/\$/g, ""));
+	result = parseFloat(pValor.value.replace(/\$|,/g, ""));
 	//result =parseFloat(pValor.value.replace('$',""));
 	return result;
 }
@@ -113,7 +112,6 @@ function clearTablaAmortizacion(pElementoHijos) {
 
 //Mostrar tabla de amortizacion
 function getTablaAmortizacion(pSaldoTotalTabla, pNumDePeriodos, pElementoInicial) {
-
     let amortizacion = 0;
     let saldoRestanteTabla = parseFloat(pSaldoTotalTabla);
     let cuotaTabla = 0;

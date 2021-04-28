@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simulador Credito Hipotecario</title>
+  <title>Simulador Credito Hipotecari</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -317,8 +317,8 @@
                           <!-- rangos con y sin cofinanciamiento -->
                           <div class="rango">
                             <div id="cofinanciamientoRange" style="display: none;">
-                              <input id="ex12c" type="range" class="forms-range" name="valorcasa" value="2500000"
-                                min="500000" max="2500000" step="100000" />
+                              <input id="ex12c" type="range" class="forms-range" name="valorcasa"
+                                 />
                             </div>
                             <div id="noCofinanciamientoRange">
                               <input type="range" class="forms-range" name="valorcasa" id="rangeEngancheFinanciamiento"
@@ -553,13 +553,13 @@
                               <div class="d-flex p-2 justify-content-">
                                 <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                   data-bs-target="#collapseExample"></i>
-                                <p class="m-1">Agregar Cofinanciamiento</p></i>
+                                <p class="m-1">Agregar Cofinanciamient</p></i>
                               </div>
                               <div>
                                 <div class="collapse" id="collapseExample">
                                   <div class="d-flex p-2">
                                     <i class="bi bi-dash-circle m-1"></i>
-                                    <p class="m-1"> Cofinanciamiento</p>
+                                    <p class="m-1"> Cofinanciamient</p>
                                   </div>
                                   <div>
                                     <select class="form-select" aria-label="Default select example">
@@ -992,7 +992,7 @@
                                 <div class="d-flex p-2 justify-content-end align-items-center">
                                   <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample"></i>
-                                  <p class="m-1 collapse.show" id="botonCofi" data-bs-toggle="collapse"
+                                  <p class="m-1 collapse.show" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample">Agregar
                                     Cofinanciamiento</p></i>
                                 </div>
@@ -1136,7 +1136,7 @@
                                 <div class="d-flex p-2 justify-content-">
                                   <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample"></i>
-                                  <p class="m-1">Agregar Cofinanciamiento</p></i>
+                                  <p class="m-1">Agregar Cofinanciamient</p></i>
                                 </div>
                                 <div>
                                   <div class="collapse" id="collapseExample">
@@ -1694,7 +1694,7 @@
 
 
   <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
-  <script type="text/javascript" src="JS/acordCofin.js"></script>
+    <!-- <script type="text/javascript" src="JS/acordCofin.js"></script> -->
 
   <!--CALCULO DE CAT-->
   <script type="text/javascript" src="JS/calculoCat.js"></script>
@@ -1752,13 +1752,13 @@
 
 
     // Range de Financiamiento y Cofinanciamiento
-    var sliderC = new Slider("#ex12c", {
-      id: "slider12c",
-      min: 500000,
-      max: 2500000,
-      range: true,
-      value: [50000, 190000]
-    });
+    // var sliderC = new Slider("#ex12c", {
+    //   id: "slider12c",
+    //   min: 500000,
+    //   max: 2500000,
+    //   range: true,
+    //   value: [50000, 190000]
+    // });
 
     const getElement = (id) => document.getElementById(id);
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simulador Credito Hipotecario</title>
+  <title>Simulador Credito Hipotecari</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -193,9 +193,9 @@
                         <form name="registrationForm" id="valorInmuebleForm">
                           <div class="row align-items-center d-flex justify-content-center">
                             <div class="col-lg-5">
-                              <input type="number" max="10000000" min="500000" id="valorCasa" value="2500000"
-                                change="handleValorCasaChange(this.value)" required
-                                class="formatoacifra col-lg-5  border border-1">
+                              <input type="text"  id="valorCasa" value="$2,500,000.00"
+                                required
+                                class="formatoacifra col-lg-5  border border-1 formato-moneda">
                             </div>
                             <div class="justify-content-center p-2 d-flex">
                               <p class="me-3">No conoces el valor?</p>
@@ -317,12 +317,12 @@
                           <!-- rangos con y sin cofinanciamiento -->
                           <div class="rango">
                             <div id="cofinanciamientoRange" style="display: none;">
-                              <input id="ex12c" type="range" class="forms-range" name="valorcasa" value="2500000"
-                                min="500000" max="2500000" step="100000" />
+                              <input id="ex12c" type="range" class="forms-range" name="valorcasa"
+                                 />
                             </div>
                             <div id="noCofinanciamientoRange">
                               <input type="range" class="forms-range" name="valorcasa" id="rangeEngancheFinanciamiento"
-                                value="2500000" min="500000" max="2500000" step="100000" oninput="handleRangeChange()">
+                                 min="20" max="80" step="1" value="25">
                             </div>
                           </div>
                           <!-- Indicadores de los rangos -->
@@ -334,11 +334,11 @@
                               </label>
                               <div class="row">
                                 <div class="col-6">
-                                  <input name="user_name" id="porcentajeEnganche" placeholder="20%"
+                                  <input name="user_name" id="porcentajeEnganche" placeholder="hola"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
                                 <div class="col-6">
-                                  <input id="valorEnganche" type="text" placeholder="10%" value="10"
+                                  <input id="valorEnganche" type="text" placeholder="10%"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
                               </div>
@@ -350,11 +350,11 @@
                               </label>
                               <div class="row">
                                 <div class="col-6">
-                                  <input type="text" id="porcentajeFinanciamiento" value="80%"
+                                  <input type="text" id="porcentajeFinanciamiento" placeholder="hola"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
                                 <div class="col-6">
-                                  <input type="text" id="valorFinanciamiento" placeholder="$1620000"
+                                  <input type="text" id="valorFinanciamiento" placeholder="h"
                                     class="input_information text-end formato-moneda" style="width: 100%">
                                 </div>
                               </div>
@@ -430,7 +430,7 @@
                             </label>
                             <div class="row">
                               <div class="col-6">
-                                <input type="text" class="input_information text-end" name="user_name"
+                                <input type="text" class="input_information text-end" 
                                   style="width: 100%;" id="valorMensualidad">
                                 <output id="valorMensualida" class="input_information"
                                   oninput="porcentajeMensualidad.value * ingresoMensual.value"></output>
@@ -467,7 +467,7 @@
                                   </div>
                                   <div class="d-flex">
                                     <input value="30000" class="input_information text-end" style="width: 100%">
-                                    <input id="valorCofinanciamiento" value="190000" class="input_information text-end"
+                                    <input value="190000" class="input_information text-end"
                                       style="width: 100%;">
 
                                   </div>
@@ -528,10 +528,10 @@
                               Enganche
                             </label>
                             <div class="row">
-                              <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
+                              <div class="col-6"><input  placeholder="10%"
                                   value="10" class="input_information text-end" style="width: 100%">
                               </div>
-                              <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                              <div class="col-6"><input type="text" placeholder="10%" value="10"
                                   class="input_information text-end" style="width: 100%">
                               </div>
                             </div>
@@ -553,13 +553,13 @@
                               <div class="d-flex p-2 justify-content-">
                                 <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                   data-bs-target="#collapseExample"></i>
-                                <p class="m-1">Agregar Cofinanciamiento</p></i>
+                                <p class="m-1">Agregar Cofinanciamient</p></i>
                               </div>
                               <div>
                                 <div class="collapse" id="collapseExample">
                                   <div class="d-flex p-2">
                                     <i class="bi bi-dash-circle m-1"></i>
-                                    <p class="m-1"> Cofinanciamiento</p>
+                                    <p class="m-1"> Cofinanciamient</p>
                                   </div>
                                   <div>
                                     <select class="form-select" aria-label="Default select example">
@@ -597,7 +597,7 @@
                               </label>
                               <div class="row">
                                 <div class="col-6">
-                                  <input type="text" class="input_information text-end" name="user_name" value="$18,000"
+                                  <input type="text" class="input_information text-end"  value="$18,000"
                                     id="mensualidad__ingresos" style="width: 100%;">
                                 </div>
                                 <div class="col-6">
@@ -645,13 +645,13 @@
                         <form name="registrationForm" class="mb-3">
                           <div class="row align-items-center d-flex justify-content-center">
                             <div class="formatoacifra col-lg-5  border border-1">
-                              <output name="prOutputName" id="prOutputId">
+                              <output >
                                 <span class="currency-usd">50,000</span>
                               </output>
                             </div>
                           </div>
                           <div class="rango ">
-                            <input type="range" class="forms-range" name="valoringresototal" id="prInputId"
+                            <input type="range" class="forms-range" name="valoringresototal"
                               value="50000" min="7000" max="250000" step="250">
                           </div>
                           <div class="d-flex">
@@ -666,10 +666,10 @@
                               Enganche
                             </label>
                             <div class="row">
-                              <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
+                              <div class="col-6"><input  placeholder="10%"
                                   value="10" class="input_information text-end" style="width: 100%">
                               </div>
-                              <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                              <div class="col-6"><input type="text" placeholder="10%" value="10"
                                   class="input_information text-end" style="width: 100%">
                               </div>
                             </div>
@@ -723,7 +723,7 @@
                               pagar&#63;</h6>
                           </div>
                           <div class="rango mb-4">
-                            <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
+                            <input type="range" class="forms-range" name="valorcasa" value="2500000"
                               min="500000" max="10000000" step="100000">
                           </div>
                           <div class="row">
@@ -733,10 +733,10 @@
                                 Enganche
                               </label>
                               <div class="row">
-                                <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
+                                <div class="col-6"><input placeholder="10%"
                                     value="10" class="input_information text-end" style="width: 100%">
                                 </div>
-                                <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                                <div class="col-6"><input type="text" placeholder="10%" value="10"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
                               </div>
@@ -792,7 +792,7 @@
                               </label>
                               <div class="row">
                                 <div class="col-6"><input type="text" class="input_information text-end"
-                                    name="user_name" value="$18,000" style="width: 100%;"></div>
+                                     value="$18,000" style="width: 100%;"></div>
                                 <div class="col-6"><input type="text" value="33%" class="input_information text-end"
                                     style="width: 100%">
                                 </div>
@@ -870,7 +870,7 @@
                           <form name="registrationForm" class="mb-3">
                             <div class="row align-items-center d-flex justify-content-center">
                               <div class="formatoacifra col-lg-5  border border-1">
-                                <output name="prOutputName" id="prOutputId">
+                                <output>
                                   <span class="currency-usd ">2,500,000</span>
                                 </output>
 
@@ -952,7 +952,7 @@
                               <input id="ex12ccfc" type="range" class="forms-range" name="valorcasa" value="2500000"
                                 min="500000" max="10000000" step="100000" />
 
-                              <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
+                              <input type="range" class="forms-range" name="valorcasa" value="2500000"
                                 min="500000" max="10000000" step="100000">
                             </div>
                             <div class="d-flex">
@@ -967,10 +967,10 @@
                                 Enganche
                               </label>
                               <div class="row">
-                                <div class="col-6"><input name="user_name" placeholder="10%" value="10"
+                                <div class="col-6"><input placeholder="10%" value="10"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
-                                <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                                <div class="col-6"><input type="text" placeholder="10%" value="10"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
                               </div>
@@ -992,7 +992,7 @@
                                 <div class="d-flex p-2 justify-content-end align-items-center">
                                   <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample"></i>
-                                  <p class="m-1 collapse.show" id="botonCofi" data-bs-toggle="collapse"
+                                  <p class="m-1 collapse.show" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample">Agregar
                                     Cofinanciamiento</p></i>
                                 </div>
@@ -1043,7 +1043,7 @@
                               </label>
                               <div class="row">
                                 <div class="col-6"><input type="text" class="input_information text-end"
-                                    name="user_name" value="$18,000" style="width: 100%;"></div>
+                                   value="$18,000" style="width: 100%;"></div>
                                 <div class="col-6"><input type="text" value="33%" class="input_information text-end"
                                     style="width: 100%">
                                 </div>
@@ -1089,14 +1089,14 @@
                           <form name="registrationForm" class="mb-3">
                             <div class="row align-items-center d-flex justify-content-center">
                               <div class="formatoacifra col-lg-5  border border-1">
-                                <output name="prOutputName" id="prOutputId">
+                                <output>
                                   <span class="currency-usd ">2,500,000</span>
                                 </output>
                               </div>
 
                             </div>
                             <div class="rango ">
-                              <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
+                              <input type="range" class="forms-range" name="valorcasa" value="2500000"
                                 min="500000" max="10000000" step="100000">
                             </div>
                             <div class="d-flex">
@@ -1111,10 +1111,10 @@
                                 Enganche
                               </label>
                               <div class="row">
-                                <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
+                                <div class="col-6"><input placeholder="10%"
                                     value="10" class="input_information text-end" style="width: 100%">
                                 </div>
-                                <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                                <div class="col-6" id=""><input type="text" placeholder="10%" value="10"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
                               </div>
@@ -1136,7 +1136,7 @@
                                 <div class="d-flex p-2 justify-content-">
                                   <i class="bi bi-plus-circle m-1" data-bs-toggle="collapse"
                                     data-bs-target="#collapseExample"></i>
-                                  <p class="m-1">Agregar Cofinanciamiento</p></i>
+                                  <p class="m-1">Agregar Cofinanciamient</p></i>
                                 </div>
                                 <div>
                                   <div class="collapse" id="collapseExample">
@@ -1179,7 +1179,7 @@
                                 </label>
                                 <div class="row">
                                   <div class="col-6">
-                                    <input type="text" class="input_information text-end" name="user_name"
+                                    <input type="text" class="input_information text-end"
                                       value="$18,000" style="width: 100%;">
                                   </div>
                                   <div class="col-6">
@@ -1228,13 +1228,13 @@
                           <form name="registrationForm" class="mb-3">
                             <div class="row align-items-center d-flex justify-content-center">
                               <div class="formatoacifra col-lg-5  border border-1">
-                                <output name="prOutputName" id="prOutputId">
+                                <output name="">
                                   <span class="currency-usd">50,000</span>
                                 </output>
                               </div>
                             </div>
                             <div class="rango ">
-                              <input type="range" class="forms-range" name="valoringresototal" id="prInputId"
+                              <input type="range" class="forms-range" 
                                 value="50000" min="7000" max="250000" step="250">
                             </div>
                             <div class="d-flex">
@@ -1249,10 +1249,10 @@
                                 Enganche
                               </label>
                               <div class="row">
-                                <div class="col-6"><input id="porcentajeenganche" name="user_name" placeholder="10%"
+                                <div class="col-6"><input placeholder="10%"
                                     value="10" class="input_information text-end" style="width: 100%">
                                 </div>
-                                <div class="col-6" id="valorenganche"><input type="text" placeholder="10%" value="10"
+                                <div class="col-6"><input type="text" placeholder="10%" value="10"
                                     class="input_information text-end" style="width: 100%">
                                 </div>
                               </div>
@@ -1306,7 +1306,7 @@
                                 pagar&#63;</h6>
                             </div>
                             <div class="rango mb-4">
-                              <input type="range" class="forms-range" name="valorcasa" id="prInputId" value="2500000"
+                              <input type="range" class="forms-range" name="valorcasa"  value="2500000"
                                 min="500000" max="10000000" step="100000">
                             </div>
                             <div class="row">
@@ -1317,7 +1317,7 @@
                                 </label>
                                 <div class="row">
                                   <div class="col-6"><input type="text" class="input_information text-end"
-                                      name="user_name" value="$18,000" style="width: 100%;"></div>
+                                       value="$18,000" style="width: 100%;"></div>
                                   <div class="col-6"><input type="text" value="33%" class="input_information text-end"
                                       style="width: 100%">
                                   </div>
@@ -1367,7 +1367,7 @@
               <h5 class="card-title text-dark">CREDITO CASA TRADICIONAL</h5>
               <div class="m-4">
                 <div class="text-secondary">Te prestamos:</div>
-                <div class="fs-5" style="color: #60a1e7" id="te-prestamos">$1,620,000</div>
+                <div class="fs-5 te-prestamos" style="color: #60a1e7" id="te-prestamos">$1,620,000</div>
               </div>
               <div class="row">
                 <div class="col-6 text-end text-secondary">Mensualidad con
@@ -1694,14 +1694,12 @@
 
 
   <!--ANIMACION PANEL DE COFINANCIAMIENTO-->
-  <script type="text/javascript" src="JS/acordCofin.js"></script>
+    <!-- <script type="text/javascript" src="JS/acordCofin.js"></script> -->
 
   <!--CALCULO DE CAT-->
   <script type="text/javascript" src="JS/calculoCat.js"></script>
   <!--Debe ir primero calculoCat.js 03/12/2020-->
-  <!-- CALCULOS CON RANGO E INGRESOS -->
-  <script type="text/javascript" src="JS/calculosConRango2.js"></script>
-  <script type="text/javascript" src="JS/calculosConIngresoMens.js"></script>
+  
   <!--PARA DECIMALES EXACTOS-->
   <script src="JS/funciones/decimal.min.js"></script>
   <!--SweetAlert2-->
@@ -1725,9 +1723,9 @@
     let obtainRecomendation = document.getElementById('obtener-recomendacion');
 
 
-    document.getElementById('valorFinanciamiento').addEventListener('input', () => {
-      document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
-    });
+    // document.getElementById('valorFinanciamiento').addEventListener('input', () => {
+    //   document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
+    // });
 
 
 
@@ -1754,13 +1752,13 @@
 
 
     // Range de Financiamiento y Cofinanciamiento
-    var sliderC = new Slider("#ex12c", {
-      id: "slider12c",
-      min: 500000,
-      max: 2500000,
-      range: true,
-      value: [50000, 190000]
-    });
+    // var sliderC = new Slider("#ex12c", {
+    //   id: "slider12c",
+    //   min: 500000,
+    //   max: 2500000,
+    //   range: true,
+    //   value: [50000, 190000]
+    // });
 
     const getElement = (id) => document.getElementById(id);
 
@@ -1771,41 +1769,41 @@
     };
 
     const handleRangeChange = () => {
-      const valorTotalInmueble = Number(getElement('valorCasa').value);
-      const enganche = Number(getElement('rangeEngancheFinanciamiento').value);
-      const porcentajeEnganche = getElement('porcentajeEnganche');
-      const valorEnganche = getElement('valorEnganche');
-      const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
-      const valorFinanciamiento = getElement('valorFinanciamiento');
+      // const valorTotalInmueble = Number(getElement('valorCasa').value);
+      // const enganche = Number(getElement('rangeEngancheFinanciamiento').value);
+      // const porcentajeEnganche = getElement('porcentajeEnganche');
+      // const valorEnganche = getElement('valorEnganche');
+      // const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
+      // const valorFinanciamiento = getElement('valorFinanciamiento');
 
 
-      porcentajeEnganche.value = `${Math.round(enganche * 100 / valorTotalInmueble)}%`;
-      valorEnganche.value = '$' + new Intl.NumberFormat().format(enganche);
-      porcentajeFinanciamiento.value = `${Math.round((valorTotalInmueble - enganche) * 100 / valorTotalInmueble)}%`;
-      valorFinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(valorTotalInmueble - enganche));
+      // porcentajeEnganche.value = `${Math.round(enganche * 100 / valorTotalInmueble)}%`;
+      // valorEnganche.value = '$' + new Intl.NumberFormat().format(enganche);
+      // porcentajeFinanciamiento.value = `${Math.round((valorTotalInmueble - enganche) * 100 / valorTotalInmueble)}%`;
+      // valorFinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(valorTotalInmueble - enganche));
 
-      document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
+      // document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
     };
 
-    sliderC.on('change', (e) => {
-      const [min, max] = e.newValue;
-      const valorTotalInmueble = Number(getElement('valorCasa').value);
-      const porcentajeEnganche = getElement('porcentajeEnganche');
-      const valorEnganche = getElement('valorEnganche');
-      const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
-      const valorFinanciamiento = getElement('valorFinanciamiento');
-      const porcentajeCofinanciamiento = getElement('porcentajeCofinanciamiento');
-      const valorCofinanciamiento = getElement('valorCofinanciamiento');
+    // sliderC.on('change', (e) => {
+    //   const [min, max] = e.newValue;
+    //   const valorTotalInmueble = Number(getElement('valorCasa').value);
+    //   const porcentajeEnganche = getElement('porcentajeEnganche');
+    //   const valorEnganche = getElement('valorEnganche');
+    //   const porcentajeFinanciamiento = getElement('porcentajeFinanciamiento');
+    //   const valorFinanciamiento = getElement('valorFinanciamiento');
+    //   const porcentajeCofinanciamiento = getElement('porcentajeCofinanciamiento');
+    //   const valorCofinanciamiento = getElement('valorCofinanciamiento');
 
-      valorFinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(max - min));
-      porcentajeFinanciamiento.value = `${Math.round((max - min) * 100 / valorTotalInmueble)}%`;
-      valorEnganche.value = '$' + new Intl.NumberFormat().format(Math.round(min));
-      porcentajeEnganche.value = `${Math.round(min * 100 / valorTotalInmueble)}%`;
-      valorCofinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(valorTotalInmueble - max));
-      porcentajeCofinanciamiento.value = `${Math.round((valorTotalInmueble - max) * 100 / valorTotalInmueble)}%`
+    //   valorFinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(max - min));
+    //   porcentajeFinanciamiento.value = `${Math.round((max - min) * 100 / valorTotalInmueble)}%`;
+    //   valorEnganche.value = '$' + new Intl.NumberFormat().format(Math.round(min));
+    //   porcentajeEnganche.value = `${Math.round(min * 100 / valorTotalInmueble)}%`;
+    //   valorCofinanciamiento.value = '$' + new Intl.NumberFormat().format(Math.round(valorTotalInmueble - max));
+    //   porcentajeCofinanciamiento.value = `${Math.round((valorTotalInmueble - max) * 100 / valorTotalInmueble)}%`
 
-      document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
-    });
+    //   document.getElementById('te-prestamos').innerHTML = document.getElementById('valorFinanciamiento').value;
+    // });
 
 
   </script>

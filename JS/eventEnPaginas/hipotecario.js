@@ -1,47 +1,130 @@
-let saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
+//Variables range enganche financiamiento
+const rangeEngancheFinanciamiento = document.querySelector('#rangeEngancheFinanciamiento');
+const valorTotalInmueble = document.querySelector('#valorCasa');;
+const valorEnganche = document.querySelector('#valorEnganche');
+const porcentajeEnganche = document.querySelector('#porcentajeEnganche');
+const porcentajeFinanciamiento = document.querySelector('#porcentajeFinanciamiento');
+const valorFinanciamiento = document.querySelector('#valorFinanciamiento');
+const porcentajeCofinanciamiento = document.querySelector('#porcentajeCofinanciamiento');
+const valorCofinanciamiento = document.querySelector('#valorCofinanciamiento');
+//Variables para la tabla de amortizacion
+// let saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
 let numDePeriodos = rangeAnos.value * 12;
 const tBody = document.querySelector('#amortizacion tbody');
 const tabla = document.querySelector('#amortizacion');
+//Fin de Variables para la tabla de amortizacion
+//Obtener PDF AMORTIZACION
 const PdfAmortizacion = document.querySelector('#print-pdf-amortizacion');
 
-
-let valorMensualidad = document.querySelector('#valorMensualidad');
-
+const valorMensualidad = document.querySelector('#valorMensualidad');
+//enlace de preaprueba hipoteca
 let preApruebaHipotecaPrincipal = document.querySelector('#preApruebaHipotecaPrincipal');
 let ingresoMensual = document.querySelector('#ingresoMensual');
-
+//Elementos con formato moneda
 const formatoMoneda = document.querySelectorAll('.formato-moneda');
-
+//Mostrar informacion primera mensualidad
+const tePrestamos = document.querySelectorAll('.te-prestamos');
+//Formato moneda a los inputs
 darFormatoMoneda(formatoMoneda);
-valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value));
 
-getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
+//Calcula enganche inicialmente
+porcentajeEnganche.value = `${rangeEngancheFinanciamiento.value}%`
+valorEnganche.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeEnganche), asignarValorPesos(valorTotalInmueble)));
+//Calcula financiamiento inicialmente
+porcentajeFinanciamiento.value = `${100 - asignarPorcentaje(porcentajeEnganche)}%`;
+valorFinanciamiento.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeFinanciamiento), asignarValorPesos(valorTotalInmueble)));
+//Calcula primer mensualidad inicialmento
+valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(asignarValorPesos(valorFinanciamiento), 2, rangeAnos.value));
+//Mostrar cantidad del prestamo
+tePrestamos.forEach(element => {
+    element.textContent = valorFinanciamiento.value;
+})
 
-//RANGO ENGANCHE FINANCIAMIENTO
-rangeEngancheFinanciamiento.addEventListener('change', () => {
+//Obtener tabla
+getTablaAmortizacion(asignarValorPesos(valorFinanciamiento), numDePeriodos, tBody);
 
-    //Actualiza el saldo total de la tabla  
-    saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
-    //Calcula la mensualidad
-    valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value));
+//Range de enganche y financiamiento
+rangeEngancheFinanciamiento.addEventListener('input', () => {
 
     clearTablaAmortizacion(tBody);
-    getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
+    //Calcula enganche
+    porcentajeEnganche.value = `${rangeEngancheFinanciamiento.value}%`
+    valorEnganche.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeEnganche), asignarValorPesos(valorTotalInmueble)));
+    //Calcula Financiamiento
+    porcentajeFinanciamiento.value = `${100 - asignarPorcentaje(porcentajeEnganche)}%`;
+    valorFinanciamiento.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeFinanciamiento), asignarValorPesos(valorTotalInmueble)));
+    //Obtener monto de primer mensualidad
+    valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(asignarValorPesos(valorFinanciamiento), 2, rangeAnos.value));
 
+    tePrestamos.forEach(element => {
+        element.textContent = valorFinanciamiento.value;
+    })
+
+    //Obtener tabla
+    getTablaAmortizacion(asignarValorPesos(valorFinanciamiento), numDePeriodos, tBody);
+
+})
+// Range de Financiamiento y Cofinanciamiento
+var sliderC = new Slider("#ex12c", {
+    id: "slider12c",
+    min: 20,
+    max: 90,
+    step: 1,
+    range: true,
+    value: [30, 70]
 });
+let eng = 30;
+let financ = 70
+
+//Boton de cofinanciamiento
+document.getElementById('botonCofi').addEventListener('click', () => {
+
+        porcentajeEnganche.value = 30 + '%';
+        valorEnganche.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeEnganche), asignarValorPesos(valorTotalInmueble)));
+
+        porcentajeFinanciamiento.value = 40 + '%';
+        valorFinanciamiento.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeFinanciamiento), asignarValorPesos(valorTotalInmueble)));
+
+        porcentajeCofinanciamiento.value = 30 + '%';
+        valorCofinanciamiento.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeCofinanciamiento), asignarValorPesos(valorTotalInmueble)));
+
+    
+    
+        
+    
+
+    
+
+
+})
+//Slider de cofinanciamiento
+sliderC.on('slide', (value) => {
+    porcentajeEnganche.value = value[0] + '%';
+    valorEnganche.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeEnganche), asignarValorPesos(valorTotalInmueble)));
+
+    porcentajeFinanciamiento.value = value[1] - value[0] + '%';
+    valorFinanciamiento.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeFinanciamiento), asignarValorPesos(valorTotalInmueble)));
+
+    porcentajeCofinanciamiento.value = 100 - value[1] + '%';
+    valorCofinanciamiento.value = '$' + formatMoneyDecimales(calcularPorcentajeEnPesos(asignarPorcentaje(porcentajeCofinanciamiento), asignarValorPesos(valorTotalInmueble)));
+
+})
+
 
 //RANGO DE AÑOS
-rangeAnos.addEventListener('change', () => {
+rangeAnos.addEventListener('input', () => {
 
     //saldoTotalTabla = valorFinanciamiento.value.replace('$', '');
-
-    valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(saldoTotalTabla, 2, rangeAnos.value));
-
     clearTablaAmortizacion(tBody);
-    getTablaAmortizacion(saldoTotalTabla, numDePeriodos, tBody);
+
+    valorMensualidad.value = '$' + formatMoneyDecimales(getPrimerMensualidad(asignarValorPesos(valorFinanciamiento), 2, rangeAnos.value));
+
+    getTablaAmortizacion(parseFloat(asignarValorPesos(valorFinanciamiento)), numDePeriodos, tBody);
 
 
 });
+
+
 
 //Input de ingreso mensual neto
 ingresoMensual.addEventListener('blur', (e) => {
@@ -65,8 +148,8 @@ ingresoMensual.addEventListener('blur', (e) => {
 
 PdfAmortizacion.addEventListener('click', () => {
 
-    getPDF(tabla);    
-    
+    getPDF(tabla);
+
 });
 
 
